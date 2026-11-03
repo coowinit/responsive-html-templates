@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Responsive HTML page templates and interactive UI examples for learning and reuse.">
+  <title>Responsive HTML Templates</title>
+  <style>
+    :root { color-scheme: light; --page-bg: #fafafa; --card-bg: #fafafa; --card-border: #dedede; --text-primary: #101010; --text-secondary: #6e747e; --hover-accent: #385e8c; --card-radius: 8px; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { font-family: Arial, Helvetica, sans-serif; -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: var(--page-bg); color: var(--text-primary); }
+    .page-container { max-width: 1280px; margin: 0 auto; padding: 29px 24px 60px; }
+    .page-header { margin-bottom: 28px; }
+    .page-header h1 { font-size: clamp(26px, 3vw, 36px); font-weight: 500; line-height: 1.2; margin: 0 0 10px; }
+    .page-header p { margin: 0; color: var(--text-secondary); font-size: 16px; line-height: 1.5; }
+    .article-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+    .article-card { display: flex; flex-direction: column; min-width: 0; min-height: 265px; padding: 32px; border: 1px solid var(--card-border); border-radius: var(--card-radius); background: var(--card-bg); transition: border-color .18s ease; }
+    .article-card:hover { border-color: #a8b8ca; }
+    .article-card__title { margin: 0 0 14px; font-size: clamp(22px, 2vw, 28px); font-weight: 400; letter-spacing: -.055em; line-height: 1.12; overflow-wrap: anywhere; }
+    .article-card__title a { color: inherit; text-decoration: none; transition: color .18s ease; }
+    .article-card__title a:hover { color: var(--hover-accent); }
+    .article-card__title a:focus-visible { outline: 2px solid var(--hover-accent); outline-offset: 4px; border-radius: 2px; }
+    .article-card__excerpt { margin: 0; font-size: 18px; line-height: 1.5; overflow-wrap: anywhere; }
+    .article-card__date { display: block; margin-top: auto; padding-top: 22px; color: var(--text-secondary); font-size: 14px; line-height: 1.4; }
+    @media (max-width: 991.98px) { .article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 767.98px) { .page-container { padding: 20px 16px 40px; } .article-grid { grid-template-columns: 1fr; gap: 16px; } .article-card { padding: 26px; min-height: 230px; } .article-card__title { font-size: 26px; } .article-card__excerpt { font-size: 17px; } }
+    @media (prefers-reduced-motion: reduce) { .article-card, .article-card__title a { transition: none; } }
+  </style>
+</head>
+<body>
+  <main class="page-container">
+    <header class="page-header">
+      <h1>Responsive HTML Templates</h1>
+      <p>Responsive HTML, CSS and JavaScript templates for learning and reuse.</p>
+    </header>
+    <section class="article-grid" id="example-list" aria-label="HTML template examples"></section>
+  </main>
+  <script>
+    // 新增案例：只需在这里添加一条数据。link 指向各案例独立的 index.html。
+    const examples = [
+      {
+        title: "Form Focus on Navigation",
+        description: "Scroll to the dealer application form and automatically focus the first input field.",
+        date: "2026-11-03",
+        link: "./html01/index.html"
+      }
+    ];
+
+    const list = document.getElementById("example-list");
+    const dateFormatter = new Intl.DateTimeFormat("en-US", {
+      year: "numeric", month: "short", day: "numeric", timeZone: "UTC"
+    });
+
+    // 按日期倒序排列；日期相同时保留数组原始顺序。
+    [...examples].sort((a, b) => b.date.localeCompare(a.date)).forEach(example => {
+      const card = document.createElement("article");
+      card.className = "article-card";
+
+      const heading = document.createElement("h2");
+      heading.className = "article-card__title";
+      const link = document.createElement("a");
+      link.href = example.link;
+      link.textContent = example.title;
+      heading.appendChild(link);
+
+      const description = document.createElement("p");
+      description.className = "article-card__excerpt";
+      description.textContent = example.description;
+
+      const date = document.createElement("time");
+      date.className = "article-card__date";
+      date.dateTime = example.date;
+      const parsed = new Date(`${example.date}T00:00:00Z`);
+      date.textContent = Number.isNaN(parsed.getTime())
+        ? example.date
+        : dateFormatter.format(parsed);
+
+      card.append(heading, description, date);
+      list.appendChild(card);
+    });
+  </script>
+</body>
+</html>

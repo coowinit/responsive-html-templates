@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Discover the marketing, sales, training, design and aftersales support available when you become an EVODEK® dealer.">
+  <title>Become an EVODEK® Dealer</title>
+  <style>
+    /* =========================================================
+       Section 01: Dealer benefits
+       ========================================================= */
+    .s01,
+    .s01 *,
+    .s01 *::before,
+    .s01 *::after,
+    .s02,
+    .s02 *,
+    .s02 *::before,
+    .s02 *::after,
+    .s03,
+    .s03 *,
+    .s03 *::before,
+    .s03 *::after {
+      box-sizing: border-box;
+    }
+
+    .s01 {
+      width: 100%;
+      padding: 64px 24px 70px;
+      background: #fff;
+      color: #101a40;
+      font-family: "Poppins", "Avenir Next", Arial, sans-serif;
+    }
+
+    .s01 .s01-inner,
+    .s02 .s02-inner,
+    .s03 .s03-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .s01 .s01-head {
+      max-width: 780px;
+      margin: 0 auto 36px;
+      text-align: center;
+    }
+
+    .s01 .s01-title {
+      margin: 0;
+      color: #101a40;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.4px;
+    }
+
+    .s01 .s01-desc {
+      margin: 14px 0 0;
+      color: #718096;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.65;
+    }
+
+    .s01 .s01-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px 24px;
+    }
+
+    .s01 .s01-card {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid #e8ebf0;
+      border-radius: 5px;
+      background: #fff;
+      box-shadow: 0 4px 18px rgba(16, 26, 64, 0.045);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .s01 .s01-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 9px 24px rgba(16, 26, 64, 0.09);
+    }
+
+    .s01 .s01-media {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #eef1f5;
+    }
+
+    .s01 .s01-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .s01 .s01-content {
+      padding: 20px 21px 22px;
+    }
+
+    .s01 .s01-card-title {
+      margin: 0 0 10px;
+      color: #101a40;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .s01 .s01-list {
+      margin: 0;
+      padding-left: 19px;
+      color: #718096;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .s01 .s01-list li {
+      margin: 0 0 5px;
+      padding-left: 1px;
+    }
+
+    .s01 .s01-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .s01 .s01-cta {
+      margin-top: 34px;
+      text-align: center;
+    }
+
+    .s01 .s01-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 190px;
+      min-height: 44px;
+      padding: 10px 24px;
+      border: 0;
+      border-radius: 3px;
+      background: #702184;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+      text-decoration: none;
+      transition: background-color .2s ease;
+    }
+
+    .s01 .s01-cta-btn:hover {
+      background: #571768;
+      color: #fff;
+    }
+
+    .s01 .s01-cta-btn:focus-visible {
+      outline: 2px solid #702184;
+      outline-offset: 3px;
+    }
+
+    /* =========================================================
+       Section 02: Five-step dealer process
+       ========================================================= */
+    .s02 {
+      width: 100%;
+      padding: 60px 24px 56px;
+      background: #f0f3f7;
+      color: #101a40;
+      font-family: "Poppins", "Avenir Next", Arial, sans-serif;
+      text-align: center;
+    }
+
+    .s02 .s02-head {
+      margin: 0 auto 28px;
+    }
+
+    .s02 .s02-title {
+      margin: 0;
+      color: #101a40;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.4px;
+    }
+
+    .s02 .s02-desc {
+      margin: 14px 0 0;
+      color: #8390a5;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .s02 .s02-steps {
+      display: flex;
+      align-items: flex-start;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .s02 .s02-step {
+      position: relative;
+      flex: 1 1 20%;
+      min-width: 0;
+      text-align: center;
+    }
+
+    .s02 .s02-number {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      background: #702184;
+      color: #fff;
+      font-size: 21px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .s02 .s02-step:not(:last-child)::after {
+      position: absolute;
+      top: 20px;
+      left: calc(50% + 28px);
+      width: calc(100% - 56px);
+      height: 1px;
+      background: #702184;
+      content: "";
+    }
+
+    .s02 .s02-step-title {
+      max-width: 220px;
+      margin: 0 auto;
+      color: #101a40;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .s02 .s02-actions {
+      margin-top: 28px;
+    }
+
+    .s02 .s02-btn,
+    .s03 .s03-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 180px;
+      min-height: 42px;
+      padding: 10px 22px;
+      border: 0;
+      border-radius: 3px;
+      background: #702184;
+      color: #fff;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color .2s ease, transform .2s ease;
+    }
+
+    .s02 .s02-btn:hover,
+    .s03 .s03-submit:hover {
+      background: #571768;
+      color: #fff;
+    }
+
+    .s02 .s02-btn:focus-visible,
+    .s03 .s03-submit:focus-visible {
+      outline: 2px solid #702184;
+      outline-offset: 3px;
+    }
+
+    /* =========================================================
+       Section 03: Dealer application form
+       ========================================================= */
+    .s03 {
+      width: 100%;
+      padding: 58px 24px 30px;
+      background: #fff;
+      color: #101a40;
+      font-family: "Poppins", "Avenir Next", Arial, sans-serif;
+      text-align: center;
+      scroll-margin-top: 24px;
+    }
+
+    .s03 .s03-head {
+      margin: 0 auto 27px;
+    }
+
+    .s03 .s03-title {
+      margin: 0;
+      color: #101a40;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.35;
+      letter-spacing: -0.4px;
+    }
+
+    .s03 .s03-desc {
+      margin: 14px 0 0;
+      color: #8390a5;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .s03 .s03-form {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .s03 .s03-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 35px;
+      row-gap: 16px;
+      text-align: left;
+    }
+
+    .s03 .s03-field {
+      position: relative;
+      min-width: 0;
+    }
+
+    /* Desktop order: Name / Phone, then Email / Subject. */
+    .s03 .s03-field:nth-child(1) { grid-column: 1; grid-row: 1; }
+    .s03 .s03-field:nth-child(2) { grid-column: 1; grid-row: 2; }
+    .s03 .s03-field:nth-child(3) { grid-column: 2; grid-row: 1; }
+    .s03 .s03-field:nth-child(4) { grid-column: 2; grid-row: 2; }
+
+    .s03 .s03-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .s03 .s03-input,
+    .s03 .s03-textarea {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      border: 1px solid #c8c8c8;
+      border-radius: 0;
+      background: #fff;
+      color: #333;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+      box-shadow: none;
+      appearance: none;
+    }
+
+    .s03 .s03-input {
+      height: 42px;
+      padding: 9px 12px;
+    }
+
+    .s03 .s03-textarea {
+      min-height: 120px;
+      padding: 11px 12px;
+      resize: vertical;
+    }
+
+    .s03 .s03-input::placeholder,
+    .s03 .s03-textarea::placeholder {
+      color: #666;
+      opacity: 1;
+    }
+
+    .s03 .s03-input:focus,
+    .s03 .s03-textarea:focus {
+      outline: none;
+      border-color: #702184;
+      box-shadow: 0 0 0 2px rgba(112, 33, 132, 0.12);
+    }
+
+    .s03 .s03-input:-webkit-autofill,
+    .s03 .s03-input:-webkit-autofill:hover,
+    .s03 .s03-input:-webkit-autofill:focus {
+      -webkit-text-fill-color: #333;
+      transition: background-color 9999s ease-out 0s;
+    }
+
+    .s03 .s03-required {
+      position: absolute;
+      top: 50%;
+      right: -14px;
+      color: #333;
+      font-size: 14px;
+      line-height: 1;
+      transform: translateY(-50%);
+    }
+
+    .s03 .s03-message {
+      grid-column: 1 / -1;
+    }
+
+    .s03 .s03-actions {
+      margin-top: 16px;
+    }
+
+    .s03 .s03-submit {
+      min-width: 175px;
+    }
+
+    .s03 .s03-note {
+      min-height: 20px;
+      margin: 12px 0 0;
+      color: #526078;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (max-width: 991.98px) {
+      .s01 .s01-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .s01 {
+        padding: 42px 16px 46px;
+      }
+
+      .s01 .s01-head {
+        margin-bottom: 25px;
+      }
+
+      .s01 .s01-title,
+      .s02 .s02-title,
+      .s03 .s03-title {
+        font-size: 25px;
+        line-height: 1.4;
+      }
+
+      .s01 .s01-desc,
+      .s02 .s02-desc,
+      .s03 .s03-desc {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .s01 .s01-desc {
+        margin-top: 11px;
+      }
+
+      .s01 .s01-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+      }
+
+      .s01 .s01-content {
+        padding: 17px 17px 19px;
+      }
+
+      .s01 .s01-card-title {
+        margin-bottom: 8px;
+        font-size: 19px;
+      }
+
+      .s01 .s01-list {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      
+      .s01 .s01-cta {
+        margin-top: 25px;
+      }
+
+      .s01 .s01-cta-btn {
+        min-width: 175px;
+        min-height: 44px;
+      }
+
+      .s02 {
+        padding: 42px 16px 42px;
+      }
+
+      .s02 .s02-head {
+        margin-bottom: 22px;
+      }
+
+      .s02 .s02-desc {
+        margin-top: 11px;
+      }
+
+      .s02 .s02-steps {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto;
+      }
+
+      .s02 .s02-step {
+        display: flex;
+        flex: none;
+        align-items: center;
+        min-height: 51px;
+        text-align: left;
+      }
+
+      .s02 .s02-number {
+        flex: 0 0 28px;
+        width: 28px;
+        height: 28px;
+        margin: 0 14px 0 0;
+        font-size: 15px;
+      }
+
+      .s02 .s02-step:not(:last-child)::after {
+        top: 40px;
+        left: 13px;
+        width: 1px;
+        height: 23px;
+      }
+
+      .s02 .s02-step-title {
+        max-width: none;
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .s02 .s02-actions {
+        margin-top: 18px;
+      }
+
+      .s02 .s02-btn {
+        min-width: 165px;
+        min-height: 42px;
+        font-size: 14px;
+      }
+
+      .s03 {
+        padding: 42px 16px 26px;
+      }
+
+      .s03 .s03-head {
+        margin-bottom: 22px;
+      }
+
+      .s03 .s03-desc {
+        margin-top: 11px;
+      }
+
+      .s03 .s03-grid {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 13px;
+      }
+
+      .s03 .s03-field:nth-child(n) {
+        grid-column: 1;
+        grid-row: auto;
+      }
+
+      .s03 .s03-message {
+        grid-column: 1;
+      }
+
+      .s03 .s03-input {
+        height: 44px;
+        padding: 9px 11px;
+        font-size: 14px;
+      }
+
+      .s03 .s03-textarea {
+        min-height: 115px;
+        padding: 10px 11px;
+        font-size: 14px;
+      }
+
+      .s03 .s03-required {
+        right: -12px;
+        font-size: 14px;
+      }
+
+      .s03 .s03-actions {
+        margin-top: 15px;
+      }
+
+      .s03 .s03-submit {
+        min-width: 165px;
+        min-height: 44px;
+        font-size: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .s01 .s01-card,
+      .s02 .s02-btn,
+      .s03 .s03-submit { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- Benefits content, image order, image URLs, and CTA are checked against the supplied source HTML (html.txt). --> 
+    <!-- Dealer benefits -->
+    <section class="s01" aria-labelledby="dealer-benefits-title">
+      <div class="s01-inner">
+        <header class="s01-head">
+          <h1 class="s01-title" id="dealer-benefits-title">The Support You Need to Grow Your Business</h1>
+          <p class="s01-desc">Get the marketing, sales, training and design support to help build your EVODEK® business.</p>
+        </header>
+
+        <!-- Service content and image order are based on:
+             https://www.evodekco.com/benefits-of-becoming-dealer/
+             Original image files:
+             /wp-content/themes/mytheme/images/biz-coop-01.webp through biz-coop-06.webp
+             The bundled image files are crops of the matching images in the supplied page screenshot. -->
+        <div class="s01-grid">
+          <article class="s01-card">
+            <div class="s01-media">
+              <img class="s01-img" src="https://www.evodekco.com/wp-content/themes/mytheme/images/biz-coop-01.webp" data-fallback="assets/brand-marketing.jpg" alt="Brand marketing image showing digital marketing and online promotion" loading="lazy">
+            </div>
+            <div class="s01-content">
+              <h2 class="s01-card-title">Brand Marketing</h2>
+              <ul class="s01-list">
+                <li>Reach more customers through Google SEO and social media platforms such as Facebook, YouTube and LinkedIn.</li>
+                <li>Promote your business through exhibitions, home shows and advertising campaigns.</li>
+                <li>A dedicated website or online store can be provided upon request.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="s01-card">
+            <div class="s01-media">
+              <img class="s01-img" src="https://www.evodekco.com/wp-content/themes/mytheme/images/biz-coop-02.webp" data-fallback="assets/sales-support.jpg" alt="Sales support image showing a team planning a project together" loading="lazy">
+            </div>
+            <div class="s01-content">
+              <h2 class="s01-card-title">Sales Support</h2>
+              <ul class="s01-list">
+                <li>Offer customized products tailored to your customers’ needs.</li>
+                <li>Help your customers plan and design their outdoor spaces.</li>
+                <li>Get support with project bids and proposals.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="s01-card">
+            <div class="s01-media">
+              <img class="s01-img" src="https://www.evodekco.com/wp-content/themes/mytheme/images/biz-coop-03.webp" data-fallback="assets/sales-training.jpg" alt="Sales training image showing a presenter addressing a training audience" loading="lazy">
+            </div>
+            <div class="s01-content">
+              <h2 class="s01-card-title">Sales Training</h2>
+              <ul class="s01-list">
+                <li>Our product experts can train your sales team in product knowledge, installation and after-sales service, helping them better support your customers.</li>
+                <li>Get practical inventory planning guidance backed by our stock management experience.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="s01-card">
+            <div class="s01-media">
+              <img class="s01-img" src="https://www.evodekco.com/wp-content/themes/mytheme/images/biz-coop-04.webp" data-fallback="assets/aftersales-service.jpg" alt="Aftersales service image showing a customer support representative" loading="lazy">
+            </div>
+            <div class="s01-content">
+              <h2 class="s01-card-title">Aftersales Service</h2>
+              <ul class="s01-list">
+                <li>We respond to customer needs by developing tailored products, addressing complaints promptly and helping resolve issues that may arise before or after a sale.</li>
+                
+              </ul>
+            </div>
+          </article>
+
+          <article class="s01-card">
+            <div class="s01-media">
+              <img class="s01-img" src="https://www.evodekco.com/wp-content/themes/mytheme/images/biz-coop-05.webp" data-fallback="assets/design-support.jpg" alt="Design support image showing a composite decking sample and technical drawings" loading="lazy">
+            </div>
+            <div class="s01-content">
+              <h2 class="s01-card-title">Design Support</h2>
+              <ul class="s01-list">
+                <li>Our design team can create marketing materials, develop websites or online stores, and design exhibition and home-show booths.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="s01-card">
+            <div class="s01-media">
+              <img class="s01-img" src="https://www.evodekco.com/wp-content/themes/mytheme/images/biz-coop-06.webp" data-fallback="assets/trusted-reputation.jpg" alt="Trusted reputation image showing EVODEK factory production equipment" loading="lazy">
+            </div>
+            <div class="s01-content">
+              <h2 class="s01-card-title">Trusted Reputation</h2>
+              <ul class="s01-list">
+                <li>Reliable products backed by ongoing R&amp;D and innovation.</li>
+                <li>Our WPC extrusion technology and expertise have resulted in dozens of patents.</li>
+                <li>Customized solutions developed to meet different customer needs.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+ 
+        <div class="s01-cta">
+          <a class="s01-cta-btn" href="#dealer-application">
+            <span>Become a Dealer</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dealer process -->
+    <section class="s02" id="dealer-process" aria-labelledby="dealer-process-title">
+      <div class="s02-inner">
+        <header class="s02-head">
+          <h2 class="s02-title" id="dealer-process-title">Become an EVODEK<sup>®</sup> Dealer</h2>
+          <p class="s02-desc">Follow these five steps to begin your EVODEK dealer journey.</p>
+        </header>
+
+        <div class="s02-steps" aria-label="Five steps to become an EVODEK dealer">
+          <div class="s02-step">
+            <div class="s02-number" aria-hidden="true">1</div>
+            <p class="s02-step-title">Submit Your Application</p>
+          </div>
+          <div class="s02-step">
+            <div class="s02-number" aria-hidden="true">2</div>
+            <p class="s02-step-title">Join an Information Session</p>
+          </div>
+          <div class="s02-step">
+            <div class="s02-number" aria-hidden="true">3</div>
+            <p class="s02-step-title">Access Your Portal</p>
+          </div>
+          <div class="s02-step">
+            <div class="s02-number" aria-hidden="true">4</div>
+            <p class="s02-step-title">Build and Register Your Decks</p>
+          </div>
+          <div class="s02-step">
+            <div class="s02-number" aria-hidden="true">5</div>
+            <p class="s02-step-title">Become a Recognized EVODEK<sup>®</sup> Dealer</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Dealer application form -->
+    <section class="s03" id="dealer-application" aria-labelledby="dealer-application-title">
+      <div class="s03-inner">
+        <header class="s03-head">
+          <h2 class="s03-title" id="dealer-application-title">Apply to Become an EVODEK<sup>®</sup> Dealer</h2>
+          <p class="s03-desc">Tell us about your business, and our team will be in touch to discuss the next steps.</p>
+        </header>
+
+        <!-- Connect this form to your WordPress form handler before publishing. -->
+        <form class="s03-form" action="#" method="post">
+          <div class="s03-grid">
+            <div class="s03-field">
+              <label class="s03-label" for="dealer-name">Your Name (required)</label>
+              <input class="s03-input" id="dealer-name" name="name" type="text" placeholder="Your Name" autocomplete="name" required>
+              <span class="s03-required" aria-hidden="true">*</span>
+            </div>
+
+            <div class="s03-field">
+              <label class="s03-label" for="dealer-email">Your Email (required)</label>
+              <input class="s03-input" id="dealer-email" name="email" type="email" placeholder="Your Email" autocomplete="email" required>
+              <span class="s03-required" aria-hidden="true">*</span>
+            </div>
+
+            <div class="s03-field">
+              <label class="s03-label" for="dealer-phone">Your Phone</label>
+              <input class="s03-input" id="dealer-phone" name="phone" type="tel" placeholder="Your Phone" autocomplete="tel">
+            </div>
+
+            <div class="s03-field">
+              <label class="s03-label" for="dealer-subject">Your Subject</label>
+              <input class="s03-input" id="dealer-subject" name="subject" type="text" placeholder="Your Subject">
+            </div>
+
+            <div class="s03-field s03-message">
+              <label class="s03-label" for="dealer-requirement">Submit your requirement here</label>
+              <textarea class="s03-textarea" id="dealer-requirement" name="requirement" placeholder="Submit your requirement here"></textarea>
+            </div>
+          </div>
+
+          <div class="s03-actions">
+            <button class="s03-submit" type="submit">Submit Application</button>
+          </div>
+          <p class="s03-note" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Focus the first application field only when the dealer CTA is clicked.
+    const dealerCta = document.querySelector('.s01-cta-btn[href="#dealer-application"]');
+    const dealerName = document.getElementById('dealer-name');
+    if (dealerCta && dealerName) {
+      dealerCta.addEventListener('click', () => {
+        // Keep the native anchor navigation and smooth scrolling intact.
+        requestAnimationFrame(() => {
+          dealerName.focus({ preventScroll: true });
+        });
+      });
+    }
+
+    // Load the original full-resolution service photos from EVODEK.
+    // If the source site is unavailable, use the bundled local screenshot crop.
+    document.querySelectorAll('.s01 .s01-img[data-fallback]').forEach((img) => {
+      img.addEventListener('error', () => {
+        if (img.dataset.fallbackUsed === 'true') return;
+        img.dataset.fallbackUsed = 'true';
+        img.src = img.dataset.fallback;
+      }, { once: true });
+    });
+
+    // Scoped preview feedback only. Connect the form to a WordPress handler for live submissions.
+    document.querySelectorAll('.s03').forEach((root) => {
+      if (root.dataset.initialized === 'true') return;
+
+      const form = root.querySelector('.s03-form');
+      const note = root.querySelector('.s03-note');
+      if (!form || !note) return;
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        note.textContent = 'Your form is ready. Connect it to your WordPress submission handler to receive applications.';
+      });
+
+      root.dataset.initialized = 'true';
+    });
+  </script>
+</body>
+</html>
