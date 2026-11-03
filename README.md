@@ -1,63 +1,79 @@
 # 🧩 Responsive HTML Templates
 
-响应式 HTML 页面模板与前端交互案例合集，基于 HTML、CSS 和 JavaScript 构建。每个案例独立运行，方便学习、预览和复制复用。
+响应式 HTML 页面模板与前端交互案例合集，基于 HTML、CSS 和 JavaScript 构建，用于日常学习、效果预览、技术研究与项目复用。
 
-**当前版本：v0.1.0**（初始版本；用于准备发布的版本标识，发布 GitHub Release 后以对应 Tag 为准）
+**设计原则：简单、独立、响应式、易迁移。**
 
-## 项目结构
+## 🌐 在线预览
+
+- [打开模板导航首页（GitHub Pages）](https://coowinit.github.io/responsive-html-templates/)
+- [查看仓库源代码](https://github.com/coowinit/responsive-html-templates)
+
+所有案例由导航首页统一展示，无需在 README 中重复维护案例清单。GitHub Pages 需要在仓库的 **Settings → Pages** 中启用（部署源为 `main` 分支的 `/(root)` 目录）；未启用或部署期间，在线预览可能暂不可用。
+
+## 📁 项目结构
 
 ```text
 responsive-html-templates/
-├── index.html             # 总预览首页（CSS、JS 均内嵌）
-├── README.md              # 项目说明与案例索引
-└── html01/                # 第一个独立案例：表单跳转与聚焦
-    ├── index.html
-    └── assets/            # 当前案例所需的本地图片
+├── index.html              # 总预览首页（内嵌 CSS、JS）
+├── README.md               # 通用项目说明
+├── html01/                 # 独立案例
+│   ├── index.html          # 案例入口
+│   └── assets/             # 案例自己的静态资源（按需）
+├── html02/                 # 独立案例
+│   ├── index.html
+│   ├── css/                # 可选
+│   ├── js/                 # 可选
+│   └── images/             # 可选
+└── ...                     # 后续按 htmlNN 顺序扩展
 ```
 
-后续案例依次使用 `html02/`、`html03/` 等编号目录。每个案例按需在自己的目录下放置 `css/`、`js/`、`images/` 或 `assets/`，不要求创建空目录，也不共用其他案例的资源。
+- 根目录 `index.html` 仅负责案例导航：CSS 和 JavaScript 内嵌，无需构建工具。
+- 每个 `htmlNN/` 目录都是可独立打开、复制和迁移的完整案例，资源存放在自身目录中。
+- 资源目录按实际需要创建，不强制使用同一种组织形式，也不创建空目录。
+- 编号仅表示案例目录，不用于描述功能；已有编号与路径尽量保持不变，避免旧链接失效。
 
-## 案例索引
+## ➕ 如何新增案例
 
-| 编号 | 案例 | 功能 | 日期 | 预览 |
-| --- | --- | --- | --- | --- |
-| HTML01 | Form Focus on Navigation | 点击 Become a Dealer 跳转到申请表单，并聚焦第一个输入框 | 2026-11-03 | [在线预览](https://coowinit.github.io/responsive-html-templates/html01/) |
+**第一步：** 新建 `htmlNN/` 目录，将案例所需 HTML、CSS、JS、图片等资源放入其中，入口统一为 `index.html`。请使用案例目录内的相对路径引用资源。
 
-## 新增案例
+**第二步：** 编辑根目录 `index.html`，在 `const examples = [...]` 中增加一条数据：
 
-1. 新建 `html02/` 目录，并放入该案例完整的 HTML、CSS、JavaScript 和图片。入口建议统一为 `html02/index.html`，所有资源路径应指向该案例目录内部。
-2. 打开根目录 `index.html`，找到 `<script>` 中的 `const examples = [...]`。在数组中添加一条：
+```js
+{
+  title: "Example Title",
+  description: "A short description of this example.",
+  date: "YYYY-MM-DD",
+  link: "./htmlNN/index.html"
+}
+```
 
-   ```js
-   {
-     title: "Example Title",
-     description: "A short description of this example.",
-     date: "2026-11-04",
-     link: "./html02/index.html"
-   }
-   ```
+其中 `date` 请替换为真实日期，例如 `2026-11-03`；`htmlNN` 请替换为实际案例编号。
 
-3. 保存即可。首页自动生成响应式卡片，**只展示标题、描述和最后一行日期**；点击标题将在新标签页打开对应案例。案例按日期从新到旧排列，日期相同时保留数组中的先后顺序。
-4. 同步更新上方 README 案例索引。编号创建后不要随意更改，以免已有链接失效。
+**第三步：** 保存并预览。首页会自动生成卡片，展示标题、描述和底部日期，按日期从新到旧排列；点击案例标题将在新标签页打开页面。
 
-## 使用与维护原则
+**以后增加案例，只需新增独立目录并维护首页 JS 数组，无需修改本 README。**
 
-- **首页单文件**：根目录 `index.html` 内嵌 CSS 和 JS；无需构建工具、外部框架或额外数据文件。
-- **数据驱动**：以后只需修改首页 `examples` 数组的 `title`、`description`、`date`、`link` 四个字段，无需复制卡片 HTML。
-- **案例独立**：每个 `htmlNN/` 是可单独打开、打包和迁移的案例；不依赖根目录首页或其他案例的 CSS、JS、图片。
-- **响应式优先**：案例尽量同时适配电脑和手机；首页默认大屏三列、中屏两列、小屏一列。
-- **保持轻量**：暂不增加搜索、分类、截图、后台或数据库；未来确有需要再扩展。
-- **预览方式**：本地直接用浏览器打开根目录 `index.html`；线上通过 GitHub Pages 预览。首页卡片会在新标签页打开案例（需要浏览器启用 JavaScript）。
-- **GitHub Pages 设置**：进入仓库 `Settings → Pages`，在 `Build and deployment` 中选择 `Deploy from a branch`，分支选择 `main`，目录选择 `/(root)`，保存后等待部署完成。
-- **预览地址**：网站首页 https://coowinit.github.io/responsive-html-templates/ ，首个案例 https://coowinit.github.io/responsive-html-templates/html01/ 。这些链接需在 GitHub Pages 成功部署后才能访问；`github.com/.../blob/main/...` 只用于查看源代码。
-- **外部依赖**：新增案例若使用 CDN 或第三方库，应在案例中明确标注；优先考虑可离线迁移的本地资源。
+## 🛠️ 开发与维护约定
 
-## 版本记录
+- **独立运行**：优先使用原生 HTML、CSS、JavaScript；案例所需资源尽量本地保存，不依赖其他案例或首页。
+- **响应式优先**：尽量兼容桌面、平板和手机，并测试常见屏幕宽度。
+- **样式隔离**：自定义 CSS 尽量限定作用域，避免不同模块之间的样式冲突。
+- **按需引入依赖**：需要第三方库时，应明确其用途与加载方式；避免为简单功能增加复杂框架。
+- **迁移友好**：复制完整 `htmlNN/` 目录后，应能在独立环境中正常使用；涉及后台接口、表单提交或外部服务的案例，需要另行配置相关功能。
+- **保持精简**：导航页专注展示，不预先引入数据库、后台管理或复杂的分类系统。
+- **版本管理**：具体功能迭代与版本信息通过 Git Commit、Tags 和 Releases 追踪，README 不记录逐项更新历史。
 
-### v0.1.0 — Initial Release（2026-11-03）
+## 📐 HTML / CSS 命名规范
 
-- 建立响应式 HTML 模板案例库和单文件预览首页。
-- 使用 JavaScript 数组集中维护案例标题、描述、日期及链接，并自动生成卡片。
-- 首次收录 `html01`：Become a Dealer 表单跳转并聚焦首个输入框。
+页面与组件开发可参考独立维护的命名规范仓库：
 
-> 注：`html01` 是前端交互演示，表单提交不包含真实后端处理，不能直接作为生产环境收集数据的完整表单系统。
+**[HTML / CSS Scope Naming Guide](https://github.com/coowinit/html-css-naming-guide)**
+
+该规范推荐采用 `s01`、`s02` 等 Scope Class，以及 `s01-title`、`s01-img` 等简短的局部类名，方便样式隔离、批量替换和跨项目迁移。
+
+该仓库是**参考规范**，不是本项目的运行依赖。已有案例无需为了统一命名而强制重构。
+
+## 📄 使用说明
+
+本仓库主要用于学习、研究和复用。将案例用于正式项目之前，请自行检查响应式表现、浏览器兼容性、无障碍体验、资源授权，以及表单或接口的实际处理逻辑。
