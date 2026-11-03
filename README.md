@@ -21,7 +21,7 @@ responsive-html-templates/
 
 | 编号 | 案例 | 功能 | 日期 | 预览 |
 | --- | --- | --- | --- | --- |
-| HTML01 | Form Focus on Navigation | 点击 Become a Dealer 跳转到申请表单，并聚焦第一个输入框 | 2026-11-03 | [打开案例](html01/index.html) |
+| HTML01 | Form Focus on Navigation | 点击 Become a Dealer 跳转到申请表单，并聚焦第一个输入框 | 2026-11-03 | [在线预览](https://coowinit.github.io/responsive-html-templates/html01/) |
 
 ## 新增案例
 
@@ -37,7 +37,7 @@ responsive-html-templates/
    }
    ```
 
-3. 保存即可。首页自动生成响应式卡片，**只展示标题、描述和最后一行日期**；点击标题进入对应案例。案例按日期从新到旧排列，日期相同时保留数组中的先后顺序。
+3. 保存即可。首页自动生成响应式卡片，**只展示标题、描述和最后一行日期**；点击标题将在新标签页打开对应案例。案例按日期从新到旧排列，日期相同时保留数组中的先后顺序。
 4. 同步更新上方 README 案例索引。编号创建后不要随意更改，以免已有链接失效。
 
 ## 使用与维护原则
@@ -47,7 +47,9 @@ responsive-html-templates/
 - **案例独立**：每个 `htmlNN/` 是可单独打开、打包和迁移的案例；不依赖根目录首页或其他案例的 CSS、JS、图片。
 - **响应式优先**：案例尽量同时适配电脑和手机；首页默认大屏三列、中屏两列、小屏一列。
 - **保持轻量**：暂不增加搜索、分类、截图、后台或数据库；未来确有需要再扩展。
-- **预览方式**：直接用浏览器打开根目录 `index.html`，或使用 GitHub Pages 部署。首页卡片由 JavaScript 渲染，需要浏览器启用 JS。
+- **预览方式**：本地直接用浏览器打开根目录 `index.html`；线上通过 GitHub Pages 预览。首页卡片会在新标签页打开案例（需要浏览器启用 JavaScript）。
+- **GitHub Pages 设置**：进入仓库 `Settings → Pages`，在 `Build and deployment` 中选择 `Deploy from a branch`，分支选择 `main`，目录选择 `/(root)`，保存后等待部署完成。
+- **预览地址**：网站首页 https://coowinit.github.io/responsive-html-templates/ ，首个案例 https://coowinit.github.io/responsive-html-templates/html01/ 。这些链接需在 GitHub Pages 成功部署后才能访问；`github.com/.../blob/main/...` 只用于查看源代码。
 - **外部依赖**：新增案例若使用 CDN 或第三方库，应在案例中明确标注；优先考虑可离线迁移的本地资源。
 
 ## 版本记录
