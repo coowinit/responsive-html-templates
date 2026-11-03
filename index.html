@@ -61,6 +61,8 @@
       heading.className = "article-card__title";
       const link = document.createElement("a");
       link.href = example.link;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
       link.textContent = example.title;
       heading.appendChild(link);
 
