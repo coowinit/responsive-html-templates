@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Products Section | Classic Theme Blueprint</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #19222a; background: #fff; }
+    /* Section 02 — Products. Standalone preview, no framework or JS required. */
+    :where(#s02-products) { padding: 80px 0 96px; }
+    :where(#s02-products) .container { width: min(1400px, calc(100% - 48px)); margin-inline: auto; }
+    :where(#s02-products) .heading { margin: 0 0 14px; font-size: clamp(28px, 2.6vw, 38px); font-weight: 700; line-height: 1.2; letter-spacing: -.025em; }
+    :where(#s02-products) .section-desc { max-width: 780px; margin: 0 0 38px; font-size: 16px; line-height: 1.75; color: #566573; overflow-wrap: break-word; }
+    :where(#s02-products) .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 26px; }
+    :where(#s02-products) .item { display: flex; flex-direction: column; min-width: 0; height: 100%; color: inherit; text-decoration: none; border: 1px solid #e5e8eb; background: #fff; transition: border-color .2s ease, box-shadow .2s ease; }
+    :where(#s02-products) .item:hover { border-color: #bec8cf; box-shadow: 0 10px 28px rgb(23 37 48 / 8%); }
+    :where(#s02-products) .item:focus-visible { outline: 3px solid #406b83; outline-offset: 4px; }
+    :where(#s02-products) .image { display: block; aspect-ratio: 1 / 1; overflow: hidden; background: #f1f3f5; }
+    :where(#s02-products) .image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+    :where(#s02-products) .item:hover .image img { transform: scale(1.025); }
+    :where(#s02-products) .info { display: flex; flex-direction: column; flex: 1; padding: 22px 22px 24px; }
+    :where(#s02-products) .title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; min-height: 2.7em; max-height: 2.7em; margin: 0 0 12px; font-size: 20px; line-height: 1.35; font-weight: 650; overflow-wrap: anywhere; }
+    :where(#s02-products) .desc { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; min-height: 3.1em; max-height: 3.1em; margin: 0; font-size: 15px; line-height: 1.55; color: #64717c; overflow-wrap: anywhere; }
+    @media (max-width: 1000px) {
+      :where(#s02-products) .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    }
+    @media (max-width: 640px) {
+      :where(#s02-products) { padding: 48px 0 64px; }
+      :where(#s02-products) .container { width: calc(100% - 36px); }
+      :where(#s02-products) .heading { margin-bottom: 12px; font-size: 27px; }
+      :where(#s02-products) .section-desc { margin-bottom: 26px; font-size: 14px; line-height: 1.65; }
+      :where(#s02-products) .grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+      :where(#s02-products) .info { padding: 18px 18px 20px; }
+      :where(#s02-products) .title { font-size: 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      :where(#s02-products) .item, :where(#s02-products) .image img { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="s02-products" aria-labelledby="products-heading">
+      <div class="container">
+        <h2 class="heading" id="products-heading">Featured Products</h2>
+        <p class="section-desc">Explore versatile products developed for modern construction and architectural applications. Discover practical options for commercial and residential projects, with a focus on reliable performance and lasting quality.</p>
+        <div class="grid">
+          <!-- Links are demo placeholders. In WordPress they become product permalinks. -->
+          <a class="item" href="#product-01" aria-label="View details: Composite Decking">
+            <span class="image"><img src="assets/images/product-placeholder.svg" alt="Product illustration placeholder" width="800" height="800"></span>
+            <span class="info"><span class="title">Composite Decking for Modern Outdoor Living</span><span class="desc">Durable outdoor materials for everyday applications.</span></span>
+          </a>
+          <a class="item" href="#product-02" aria-label="View details: Architectural Wall Cladding Systems">
+            <span class="image"><img src="assets/images/product-placeholder.svg" alt="Product illustration placeholder" width="800" height="800" loading="lazy"></span>
+            <span class="info"><span class="title">Architectural Wall Cladding Systems</span><span class="desc">Modern surface solutions that bring texture and lasting visual appeal to commercial spaces.</span></span>
+          </a>
+          <a class="item" href="#product-03" aria-label="View details: Outdoor Fencing">
+            <span class="image"><img src="assets/images/product-placeholder.svg" alt="Product illustration placeholder" width="800" height="800" loading="lazy"></span>
+            <span class="info"><span class="title">Outdoor Fencing and Garden Privacy Solutions</span><span class="desc">Flexible options for patios, gardens and perimeter design.</span></span>
+          </a>
+          <a class="item" href="#product-04" aria-label="View details: Custom Architectural Profiles for Commercial Building Projects">
+            <span class="image"><img src="assets/images/product-placeholder.svg" alt="Product illustration placeholder" width="800" height="800" loading="lazy"></span>
+            <span class="info"><span class="title">Custom Architectural Profiles for Commercial Building Projects</span><span class="desc">A broad range of profiles suitable for customized construction and facade detailing.</span></span>
+          </a>
+          <a class="item" href="#product-05" aria-label="View details: Interior Paneling">
+            <span class="image"><img src="assets/images/product-placeholder.svg" alt="Product illustration placeholder" width="800" height="800" loading="lazy"></span>
+            <span class="info"><span class="title">Interior Paneling</span><span class="desc">Clean, practical finishes.</span></span>
+          </a>
+          <a class="item" href="#product-06" aria-label="View details: Modular Outdoor Structures">
+            <span class="image"><img src="assets/images/product-placeholder.svg" alt="Product illustration placeholder" width="800" height="800" loading="lazy"></span>
+            <span class="info"><span class="title">Modular Outdoor Structures</span><span class="desc">Functional exterior solutions developed for modern design requirements and consistent installation results.</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

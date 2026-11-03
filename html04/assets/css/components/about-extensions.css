@@ -1,0 +1,361 @@
+/* About extension components — isolated styles;
+ base/font CSS are shared. */
+.abx-section {
+  padding:clamp(64px,6vw,96px) 0;
+  color:#18242d
+}
+.abx-container {
+  width:min(1400px,calc(100% - 48px));
+  margin-inline:auto
+}
+.abx-history,.abx-factory {
+  background:#fff
+}
+.abx-credentials {
+  background:#f5f7f9
+}
+.abx-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:28px;
+  margin-bottom:30px
+}
+.abx-heading>div {
+  min-width:0;
+  flex:1
+}
+.abx-heading>p {
+  max-width:470px;
+  margin:0;
+  color:#566775;
+  font-size:16px;
+  line-height:1.75
+}
+.abx-eyebrow {
+  display:block;
+  margin-bottom:12px;
+  color:#476875;
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:.14em
+}
+.abx-heading h2 {
+  font-size:clamp(28px,2.7vw,42px);
+  line-height:1.2;
+  letter-spacing:-.025em;
+  margin:0;
+  font-weight:700
+}
+.abx-slider-controls {
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  margin-bottom:18px
+}
+.abx-arrow {
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#fff;
+  border:1px solid #cfd9dd;
+  color:#18242d;
+  cursor:pointer;
+  font-size:22px
+}
+.abx-arrow:hover:not(:disabled) {
+  border-color:#476875;
+  background:#e9eff1
+}
+.abx-arrow:disabled {
+  opacity:.4;
+  cursor:not-allowed
+}
+.abx-history-swiper,.abx-cert-swiper {
+  width:100%;
+  overflow:hidden
+}
+.abx-history .swiper-slide,.abx-credentials .swiper-slide {
+  height:auto
+}
+.abx-milestone {
+  height:100%;
+  border-top:3px solid #365968;
+  padding:26px 24px 28px;
+  background:#f5f7f8;
+  min-height:230px
+}
+.abx-year {
+  display:block;
+  font-size:30px;
+  color:#365968;
+  font-weight:750;
+  letter-spacing:-.03em;
+  margin-bottom:20px
+}
+.abx-milestone h3 {
+  margin:0 0 12px;
+  font-size:20px;
+  line-height:1.3
+}
+.abx-milestone p {
+  margin:0;
+  font-size:16px;
+  line-height:1.7;
+  color:#566775
+}
+.abx-pagination {
+  position:relative!important;
+  bottom:auto!important;
+  margin-top:25px;
+  text-align:center
+}
+.abx-pagination .swiper-pagination-bullet-active {
+  background:#365968
+}
+.abx-cert-open {
+  display:block;
+  width:100%;
+  height:100%;
+  min-width:0;
+  text-align:left;
+  border:1px solid #dee5e9;
+  border-radius:12px;
+  background:#fff;
+  padding:14px;
+  cursor:zoom-in;
+  color:inherit
+}
+.abx-cert-open:hover {
+  border-color:#91aab8
+}
+/* Pointer activation must not leave a persistent blue keyboard-focus ring. */
+.abx-cert-open:focus:not(:focus-visible),
+.abx-factory-open:focus:not(:focus-visible),
+.abx-preview-close:focus:not(:focus-visible) {
+  outline:none;
+}
+.abx-cert-open.abx-pointer-focus:focus-visible,
+.abx-factory-open.abx-pointer-focus:focus-visible {
+  outline:none;
+}
+.abx-cert-open:focus-visible,
+.abx-factory-open:focus-visible,
+.abx-preview-close:focus-visible {
+  outline:2px solid #315f77;
+  outline-offset:3px;
+}
+.abx-cert-open img {
+  display:block;
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:contain;
+  background:#f5f7f8;
+  border-radius:7px
+}
+.abx-cert-open span {
+  display:block;
+  margin-top:16px;
+  font-size:17px;
+  font-weight:700;
+  line-height:1.4
+}
+/* Shared lightbox: airy framing, gentle overlay, keyboard-accessible controls. */
+.abx-preview-dialog {
+  position:fixed;
+  width:min(720px,calc(100vw - 48px));
+  max-width:none;
+  max-height:calc(100dvh - 32px);
+  padding:18px 24px 16px;
+  overflow:hidden;
+  border:1px solid rgba(225,231,235,.9);
+  border-radius:16px;
+  box-sizing:border-box;
+  background:#fff;
+  color:#18242d;
+  text-align:center;
+  box-shadow:0 24px 80px rgba(12,29,40,.25);
+}
+.abx-preview-dialog::backdrop {
+  background:rgba(18,30,39,.66);
+}
+.abx-preview-image {
+  display:block;
+  width:auto;
+  max-width:100%;
+  max-height:calc(100dvh - 124px);
+  height:auto;
+  margin:16px auto 0;
+  object-fit:contain;
+  border-radius:5px;
+}
+.abx-preview-title {
+  margin:10px 0 0;
+  font-weight:650;
+  font-size:16px;
+  line-height:1.5;
+}
+.abx-preview-close {
+  position:absolute;
+  z-index:2;
+  top:12px;
+  right:12px;
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  margin:0;
+  padding:0;
+  border:1px solid #e3e8ec;
+  border-radius:50%;
+  background:#f6f8f9;
+  color:#344a56;
+  cursor:pointer;
+  font-size:24px;
+  line-height:1;
+  transition:background .18s ease,color .18s ease;
+}
+.abx-preview-close:hover {
+  background:#e9eef1;
+  color:#18242d;
+}
+/* The close control is auto-focused for pointer-opened dialogs; hide only
+   that non-keyboard outline, not focus-visible for keyboard-opened dialogs. */
+.abx-preview-dialog.abx-pointer-open .abx-preview-close:focus-visible {
+  outline:none;
+}
+/* A wider lightbox suits landscape factory photography. */
+#s10-factory .abx-preview-dialog {
+  width:min(960px,calc(100vw - 48px));
+}
+.abx-factory-grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px
+}
+.abx-factory-item {
+  min-width:0;
+  margin:0
+}
+.abx-factory-open {
+  position:relative;
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  padding:0;
+  text-align:left;
+  overflow:hidden;
+  border:0;
+  border-radius:10px;
+  background:#f5f7f9;
+  color:#fff;
+  cursor:zoom-in
+}
+.abx-factory-open img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .25s ease
+}
+.abx-factory-open:hover img {
+  transform:scale(1.035)
+}
+.abx-factory-label {
+  position:absolute;
+  inset:auto 0 0;
+  padding:36px 15px 14px;
+  background:linear-gradient(transparent,rgba(15,35,42,.82));
+  font-size:15px;
+  font-weight:650;
+  line-height:1.4
+}
+.abx-factory-expand {
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.91);
+  color:#233c45;
+  border-radius:50%;
+  font-size:21px
+}
+@media(max-width:900px) {
+  .abx-heading {
+    display:block
+  }
+  .abx-heading>p {
+    margin-top:16px
+  }
+  .abx-factory-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr))
+  }
+}
+@media(max-width:600px) {
+   .abx-preview-dialog {
+    width:calc(100vw - 24px);
+    max-height:calc(100dvh - 24px);
+    padding:12px;
+    border-radius:12px
+  }
+  #s10-factory .abx-preview-dialog {
+    width:calc(100vw - 24px)
+  }
+  .abx-preview-close {
+    top:8px;
+    right:8px
+  }
+  .abx-preview-image {
+    max-height:calc(100dvh - 104px)
+  }
+  .abx-container {
+    width:calc(100% - 36px)
+  }
+  .abx-heading {
+    margin-bottom:24px
+  }
+  .abx-heading>p,.abx-milestone p {
+    font-size:16px
+  }
+  /* One horizontal row on phones; show a peek of the next item. */
+  .abx-factory-grid {
+    display:flex;
+    gap:14px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    scroll-padding-inline:2px;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+    padding:3px 2px 12px;
+    scrollbar-width:thin;
+    scrollbar-color:#b9c7d0 transparent;
+  }
+  .abx-factory-grid::-webkit-scrollbar {
+    height:5px;
+  }
+  .abx-factory-grid::-webkit-scrollbar-thumb {
+    background:#b9c7d0;
+    border-radius:10px;
+  }
+  .abx-factory-item {
+    flex:0 0 80%;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+  }
+  .abx-milestone {
+    min-height:220px;
+    padding:22px
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .abx-factory-open img {
+    transition:none
+  }
+  .abx-factory-open:hover img {
+    transform:none
+  }
+}

@@ -1,0 +1,27 @@
+/* Inter 4.1 — self-hosted variable font, official SIL OFL 1.1. */
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/inter/InterVariable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --font-body: "Inter", "PingFang SC", "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+    --font-heading: var(--font-body);
+}
+
+html,
+body {
+    font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+}

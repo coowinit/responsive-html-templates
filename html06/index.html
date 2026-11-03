@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advantages Component | Classic Theme Blueprint</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#19222a;background:#fff}
+    /* Independent Section example: copy only this section and its scoped rules into a page. */
+    :where(#s04-advantages){padding:84px 0 94px;background:#f7f8fa;color:#19222a}
+    :where(#s04-advantages) .container{width:min(1400px,calc(100% - 48px));margin-inline:auto}
+    :where(#s04-advantages) .heading{margin:0 0 15px;font-size:clamp(28px,2.6vw,38px);font-weight:700;letter-spacing:-.025em;line-height:1.22}
+    :where(#s04-advantages) .intro{max-width:800px;margin:0 0 42px;color:#556675;font-size:16px;line-height:1.75;overflow-wrap:anywhere}
+    :where(#s04-advantages) .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    :where(#s04-advantages) .item{min-width:0;padding:35px 31px 37px;background:#fff;border:1px solid #e5e9ed;display:flex;flex-direction:column;align-items:flex-start;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+    :where(#s04-advantages) .symbol{width:54px;height:54px;display:grid;place-items:center;border-radius:12px;background:#edf2f5;color:#263e4d;margin:0 0 27px;flex:none}
+    :where(#s04-advantages) .symbol svg{display:block;width:29px;height:29px;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;fill:none}
+    :where(#s04-advantages) .title{font-size:21px;font-weight:700;letter-spacing:-.015em;line-height:1.4;margin:0 0 13px;min-height:2.8em;overflow-wrap:anywhere}
+    :where(#s04-advantages) .desc{font-size:16px;line-height:1.75;color:#586875;margin:0;overflow-wrap:anywhere}
+    @media(hover:hover) and (pointer:fine){:where(#s04-advantages) .item:hover{transform:translateY(-3px);border-color:#cfd8df;box-shadow:0 12px 30px rgba(22,38,49,.055)}}
+    @media(max-width:900px){:where(#s04-advantages) .grid{grid-template-columns:repeat(2,minmax(0,1fr))}:where(#s04-advantages) .item:last-child{grid-column:1/-1}}
+    @media(max-width:600px){:where(#s04-advantages){padding:56px 0 66px}:where(#s04-advantages) .container{width:calc(100% - 36px)}:where(#s04-advantages) .heading{font-size:28px}:where(#s04-advantages) .intro{font-size:15px;line-height:1.7;margin-bottom:28px}:where(#s04-advantages) .grid{grid-template-columns:1fr;gap:14px}:where(#s04-advantages) .item{padding:26px 24px 29px}:where(#s04-advantages) .item:last-child{grid-column:auto}:where(#s04-advantages) .symbol{width:48px;height:48px;margin-bottom:17px}:where(#s04-advantages) .symbol svg{width:26px;height:26px}:where(#s04-advantages) .title{font-size:18px;min-height:0;margin-bottom:9px}:where(#s04-advantages) .desc{font-size:15px;line-height:1.7}}
+    @media(prefers-reduced-motion:reduce){:where(#s04-advantages) .item{transition:none}:where(#s04-advantages) .item:hover{transform:none}}
+  </style>
+</head>
+<body>
+  <main>
+    <section id="s04-advantages" aria-labelledby="advantages-heading">
+      <div class="container">
+        <h2 class="heading" id="advantages-heading">Why Work With Us</h2>
+        <p class="intro">Reliable partnerships start with consistent quality, practical expertise, and clear communication. Explore the capabilities that help us support businesses from initial planning to delivery.</p>
+        <div class="grid">
+          <article class="item">
+            <span class="symbol" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 3 27 8v7c0 8-5 11.5-11 14C10 26.5 5 23 5 15V8L16 3Z"/><path d="m11 16 3.5 3.5L22 12"/></svg></span>
+            <h3 class="title">Consistent Product Quality</h3>
+            <p class="desc">Clear specifications and thoughtful quality checks help teams select dependable products and maintain consistent project expectations.</p>
+          </article>
+          <article class="item">
+            <span class="symbol" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="5" y="12" width="22" height="16" rx="1"/><path d="M2.5 12 16 4l13.5 8M11 28V18h10v10M9 12V9m14 3V9"/></svg></span>
+            <h3 class="title">Flexible Project Solutions</h3>
+            <p class="desc">Explore practical material choices, adaptable specifications, and coordinated support for varied architectural and commercial applications.</p>
+          </article>
+          <article class="item">
+            <span class="symbol" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 9h14v12H5zM19 13h5l4 5v3h-9M9 25a3 3 0 1 0 6 0 3 3 0 0 0-6 0Zm13 0a3 3 0 1 0 6 0 3 3 0 0 0-6 0Z"/><path d="M5 25h4m6 0h7"/></svg></span>
+            <h3 class="title">Responsive Service &amp; Delivery</h3>
+            <p class="desc">Timely communication and coordinated order planning help clients stay informed as requirements, production details, and delivery plans evolve.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

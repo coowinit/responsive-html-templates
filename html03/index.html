@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Factory Gallery reusable standalone component preview for a WordPress Classic Theme.">
+  <title>Factory Gallery Component | Classic Theme Blueprint</title>
+  <!-- Standalone component demo: section markup below can be reused in a page. -->
+  <link rel="preload" href="assets/fonts/inter/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/font.css">
+  <link rel="stylesheet" href="assets/css/components/about-extensions.css">
+</head>
+<body>
+  <main>
+    <!-- Factory Gallery: eight responsive tiles; native-dialog lightbox. -->
+    <section id="s10-factory" class="abx-section abx-factory" aria-labelledby="abx-factory-title">
+      <div class="abx-container">
+        <div class="abx-heading">
+          <div>
+            <span class="abx-eyebrow">BEHIND THE SCENES</span>
+            <h2 id="abx-factory-title">Inside Our Factory</h2>
+          </div>
+          <p>Explore our facilities, production processes, quality inspection and logistics. Replace all images with real factory photography.</p>
+        </div>
+        <div class="abx-factory-grid" role="region" aria-label="Factory photo gallery; swipe horizontally on mobile" tabindex="0">
+          <figure class="abx-factory-item">
+            <button type="button" class="abx-factory-open" data-title="Factory Exterior" aria-label="Enlarge Factory Exterior">
+              <img src="assets/images/about-placeholder.svg" alt="Factory Exterior — demonstration placeholder" loading="lazy" width="800" height="600">
+              <span class="abx-factory-label">Factory Exterior</span>
+              <span class="abx-factory-expand" aria-hidden="true">↗</span>
+            </button>
+          </figure>
+          <figure class="abx-factory-item">
+            <button type="button" class="abx-factory-open" data-title="Production Workshop" aria-label="Enlarge Production Workshop">
+              <img src="assets/images/about-placeholder.svg" alt="Production Workshop — demonstration placeholder" loading="lazy" width="800" height="600">
+              <span class="abx-factory-label">Production Workshop</span>
+              <span class="abx-factory-expand" aria-hidden="true">↗</span>
+            </button>
+          </figure>
+          <figure class="abx-factory-item">
+            <button type="button" class="abx-factory-open" data-title="Production Equipment" aria-label="Enlarge Production Equipment">
+              <img src="assets/images/about-placeholder.svg" alt="Production Equipment — demonstration placeholder" loading="lazy" width="800" height="600">
+              <span class="abx-factory-label">Production Equipment</span>
+              <span class="abx-factory-expand" aria-hidden="true">↗</span>
+            </button>
+          </figure>
+          <figure class="abx-factory-item">
+            <button type="button" class="abx-factory-open" data-title="Manufacturing Process" aria-label="Enlarge Manufacturing Process">
+              <img src="assets/images/about-placeholder.svg" alt="Manufacturing Process — demonstration placeholder" loading="lazy" width="800" height="600">
+              <span class="abx-factory-label">Manufacturing Process</span>
+              <span class="abx-factory-expand" aria-hidden="true">↗</span>
+            </button>
+          </figure>
+          <figure class="abx-factory-item">
+            <button type="button" class="abx-factory-open" data-title="Material Preparation" aria-label="Enlarge Material Preparation">
+              <img src="assets/images/about-placeholder.svg" alt="Material Preparation — demonstration placeholder" loading="lazy" width="800" height="600">
+              <span class="abx-factory-label">Material Preparation</span>
+              <span class="abx-factory-expand" aria-hidden="true">↗</span>
+            </button>
+          </figure>
+          <figure class="abx-factory-item">
+            <button type="button" class="abx-factory-open" data-title="Quality Inspection" aria-label="Enlarge Quality Inspection">
+              <img src="assets/images/about-placeholder.svg" alt="Quality Inspection — demonstration placeholder" loading="lazy" width="800" height="600">
+              <span class="abx-factory-label">Quality Inspection</span>
+              <span class="abx-factory-expand" aria-hidden="true">↗</span>
+            </button>
+          </figure>
+          <figure class="abx-factory-item">
+            <button type="button" class="abx-factory-open" data-title="Packaging Area" aria-label="Enlarge Packaging Area">
+              <img src="assets/images/about-placeholder.svg" alt="Packaging Area — demonstration placeholder" loading="lazy" width="800" height="600">
+              <span class="abx-factory-label">Packaging Area</span>
+              <span class="abx-factory-expand" aria-hidden="true">↗</span>
+            </button>
+          </figure>
+          <figure class="abx-factory-item">
+            <button type="button" class="abx-factory-open" data-title="Warehouse & Shipping" aria-label="Enlarge Warehouse & Shipping">
+              <img src="assets/images/about-placeholder.svg" alt="Warehouse & Shipping — demonstration placeholder" loading="lazy" width="800" height="600">
+              <span class="abx-factory-label">Warehouse & Shipping</span>
+              <span class="abx-factory-expand" aria-hidden="true">↗</span>
+            </button>
+          </figure>
+        </div>
+        <dialog class="abx-preview-dialog" aria-label="Factory image preview">
+          <button class="abx-preview-close" type="button" aria-label="Close preview">×</button>
+          <img class="abx-preview-image" alt="">
+          <p class="abx-preview-title"></p>
+        </dialog>
+      </div>
+    </section>
+  </main>
+  <script src="assets/js/components/about-extensions.js"></script>
+</body>
+</html>

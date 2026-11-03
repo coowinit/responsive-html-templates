@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Component | Classic Theme Blueprint</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #19222a; background: #fff; }
+
+    /* Section 05 — About. Keep the component styles scoped to its unique section ID. */
+    :where(#s05-about) { padding: 88px 0 96px; color: #19222a; background: #fff; }
+    :where(#s05-about) .container { width: min(1400px, calc(100% - 48px)); margin-inline: auto; }
+    :where(#s05-about) .grid { display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(0, 1fr); align-items: center; gap: clamp(38px, 5vw, 86px); }
+    :where(#s05-about) .image { margin: 0; min-width: 0; overflow: hidden; aspect-ratio: 4 / 3; background: #eff2f4; }
+    :where(#s05-about) .image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    :where(#s05-about) .content { min-width: 0; }
+    :where(#s05-about) .heading { margin: 0 0 18px; font-size: clamp(28px, 2.6vw, 38px); font-weight: 700; line-height: 1.22; letter-spacing: -.025em; overflow-wrap: anywhere; }
+    :where(#s05-about) .lead { margin: 0 0 21px; font-size: 17px; font-weight: 500; line-height: 1.75; color: #2c3b47; overflow-wrap: anywhere; }
+    :where(#s05-about) .desc { margin: 0 0 18px; font-size: 16px; line-height: 1.8; color: #596a78; overflow-wrap: anywhere; }
+    :where(#s05-about) .actions { margin-top: 29px; }
+    :where(#s05-about) .btn { display: inline-flex; justify-content: center; align-items: center; gap: 12px; min-height: 48px; padding: 12px 21px; border: 1px solid #202b33; border-radius: 5px; background: #202b33; color: #fff; font-size: 14px; line-height: 1.35; font-weight: 700; text-align: center; text-decoration: none; transition: background .2s ease, color .2s ease; }
+    :where(#s05-about) .btn svg { width: 17px; height: 17px; flex: none; }
+    :where(#s05-about) .btn:focus-visible { outline: 3px solid #2f6fed; outline-offset: 4px; }
+    @media (hover:hover) and (pointer:fine) { :where(#s05-about) .btn:hover { background: transparent; color: #202b33; } }
+    @media (max-width: 900px) { :where(#s05-about) { padding: 70px 0 78px; } :where(#s05-about) .grid { grid-template-columns: 1fr; gap: 35px; } :where(#s05-about) .image { max-width: 740px; } }
+    @media (max-width: 600px) { :where(#s05-about) { padding: 56px 0 66px; } :where(#s05-about) .container { width: calc(100% - 36px); } :where(#s05-about) .grid { gap: 26px; } :where(#s05-about) .heading { font-size: 28px; margin-bottom: 14px; } :where(#s05-about) .lead { font-size: 16px; margin-bottom: 14px; line-height: 1.7; } :where(#s05-about) .desc { font-size: 15px; line-height: 1.75; margin-bottom: 12px; } :where(#s05-about) .actions { margin-top: 23px; } :where(#s05-about) .btn { min-height: 44px; font-size: 13px; } }
+    @media (prefers-reduced-motion: reduce) { :where(#s05-about) .btn { transition: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="s05-about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="grid">
+          <figure class="image">
+            <img src="assets/images/about-placeholder.svg" alt="Illustration placeholder for a company facility or team photograph" width="800" height="600">
+          </figure>
+          <div class="content">
+            <h2 class="heading" id="about-heading">About Our Company</h2>
+            <p class="lead">We connect practical expertise with reliable products to help businesses move their projects forward.</p>
+            <p class="desc">Our approach begins with understanding each project's goals. From product selection and specification planning to clear communication, we focus on creating a straightforward experience for our partners.</p>
+            <p class="desc">Whether you are exploring new materials or preparing for an upcoming project, our team works to make information accessible and collaboration efficient.</p>
+            <div class="actions">
+              <a class="btn" href="#about-us">Learn More About Us
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,141 @@
+/* Product Gallery v0.4 — reusable in CPT / WooCommerce adapters.
+   Scope every selector to .product-gallery; no third-party CSS dependency. */
+.product-gallery {
+  width: 100%;
+  min-width: 0;
+}
+/* Swiper pair: five vertical thumbnails and a square main image. */
+.product-gallery .pg-layout {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 540px);
+  justify-content: start;
+  gap: 14px;
+  max-width: 624px;
+  align-items: stretch;
+}
+.product-gallery .pg-stage {
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  aspect-ratio: 1;
+  background: #eef2f5;
+  overflow: hidden;
+  min-width: 0;
+}
+.product-gallery .pg-main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.product-gallery .pg-main .swiper-slide {
+  overflow: hidden;
+  height: 100%;
+}
+.product-gallery .pg-main .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-gallery .pg-rail {
+  display: grid;
+  grid-template-rows: 28px minmax(0, 1fr) 28px;
+  min-height: 0;
+  max-height: 540px;
+  gap: 6px;
+}
+.product-gallery .pg-thumbs.swiper {
+  display: block;
+  width: 72px;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.product-gallery .pg-thumbs .swiper-slide {
+  width: 72px;
+  height: 68px;
+}
+.product-gallery .pg-thumb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color .18s ease, background-color .18s ease;
+}
+.product-gallery .pg-thumb.is-active {
+  border-color: #20323f;
+  background: #edf2f5;
+}
+.product-gallery .pg-thumb:focus-visible {
+  outline: 2px solid #417ba2;
+  outline-offset: 2px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .product-gallery .pg-thumb:not(.is-active):hover {
+    border-color: #9aabb7;
+  }
+}
+.product-gallery .pg-thumb img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.product-gallery .pg-thumb-prev,
+.product-gallery .pg-thumb-next {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 28px;
+  border: 1px solid #dce4e9;
+  border-radius: 4px;
+  background: #fff;
+  color: #20323f;
+  cursor: pointer;
+}
+.product-gallery .pg-thumb-prev.swiper-button-disabled,
+.product-gallery .pg-thumb-next.swiper-button-disabled {
+  opacity: .35;
+  cursor: default;
+}
+.product-gallery.pg-single .pg-rail {
+  display: none;
+}
+.product-gallery.pg-single .pg-layout {
+  grid-template-columns: minmax(0, 540px);
+}
+@media (max-width: 767px) {
+  .product-gallery .pg-layout {
+    display: flex;
+    flex-direction: column;
+    max-width: 540px;
+    gap: 12px;
+  }
+  .product-gallery .pg-stage {
+    order: 0;
+  }
+  .product-gallery .pg-rail {
+    order: 1;
+    display: block;
+    max-height: none;
+    width: 100%;
+  }
+  .product-gallery .pg-thumbs.swiper {
+    width: 100%;
+    height: 68px;
+  }
+  .product-gallery .pg-thumb-prev,
+  .product-gallery .pg-thumb-next {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .product-gallery .pg-thumb {
+    transition: none;
+  }
+}
+

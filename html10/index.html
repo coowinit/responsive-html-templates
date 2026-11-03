@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Hero Slider · Classic Theme Blueprint</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html{font-family:Inter,Arial,sans-serif}
+    body{margin:0;color:#fff}
+    button,a{-webkit-tap-highlight-color:transparent}
+    button{font:inherit}
+    /* Section 01 — Hero. The standalone demo uses a single section only. */
+    :where(#s01-hero){--hero-height:750px;--hero-text:#fff;--hero-accent:#fff;--hero-gutter:24px;position:relative;height:var(--hero-height);width:100%;overflow:hidden;background:#344958;color:var(--hero-text);isolation:isolate}
+    :where(#s01-hero) .slide{position:absolute;inset:0;display:flex;align-items:center;opacity:0;visibility:hidden;transition:opacity .65s ease,visibility .65s ease;z-index:0}
+    :where(#s01-hero) .slide.is-active{opacity:1;visibility:visible;z-index:1}
+    :where(#s01-hero) .slide::before{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(13,25,34,.77) 0%,rgba(13,25,34,.53) 43%,rgba(13,25,34,.12) 100%);z-index:1}
+    :where(#s01-hero) .slide-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.9)}
+    :where(#s01-hero) .inner{position:relative;z-index:2;width:min(1400px,calc(100% - 48px));margin-inline:auto;padding-block:52px 80px}
+    :where(#s01-hero) .copy{max-width:740px}
+
+    :where(#s01-hero) .title{font-size:clamp(38px,4.4vw,66px);font-weight:700;line-height:1.12;letter-spacing:-.035em;margin:0 0 22px;text-wrap:balance}
+    :where(#s01-hero) .desc{font-size:clamp(16px,1.3vw,18px);font-weight:400;line-height:1.75;max-width:580px;margin:0 0 34px;color:#e3e8eb}
+    :where(#s01-hero) .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:13px 22px;min-height:48px;border:1px solid #fff;border-radius:6px;background:#fff;color:#202830;font-weight:700;font-size:14px;text-decoration:none;transition:background .2s,color .2s}
+    :where(#s01-hero) .btn:hover{background:transparent;color:#fff}
+    :where(#s01-hero) .btn svg{width:17px;height:17px;flex-shrink:0}
+    :where(#s01-hero) .controls{position:absolute;z-index:4;bottom:35px;left:50%;transform:translateX(-50%);width:min(1400px,calc(100% - 48px));display:flex;align-items:center;justify-content:space-between;pointer-events:none}
+    :where(#s01-hero) .dots,:where(#s01-hero) .arrows{display:flex;align-items:center;gap:10px;pointer-events:auto}
+    :where(#s01-hero) .dot{appearance:none;border:0;border-radius:999px;width:8px;height:8px;background:#ffffff85;cursor:pointer;padding:0;transition:width .25s,background .25s}
+    :where(#s01-hero) .dot[aria-current="true"]{width:27px;background:#fff}
+    :where(#s01-hero) .arrow{width:40px;height:40px;display:grid;place-items:center;border:1px solid #ffffff75;border-radius:50%;background:#00000026;color:#fff;cursor:pointer}
+    :where(#s01-hero) .arrow:hover{background:#ffffff2b}
+    :where(#s01-hero) .arrow svg{width:19px;height:19px}
+    :where(#s01-hero) :focus-visible{outline:3px solid #fff;outline-offset:4px}
+    @media(max-width:767px){
+      :where(#s01-hero){--hero-height:350px}
+      :where(#s01-hero) .slide::before{background:linear-gradient(90deg,rgba(12,26,36,.82),rgba(12,26,36,.42))}
+      :where(#s01-hero) .inner{width:calc(100% - 36px);padding-block:18px 48px}
+      :where(#s01-hero) .copy{max-width:100%}
+
+      :where(#s01-hero) .title{font-size:clamp(23px,6.1vw,30px);line-height:1.2;margin-bottom:11px;letter-spacing:-.025em}
+      :where(#s01-hero) .desc{font-size:13px;line-height:1.5;margin-bottom:16px;max-width:350px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+      :where(#s01-hero) .btn{padding:10px 16px;min-height:44px;font-size:13px;border-radius:5px;gap:6px}
+      :where(#s01-hero) .btn svg{width:13px;height:13px}
+      :where(#s01-hero) .controls{bottom:14px;width:calc(100% - 36px)}
+      :where(#s01-hero) .arrow{width:28px;height:28px}
+      :where(#s01-hero) .arrow svg{width:15px;height:15px}
+    }
+    /* Text motion only activates after JS initialization; content stays visible without JS. */
+    :where(#s01-hero.motion-ready) .slide.is-active .title{animation:hero-copy-rise .55s both ease-out}
+    :where(#s01-hero.motion-ready) .slide.is-active .desc{animation:hero-copy-rise .5s .12s both ease-out}
+    :where(#s01-hero.motion-ready) .slide.is-active .btn{animation:hero-copy-rise .45s .22s both ease-out}
+    @keyframes hero-copy-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    @media(prefers-reduced-motion:reduce){
+      :where(#s01-hero.motion-ready) .slide.is-active .title,
+      :where(#s01-hero.motion-ready) .slide.is-active .desc,
+      :where(#s01-hero.motion-ready) .slide.is-active .btn{animation:none}
+    }
+    @media(prefers-reduced-motion:reduce){:where(#s01-hero) .slide,:where(#s01-hero) .dot,:where(#s01-hero) .btn{transition:none}}
+  </style>
+</head>
+<body>
+<main>
+  <section id="s01-hero" aria-label="Featured solutions" aria-roledescription="carousel" tabindex="-1">
+    <div class="slide is-active" data-slide aria-hidden="false">
+      <img class="slide-image" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&amp;q=85&amp;fit=crop" alt="" fetchpriority="high">
+      <div class="inner"><div class="copy">
+        <h2 class="title">Solutions That Move Your Business Forward</h2>
+        <p class="desc">Explore practical products, reliable manufacturing and long-term support for your next project.</p>
+        <a class="btn" href="#products">Explore Products <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      </div></div>
+    </div>
+    <div class="slide" data-slide aria-hidden="true" inert>
+      <img class="slide-image" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&amp;q=85&amp;fit=crop" alt="" loading="lazy">
+      <div class="inner"><div class="copy">
+        <h2 class="title">Innovation Meets Everyday Performance</h2>
+        <p class="desc">Thoughtful details and consistent quality help your teams turn plans into measurable outcomes.</p>
+        <a class="btn" href="#solutions">View Solutions <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      </div></div>
+    </div>
+    <div class="slide" data-slide aria-hidden="true" inert>
+      <img class="slide-image" src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1920&amp;q=85&amp;fit=crop" alt="" loading="lazy">
+      <div class="inner"><div class="copy">
+        <h2 class="title">Built on Quality. Backed by Experience.</h2>
+        <p class="desc">From initial ideas to delivery, we bring people, processes and solutions together.</p>
+        <a class="btn" href="#about">Discover Our Story <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      </div></div>
+    </div>
+    <div class="controls" aria-label="Carousel controls">
+      <div class="dots" aria-label="Choose a slide">
+        <button type="button" class="dot" aria-label="Show slide 1" aria-current="true" data-go="0"></button>
+        <button type="button" class="dot" aria-label="Show slide 2" data-go="1"></button>
+        <button type="button" class="dot" aria-label="Show slide 3" data-go="2"></button>
+      </div>
+      <div class="arrows">
+        <button class="arrow" type="button" aria-label="Previous slide" data-prev><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m14 5-7 7 7 7"/></svg></button>
+        <button class="arrow" type="button" aria-label="Next slide" data-next><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 5 7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+(() => {
+  const root=document.getElementById('s01-hero');
+  if(!root || root.dataset.initialized==='true') return;
+  root.dataset.initialized='true';
+  const slides=[...root.querySelectorAll('[data-slide]')];
+  const dots=[...root.querySelectorAll('[data-go]')];
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  let index=0, timer=null, startX=null;
+  const show=(next)=>{
+    index=(next+slides.length)%slides.length;
+    slides.forEach((slide,i)=>{
+      const current=i===index;
+      slide.classList.toggle('is-active',current);
+      slide.setAttribute('aria-hidden',String(!current));
+      slide.inert=!current;
+    });
+    dots.forEach((dot,i)=>{
+      if(i===index)dot.setAttribute('aria-current','true');
+      else dot.removeAttribute('aria-current');
+    });
+  };
+  const stop=()=>{if(timer!==null){clearInterval(timer);timer=null;}};
+  const start=()=>{
+    stop();
+    if(reduceMotion.matches || document.hidden || root.matches(':hover') || root.contains(document.activeElement))return;
+    timer=setInterval(()=>show(index+1),5500);
+  };
+  const navigate=(next)=>{show(next);start();};
+  root.querySelector('[data-prev]')?.addEventListener('click',()=>navigate(index-1));
+  root.querySelector('[data-next]')?.addEventListener('click',()=>navigate(index+1));
+  dots.forEach((dot,i)=>dot.addEventListener('click',()=>navigate(i)));
+  root.addEventListener('mouseenter',stop);
+  root.addEventListener('mouseleave',start);
+  root.addEventListener('focusin',stop);
+  root.addEventListener('focusout',()=>requestAnimationFrame(start));
+  document.addEventListener('visibilitychange',start);
+  reduceMotion.addEventListener?.('change',()=>{
+    root.classList.toggle('motion-ready',!reduceMotion.matches);
+    start();
+  });
+  root.addEventListener('touchstart',(e)=>{startX=e.changedTouches[0]?.screenX??null;stop();},{passive:true});
+  root.addEventListener('touchend',(e)=>{
+    if(startX===null)return;
+    const delta=(e.changedTouches[0]?.screenX??startX)-startX;
+    startX=null;
+    if(Math.abs(delta)>55)show(index+(delta<0?1:-1));
+    start();
+  },{passive:true});
+  show(0);
+  if(!reduceMotion.matches) root.classList.add('motion-ready');
+  start();
+})();
+</script>
+</body>
+</html>

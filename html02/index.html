@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Honors & Credentials reusable standalone component preview for a WordPress Classic Theme.">
+  <title>Honors & Credentials Component | Classic Theme Blueprint</title>
+  <!-- Standalone component demo: section markup below can be reused in a page. -->
+  <link rel="preload" href="assets/fonts/inter/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/font.css">
+  <link rel="stylesheet" href="assets/vendor/swiper/14.3.0/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/components/about-extensions.css">
+</head>
+<body>
+  <main>
+    <!-- Honors & Credentials: replace illustrative documents with verified certificates. -->
+    <section id="s09-credentials" class="abx-section abx-credentials" aria-labelledby="abx-credentials-title">
+      <div class="abx-container">
+        <div class="abx-heading">
+          <div>
+            <span class="abx-eyebrow">OUR STANDARDS</span>
+            <h2 id="abx-credentials-title">Honors &amp; Credentials</h2>
+          </div>
+          <p>Explore selected certificates and recognitions. Verify their validity before publication.</p>
+        </div>
+        <div class="abx-slider-controls">
+          <button class="abx-arrow abx-cert-prev" type="button" aria-label="Previous certificates">←</button>
+          <button class="abx-arrow abx-cert-next" type="button" aria-label="Next certificates">→</button>
+        </div>
+        <div class="swiper abx-cert-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <button class="abx-cert-open" type="button" data-title="Certificate 01">
+                <img src="assets/images/certificate-01.svg" alt="Certificate 01" loading="lazy" width="600" height="800">
+                <span>Certificate 01</span>
+
+              </button>
+            </div>
+            <div class="swiper-slide">
+              <button class="abx-cert-open" type="button" data-title="Certificate 02">
+                <img src="assets/images/certificate-02.svg" alt="Certificate 02" loading="lazy" width="600" height="800">
+                <span>Certificate 02</span>
+
+              </button>
+            </div>
+            <div class="swiper-slide">
+              <button class="abx-cert-open" type="button" data-title="Certificate 03">
+                <img src="assets/images/certificate-03.svg" alt="Certificate 03" loading="lazy" width="600" height="800">
+                <span>Certificate 03</span>
+
+              </button>
+            </div>
+            <div class="swiper-slide">
+              <button class="abx-cert-open" type="button" data-title="Certificate 04">
+                <img src="assets/images/certificate-04.svg" alt="Certificate 04" loading="lazy" width="600" height="800">
+                <span>Certificate 04</span>
+
+              </button>
+            </div>
+            <div class="swiper-slide">
+              <button class="abx-cert-open" type="button" data-title="Certificate 05">
+                <img src="assets/images/certificate-05.svg" alt="Certificate 05" loading="lazy" width="600" height="800">
+                <span>Certificate 05</span>
+
+              </button>
+            </div>
+            <div class="swiper-slide">
+              <button class="abx-cert-open" type="button" data-title="Certificate 06">
+                <img src="assets/images/certificate-06.svg" alt="Certificate 06" loading="lazy" width="600" height="800">
+                <span>Certificate 06</span>
+
+              </button>
+            </div>
+          </div>
+          <div class="abx-pagination abx-cert-pagination"></div>
+        </div>
+        <dialog class="abx-preview-dialog" aria-label="Certificate preview">
+          <button class="abx-preview-close" type="button" aria-label="Close preview">×</button>
+          <img class="abx-preview-image" alt="">
+          <p class="abx-preview-title"></p>
+        </dialog>
+      </div>
+    </section>
+  </main>
+  <script src="assets/vendor/swiper/14.3.0/swiper-bundle.min.js"></script>
+  <script src="assets/js/components/about-extensions.js"></script>
+</body>
+</html>

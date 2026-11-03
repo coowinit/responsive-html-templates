@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/><link href="assets/vendor/swiper/14.3.0/swiper-bundle.min.css" rel="stylesheet"/>
+<title>Testimonials Component | Classic Theme Blueprint</title>
+<style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #19222a; background: #fff; }
+
+    /* Section 06 — Testimonials. All component-specific styles are scoped. */
+    :where(#s06-testimonials) { padding: 88px 0 96px; background: #f6f7f8; color: #19222a; }
+    :where(#s06-testimonials) .container { width: min(1400px, calc(100% - 48px)); margin-inline: auto; }
+    :where(#s06-testimonials) .heading { margin: 0 0 14px; font-size: clamp(28px, 2.6vw, 38px); line-height: 1.2; letter-spacing: -.025em; font-weight: 700; }
+    :where(#s06-testimonials) .section-desc { max-width: 790px; margin: 0 0 38px; font-size: 16px; line-height: 1.75; color: #596a78; }
+    :where(#s06-testimonials) .swiper { width: 100%; }
+    :where(#s06-testimonials) .swiper-wrapper { align-items: stretch; }
+    :where(#s06-testimonials) .swiper-slide { height: auto; display: flex; }
+    :where(#s06-testimonials) .swiper-slide .item { width: 100%; }
+    :where(#s06-testimonials) .item { display: flex; flex-direction: column; min-width: 0; min-height: 290px; padding: 30px; background: #fff; border: 1px solid #e4e8eb; border-radius: 8px; }
+    :where(#s06-testimonials) .quote-icon { display: block; width: 32px; height: 32px; color: #9baab4; margin: 0 0 18px; flex: none; }
+    :where(#s06-testimonials) .quote { margin: 0 0 28px; font-size: 16px; line-height: 1.75; color: #2f3d48; overflow-wrap: anywhere; }
+    :where(#s06-testimonials) .byline { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 18px; border-top: 1px solid #edf0f2; margin-top: auto; min-width: 0; }
+    :where(#s06-testimonials) .byline-text { display: flex; flex-direction: column; gap: 5px; min-width: 0; flex: 1; }
+    :where(#s06-testimonials) .name { font-size: 15px; line-height: 1.5; font-weight: 700; color: #19222a; overflow-wrap: anywhere; }
+    :where(#s06-testimonials) .role { font-size: 14px; line-height: 1.55; color: #687985; overflow-wrap: anywhere; }
+    :where(#s06-testimonials) .avatar { width: 56px; height: 56px; flex: none; border-radius: 50%; background: #eef2f4; border: 1px solid #d8e0e5; display: grid; place-items: center; color: #8ca0ad; overflow: hidden; }
+    :where(#s06-testimonials) .avatar svg { width: 26px; height: 26px; display: block; }
+    @media (max-width: 960px) {
+      :where(#s06-testimonials) .item { min-height: 270px; }
+    }
+    @media (max-width: 600px) {
+      :where(#s06-testimonials) { padding: 56px 0 66px; }
+      :where(#s06-testimonials) .container { width: calc(100% - 36px); }
+      :where(#s06-testimonials) .heading { font-size: 28px; }
+      :where(#s06-testimonials) .section-desc { font-size: 15px; margin-bottom: 26px; }
+      :where(#s06-testimonials) .item { min-height: 0; padding: 24px; }
+      :where(#s06-testimonials) .quote { font-size: 16px; margin-bottom: 22px; }
+    }
+  
+    /* Controls sit BELOW the cards, not over the quotes. */
+    :where(#s06-testimonials) .controls { display:flex; align-items:center; justify-content:space-between; gap:20px; margin-top:26px; }
+    :where(#s06-testimonials) .pagination { position:static; inset:auto; transform:none; width:auto; display:flex; align-items:center; justify-content:flex-start; flex:1 1 auto; gap:9px; }
+    :where(#s06-testimonials) .pagination .swiper-pagination-bullet { margin:0; width:9px; height:9px; background:#8c9aa4; opacity:.5; border-radius:100px; transition:width .2s ease,opacity .2s ease; }
+    :where(#s06-testimonials) .pagination .swiper-pagination-bullet-active { width:26px; opacity:1; background:#253842; }
+    :where(#s06-testimonials) .arrows { display:flex; gap:10px; flex:none; }
+    :where(#s06-testimonials) .arrow { display:grid; place-items:center; width:40px; height:40px; border:1px solid #cad2d8; border-radius:50%; background:#fff; color:#26323d; cursor:pointer; }
+    :where(#s06-testimonials) .arrow svg { width:18px; height:18px; }
+    :where(#s06-testimonials) .arrow:hover { border-color:#26323d; }
+    :where(#s06-testimonials) .arrow:disabled { opacity:.35; cursor:default; }
+    :where(#s06-testimonials) :focus-visible { outline:3px solid #2563eb; outline-offset:3px; }
+    @media (max-width:600px) { :where(#s06-testimonials) .controls { margin-top:20px; } }
+    @media (prefers-reduced-motion:reduce) { :where(#s06-testimonials) .pagination .swiper-pagination-bullet { transition:none; } }
+    /* If Swiper is missing, render the first card as a readable fallback. */
+    :where(#s06-testimonials) .swiper:not(.swiper-initialized) .swiper-wrapper { display:block; }
+    :where(#s06-testimonials) .swiper:not(.swiper-initialized) .swiper-slide:not(:first-child) { display:none; }
+</style>
+</head>
+<body>
+<main>
+<section aria-labelledby="testimonials-heading" id="s06-testimonials">
+<div class="container">
+<h2 class="heading" id="testimonials-heading">What Our Clients Say</h2>
+<p class="section-desc">Discover how clear communication, dependable service, and practical solutions can shape a better project experience. Here is a simple format for sharing verified client feedback.</p>
+<!-- SAMPLE DATA ONLY. Replace every quote and attribution with authorized, genuine customer feedback before publishing. -->
+<div class="swiper testimonials-swiper">
+
+
+
+<div class="swiper-wrapper"><div class="swiper-slide"><article class="item">
+<svg aria-hidden="true" class="quote-icon" fill="currentColor" focusable="false" viewbox="0 0 32 32"><path d="M5 8h10v9H9c0 3 1 4 5 5v4C7 25 5 21 5 16V8Zm14 0h10v9h-6c0 3 1 4 5 5v4c-7-1-9-5-9-10V8Z"></path></svg>
+<blockquote class="quote">“The team communicated clearly throughout the process and helped us compare different options before making a decision.”</blockquote>
+<div class="byline"><div class="byline-text"><span class="name">Client Name Placeholder</span><span class="role">Role / Company Placeholder</span></div><span aria-hidden="true" class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.5 18.2c1.6-2.6 4-3.9 6.5-3.9s4.9 1.3 6.5 3.9"></path></svg></span></div>
+</article></div><div class="swiper-slide"><article class="item">
+<svg aria-hidden="true" class="quote-icon" fill="currentColor" focusable="false" viewbox="0 0 32 32"><path d="M5 8h10v9H9c0 3 1 4 5 5v4C7 25 5 21 5 16V8Zm14 0h10v9h-6c0 3 1 4 5 5v4c-7-1-9-5-9-10V8Z"></path></svg>
+<blockquote class="quote">“We appreciated the practical guidance, responsive updates, and attention to the details that mattered to our project.”</blockquote>
+<div class="byline"><div class="byline-text"><span class="name">Client Name Placeholder</span><span class="role">Role / Company Placeholder</span></div><span aria-hidden="true" class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.5 18.2c1.6-2.6 4-3.9 6.5-3.9s4.9 1.3 6.5 3.9"></path></svg></span></div>
+</article></div><div class="swiper-slide"><article class="item">
+<svg aria-hidden="true" class="quote-icon" fill="currentColor" focusable="false" viewbox="0 0 32 32"><path d="M5 8h10v9H9c0 3 1 4 5 5v4C7 25 5 21 5 16V8Zm14 0h10v9h-6c0 3 1 4 5 5v4c-7-1-9-5-9-10V8Z"></path></svg>
+<blockquote class="quote">“Having straightforward information and consistent support made it easier to plan the next steps with confidence.”</blockquote>
+<div class="byline"><div class="byline-text"><span class="name">Client Name Placeholder</span><span class="role">Role / Company Placeholder</span></div><span aria-hidden="true" class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.5 18.2c1.6-2.6 4-3.9 6.5-3.9s4.9 1.3 6.5 3.9"></path></svg></span></div>
+</article></div><div class="swiper-slide"><article class="item">
+<svg aria-hidden="true" class="quote-icon" fill="currentColor" focusable="false" viewbox="0 0 32 32"><path d="M5 8h10v9H9c0 3 1 4 5 5v4C7 25 5 21 5 16V8Zm14 0h10v9h-6c0 3 1 4 5 5v4c-7-1-9-5-9-10V8Z"></path></svg>
+<blockquote class="quote">“We value the clear updates and the way project requirements were reviewed before confirming the next steps.”</blockquote>
+<div class="byline"><div class="byline-text"><span class="name">Client Name Placeholder</span><span class="role">Role / Company Placeholder</span></div><span aria-hidden="true" class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.5 18.2c1.6-2.6 4-3.9 6.5-3.9s4.9 1.3 6.5 3.9"></path></svg></span></div>
+</article></div><div class="swiper-slide"><article class="item">
+<svg aria-hidden="true" class="quote-icon" fill="currentColor" focusable="false" viewbox="0 0 32 32"><path d="M5 8h10v9H9c0 3 1 4 5 5v4C7 25 5 21 5 16V8Zm14 0h10v9h-6c0 3 1 4 5 5v4c-7-1-9-5-9-10V8Z"></path></svg>
+<blockquote class="quote">“The information shared during planning helped our team compare options and communicate requirements internally.”</blockquote>
+<div class="byline"><div class="byline-text"><span class="name">Client Name Placeholder</span><span class="role">Role / Company Placeholder</span></div><span aria-hidden="true" class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.5 18.2c1.6-2.6 4-3.9 6.5-3.9s4.9 1.3 6.5 3.9"></path></svg></span></div>
+</article></div><div class="swiper-slide"><article class="item">
+<svg aria-hidden="true" class="quote-icon" fill="currentColor" focusable="false" viewbox="0 0 32 32"><path d="M5 8h10v9H9c0 3 1 4 5 5v4C7 25 5 21 5 16V8Zm14 0h10v9h-6c0 3 1 4 5 5v4c-7-1-9-5-9-10V8Z"></path></svg>
+<blockquote class="quote">“The responsive discussions made it easier to coordinate schedules and clarify technical questions along the way.”</blockquote>
+<div class="byline"><div class="byline-text"><span class="name">Client Name Placeholder</span><span class="role">Role / Company Placeholder</span></div><span aria-hidden="true" class="avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5.5 18.2c1.6-2.6 4-3.9 6.5-3.9s4.9 1.3 6.5 3.9"></path></svg></span></div>
+</article></div></div></div><div aria-label="Testimonials carousel controls" class="controls">
+<div class="pagination swiper-pagination"></div>
+<div class="arrows">
+<button aria-label="Previous testimonials" class="arrow testimonials-prev" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m14 5-7 7 7 7"></path></svg></button>
+<button aria-label="Next testimonials" class="arrow testimonials-next" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="m10 5 7 7-7 7"></path></svg></button>
+</div></div>
+</div>
+</section>
+</main>
+<script src="assets/vendor/swiper/14.3.0/swiper-bundle.min.js"></script><script>(() => {
+  const root = document.getElementById('s06-testimonials');
+  if (!root || root.dataset.initialized === 'true' || typeof window.Swiper !== 'function') return;
+  const slider = root.querySelector('.testimonials-swiper');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let swiper;
+  const syncFocus = () => {
+    if (!swiper) return;
+    const perView = Math.ceil(swiper.params.slidesPerView);
+    Array.from(slider.querySelectorAll('.swiper-slide')).forEach((slide, index) => {
+      const visible = index >= swiper.activeIndex && index < swiper.activeIndex + perView;
+      slide.inert = !visible;
+    });
+  };
+  const canAutoplay = () => !reduceMotion.matches && !document.hidden && !root.matches(':hover') && !root.contains(document.activeElement);
+  const updateAutoplay = () => {
+    if (!swiper || swiper.destroyed || !swiper.autoplay) return;
+    if (canAutoplay()) swiper.autoplay.start();
+    else swiper.autoplay.stop();
+  };
+  swiper = new Swiper(slider, {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    speed: reduceMotion.matches ? 0 : 550,
+    rewind: true,
+    watchOverflow: true,
+    breakpoints: {
+      640: { slidesPerView: 2, spaceBetween: 20 },
+      1024: { slidesPerView: 3, spaceBetween: 24 }
+    },
+    autoplay: { delay: 6500, disableOnInteraction: false, pauseOnMouseEnter: true },
+    navigation: { prevEl: root.querySelector('.testimonials-prev'), nextEl: root.querySelector('.testimonials-next') },
+    pagination: {
+      el: root.querySelector('.pagination'), clickable: true,
+      renderBullet: (index, className) => `<button type="button" class="${className}" aria-label="Go to testimonial position ${index + 1}"></button>`
+    },
+    a11y: { enabled: true, containerMessage: 'Sample client testimonials' },
+    on: {
+      init(instance) { swiper = instance; syncFocus(); },
+      slideChange(instance) { swiper = instance; syncFocus(); },
+      breakpoint(instance) { swiper = instance; syncFocus(); },
+    }
+  });
+  root.dataset.initialized = 'true';
+  root.addEventListener('mouseenter', updateAutoplay);
+  root.addEventListener('mouseleave', updateAutoplay);
+  root.addEventListener('focusin', updateAutoplay);
+  root.addEventListener('focusout', () => requestAnimationFrame(updateAutoplay));
+  document.addEventListener('visibilitychange', updateAutoplay);
+  reduceMotion.addEventListener?.('change', () => {
+    swiper.params.speed = reduceMotion.matches ? 0 : 550;
+    updateAutoplay();
+  });
+  updateAutoplay();
+})();</script></body>
+</html>

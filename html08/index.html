@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Reusable footer component for a B2B classic WordPress theme blueprint.">
+<title>Footer Component | Classic Theme Blueprint</title>
+<style>
+:root { --footer-bg:#303030; --footer-bottom-bg:#303030; --footer-text:#f3f3f3; --footer-muted:#b8b8b8; --footer-line:#505050; --footer-circle:#484848; --footer-width:1400px; }
+*,*::before,*::after {box-sizing:border-box;}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;}
+.site-footer{color:var(--footer-text);background:var(--footer-bg);}
+.site-footer a {color:inherit;text-decoration:none;}
+.site-footer button{font:inherit;cursor:pointer;}
+.site-footer :focus-visible{outline:2px solid #fff;outline-offset:4px;border-radius:3px;}
+.footer-main,.footer-bottom-inner{width:min(var(--footer-width),calc(100% - 48px));margin-inline:auto;}
+.footer-main{display:grid;grid-template-columns:minmax(230px,.9fr) minmax(300px,1.1fr) minmax(260px,1fr);gap:clamp(32px,5vw,85px);padding-block:50px 58px;align-items:start;}
+.footer-brand{min-width:0;}
+.footer-logo{display:inline-flex;align-items:center;color:#fff;margin-bottom:24px;transition:opacity .2s ease;}
+.footer-logo:hover{opacity:.8;}
+.footer-brand-svg{display:block;width:164px;height:auto;max-height:50px;}
+.footer-contact{display:grid;gap:13px;}
+.footer-contact .contact-item{display:inline-flex;align-items:center;gap:11px;width:fit-content;min-width:0;color:var(--footer-muted);font-size:14px;line-height:1.5;overflow-wrap:anywhere;transition:color .2s;}
+.footer-contact .contact-item:hover,.footer-links a:hover,.footer-bottom-links a:hover{color:#fff;}
+.site-footer .contact-item svg{width:18px;height:18px;flex:none;}
+.footer-social{display:flex;align-items:center;gap:12px;margin-top:34px;flex-wrap:wrap;}
+.footer-social .social-link{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:var(--footer-circle);color:#fff;transition:background .2s,transform .2s;}
+.footer-social .social-link:hover{background:#626262;transform:translateY(-2px);}
+.footer-social .social-link svg{width:19px;height:19px;}
+.footer-section{min-width:0;}
+.footer-section-title{overflow-wrap:anywhere;margin:4px 0 17px;font-size:18px;font-weight:600;line-height:1.4;color:#fff;}
+.footer-section-title-desktop{display:inline;}
+.footer-section-toggle{display:none;}
+.footer-section-rule{width:68px;height:1px;background:#818181;margin-bottom:27px;}
+.footer-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 24px;list-style:none;margin:0;padding:0;}
+.footer-links a{display:inline-block;overflow-wrap:anywhere;color:var(--footer-muted);font-size:14px;line-height:1.5;transition:color .2s;}
+.footer-links a::before{content:'+';display:inline-block;margin-right:10px;color:#aaaaaa;}
+.footer-about{margin:0;max-width:420px;color:var(--footer-muted);font-size:14px;line-height:1.7;}
+.footer-bottom{border-top:1px solid var(--footer-line);background:var(--footer-bottom-bg);}
+.footer-bottom-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px 32px;}
+.footer-copyright{margin:0;color:var(--footer-muted);font-size:13px;line-height:1.5;}
+.footer-bottom-links{display:flex;gap:10px 22px;flex-wrap:wrap;}
+.footer-bottom-links a{color:var(--footer-muted);font-size:13px;line-height:1.5;transition:color .2s;}
+@media(max-width:1050px){.footer-main{grid-template-columns:minmax(200px,1fr) minmax(220px,1fr);gap:40px;}.footer-main>.footer-section:last-child{grid-column:2;}.footer-brand{grid-row:1/span 2;}}
+@media(max-width:720px){
+.footer-main,.footer-bottom-inner{width:calc(100% - 40px);}
+.footer-main{display:block;padding-block:28px 12px;}
+.footer-brand{padding-bottom:22px;}
+.footer-brand-svg{width:145px;}
+.footer-social{margin-top:28px;}
+.footer-section{border-top:0;}
+.footer-section + .footer-section{border-top:1px solid var(--footer-line);}
+.footer-section:last-child{border-bottom:0;}
+.footer-section-title{margin:0;font-size:16px;line-height:1.4;}
+.footer-section-title-desktop,.footer-section-rule{display:none;}
+.footer-section-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:58px;padding:0;border:0;background:transparent;color:#fff;font-weight:600;font-size:16px;line-height:1.4;letter-spacing:0;text-align:left;}
+.footer-section-toggle svg{width:16px;height:16px;flex:none;margin-left:14px;transition:transform .2s;}
+.footer-section-toggle[aria-expanded="true"] svg{transform:rotate(180deg);}
+.footer-section-content[hidden]{display:none;}
+.footer-section-content{padding:0 0 22px;}
+.footer-links{grid-template-columns:1fr;gap:13px;}
+.footer-about{max-width:none;font-size:14px;line-height:1.65;}
+.footer-bottom-inner{align-items:flex-start;flex-direction:column;gap:10px;padding-block:18px 24px;}
+.footer-bottom-links{gap:12px 24px;}
+.footer-copyright,.footer-bottom-links a{font-size:13px;line-height:1.6;}
+}
+@media(prefers-reduced-motion:reduce){.site-footer *, .site-footer *::before, .site-footer *::after{transition:none!important;}}
+</style>
+</head>
+<body>
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a class="footer-logo" href="/" aria-label="Homepage"><svg aria-hidden="true" class="footer-brand-svg" focusable="false" height="50"  viewBox="0 0 180 50" width="180" xmlns="http://www.w3.org/2000/svg">
+<rect fill="currentColor" height="50" rx="11" ry="11" width="48" x="0" y="0"></rect>
+<!-- Left initial -->
+<text dy="0.35em" fill="#303030" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="700" text-anchor="middle" x="24" y="50%">N</text>
+<!-- Brand name -->
+<text dy="0.35em" fill="currentColor" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" x="60" y="50%">NovaTech</text>
+</svg></a>
+      <div class="footer-contact">
+        <a class="contact-item" href="tel:+10000000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.6 3.5 4.4 5.7c-.7.7-.8 1.7-.4 2.6 2.1 4.9 6 8.8 10.9 10.9.9.4 1.9.3 2.6-.4l2.2-2.2-3.6-3.2-2 1.5c-2.1-1-4-2.9-5-5l1.5-2-3.2-3.4Z"/></svg><span>+1 (000) 000-0000</span></a>
+        <a class="contact-item" href="mailto:hello@example.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg><span>hello@example.com</span></a>
+      </div>
+      <nav class="footer-social" aria-label="Social media (demo links)"><a class="social-link" href="#" aria-label="Facebook (placeholder)" title="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 21v-8h3l.5-4H15V7c0-1 .4-1.5 1.7-1.5H19V2.1A23 23 0 0 0 16.2 2C12.8 2 11 4 11 7.2V9H8v4h3v8"/></svg></a>
+<a class="social-link" href="#" aria-label="Linkedin (placeholder)" title="Linkedin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="4.8" r="1.7"/><path d="M11 21V9h4v2c.7-1.3 1.7-2.2 3.4-2.2 2.4 0 3.6 1.5 3.6 4.5V21h-4v-7.1c0-1.2-.4-1.9-1.5-1.9-1.2 0-1.5.9-1.5 2V21Z"/></svg></a>
+<a class="social-link" href="#" aria-label="Youtube (placeholder)" title="Youtube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="5.8" width="19" height="12.4" rx="3.5"/><path d="m10 9 5 3-5 3Z"/></svg></a>
+<a class="social-link" href="#" aria-label="Instagram (placeholder)" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.8" r=".8" fill="currentColor" stroke="none"/></svg></a></nav>
+    </div>
+    <section class="footer-section footer-accordion" aria-labelledby="footer-about-title">
+      <h2 class="footer-section-title" id="footer-about-title"><button type="button" class="footer-section-toggle" aria-expanded="true" aria-controls="footer-about-links">EXPLORE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></button><span class="footer-section-title-desktop">EXPLORE</span></h2>
+      <div class="footer-section-rule" aria-hidden="true"></div>
+      <nav class="footer-section-content" id="footer-about-links" aria-label="Footer navigation"><ul class="footer-links"><li><a href="/about/">About Us</a></li>
+<li><a href="/products/">Products</a></li>
+<li><a href="/solutions/">Solutions</a></li>
+<li><a href="/projects/">Projects</a></li>
+<li><a href="/resources/">Resources</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/faq/">FAQs</a></li>
+<li><a href="/downloads/">Downloads</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+<li><a href="/contact/">Request a Quote</a></li></ul></nav>
+    </section>
+    <section class="footer-section footer-accordion" aria-labelledby="footer-company-title">
+      <h2 class="footer-section-title" id="footer-company-title"><button type="button" class="footer-section-toggle" aria-expanded="true" aria-controls="footer-company-info">ABOUT THE COMPANY <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></button><span class="footer-section-title-desktop">ABOUT THE COMPANY</span></h2>
+      <div class="footer-section-rule" aria-hidden="true"></div>
+      <div class="footer-section-content" id="footer-company-info"><p class="footer-about">We help businesses bring practical ideas to life through reliable products, thoughtful service, and long-term partnerships. Explore our capabilities, browse our work, or contact our team to discuss your next project.</p></div>
+    </section>
+  </div>
+  <div class="footer-bottom"><div class="footer-bottom-inner"><p class="footer-copyright">© 2026 NovaTech. All rights reserved.</p><nav class="footer-bottom-links" aria-label="Legal information"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms-of-use/">Terms of Use</a></nav></div></div>
+</footer>
+<script>
+(()=>{
+  const root=document.querySelector('.site-footer');
+  if(!root || root.dataset.initialized==='true')return;
+  root.dataset.initialized='true';
+  const query=window.matchMedia('(max-width:720px)');
+  const sections=[...root.querySelectorAll('.footer-accordion')];
+  function setState(section,open){const btn=section.querySelector('.footer-section-toggle');const content=section.querySelector('.footer-section-content');if(!btn||!content)return;btn.setAttribute('aria-expanded',String(open));content.hidden=!open;}
+  function sync(){sections.forEach(section=>setState(section,!query.matches));}
+  sections.forEach(section=>{const btn=section.querySelector('.footer-section-toggle');if(btn)btn.addEventListener('click',()=>{if(!query.matches)return;setState(section,btn.getAttribute('aria-expanded')!=='true');});});
+  if(query.addEventListener)query.addEventListener('change',sync);else query.addListener(sync);
+  sync();
+})();
+</script>
+</body>
+</html>

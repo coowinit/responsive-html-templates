@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ Component | Classic Theme Blueprint</title>
+  <meta name="description" content="Common questions about materials, customization, installation, and support for B2B projects.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #19222a; background: #fff; }
+    /* Section 03 — FAQ: independent preview; no library or JavaScript required. */
+    :where(#s03-faq) { padding: 72px 0 88px; }
+    :where(#s03-faq) .container { width: min(1000px, calc(100% - 48px)); margin-inline: auto; }
+    :where(#s03-faq) .heading { margin: 0 0 14px; font-size: clamp(26px, 2.5vw, 32px); line-height: 1.2; font-weight: 700; letter-spacing: -.025em; }
+    :where(#s03-faq) .section-desc { max-width: 780px; margin: 0 0 34px; color: #566573; font-size: 16px; line-height: 1.75; overflow-wrap: anywhere; }
+    :where(#s03-faq) .faq-list { width: 100%; border-top: 1px solid #dfe5e9; }
+    :where(#s03-faq) .item { border-bottom: 1px solid #dfe5e9; }
+    :where(#s03-faq) .question { display: flex; gap: 20px; align-items: center; justify-content: space-between; min-height: 78px; padding: 19px 2px; cursor: pointer; list-style: none; font-size: 18px; font-weight: 600; line-height: 1.45; color: #202a32; overflow-wrap: anywhere; }
+    :where(#s03-faq) .question::-webkit-details-marker { display: none; }
+    :where(#s03-faq) .question::marker { content: ''; }
+    :where(#s03-faq) .question:hover, :where(#s03-faq) .item[open] .question { color: #26475a; }
+    :where(#s03-faq) .question:focus-visible { outline: 3px solid #406b83; outline-offset: 4px; border-radius: 2px; }
+    :where(#s03-faq) .icon { position: relative; flex: 0 0 28px; width: 28px; height: 28px; border: 1px solid #dce4e9; border-radius: 50%; color: #435865; background: #f7f9fa; }
+    :where(#s03-faq) .icon::before, :where(#s03-faq) .icon::after { content: ''; position: absolute; left: 50%; top: 50%; width: 11px; height: 1.5px; border-radius: 2px; background: currentColor; transform: translate(-50%, -50%); }
+    :where(#s03-faq) .icon::after { transform: translate(-50%, -50%) rotate(90deg); transition: transform .2s ease; }
+    :where(#s03-faq) .item[open] .icon::after { transform: translate(-50%, -50%) rotate(0); }
+    :where(#s03-faq) .answer { max-width: 940px; padding: 0 48px 24px 2px; color: #52616e; font-size: 16px; line-height: 1.7; overflow-wrap: anywhere; }
+    :where(#s03-faq) .answer p { margin: 0; }
+    :where(#s03-faq) .answer p + p { margin-top: 12px; }
+    @media (max-width: 640px) {
+      :where(#s03-faq) { padding: 48px 0 70px; }
+      :where(#s03-faq) .container { width: calc(100% - 36px); }
+      :where(#s03-faq) .heading { font-size: 27px; margin-bottom: 12px; }
+      :where(#s03-faq) .section-desc { font-size: 14px; line-height: 1.65; margin-bottom: 28px; }
+      :where(#s03-faq) .question { min-height: 68px; padding: 18px 0; font-size: 16px; gap: 16px; }
+      :where(#s03-faq) .icon { flex-basis: 26px; width: 26px; height: 26px; }
+      :where(#s03-faq) .answer { font-size: 16px; line-height: 1.75; padding: 0 20px 22px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      :where(#s03-faq) .icon::after { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="s03-faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <h2 class="heading" id="faq-heading">Frequently Asked Questions</h2>
+        <p class="section-desc">Find useful answers to common questions about our products, project requirements, customization, and ongoing support. Explore the information below to plan your next project with greater confidence.</p>
+
+        <!-- The shared name attribute keeps one item open at a time in modern browsers. -->
+        <div class="faq-list">
+          <details class="item" name="faq" open>
+            <summary class="question">What types of products and solutions do you offer?<span class="icon" aria-hidden="true"></span></summary>
+            <div class="answer"><p>We offer a range of products for indoor, outdoor, and architectural applications. Our team can help you compare available systems and identify options that suit your project goals, environment, and design requirements.</p></div>
+          </details>
+          <details class="item" name="faq">
+            <summary class="question">Can products be customized for different projects?<span class="icon" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Customization options may include dimensions, finishes, colors, and selected product specifications. Share your drawings or requirements with our team so we can review feasibility and confirm the details before an order is placed.</p></div>
+          </details>
+          <details class="item" name="faq">
+            <summary class="question">How do I choose the right material for my application?<span class="icon" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Start with the intended environment, installation conditions, appearance, maintenance expectations, and budget. Product documentation and technical discussions can help you narrow the options; final suitability should be confirmed against project-specific requirements.</p></div>
+          </details>
+          <details class="item" name="faq">
+            <summary class="question">Do you provide technical documents and installation guidance?<span class="icon" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Relevant specifications, installation guidance, and product documents can be discussed during the quotation process. Document availability depends on the selected product and project, so please ask for the resources you need.</p></div>
+          </details>
+          <details class="item" name="faq">
+            <summary class="question">What information is needed to request a quotation?<span class="icon" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Please include the product type, estimated quantity, preferred specifications, delivery destination, and project schedule where available. Clear requirements help our team prepare a more useful response and identify any details that still need confirmation.</p></div>
+          </details>
+          <details class="item" name="faq">
+            <summary class="question">How are lead times and delivery arrangements confirmed?<span class="icon" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Lead times and shipping arrangements depend on product selection, quantity, customization, and destination. The agreed schedule should be confirmed as part of the order and project communication process.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

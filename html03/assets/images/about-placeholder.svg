@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Abstract architecture image placeholder">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dce4e8"/><stop offset="1" stop-color="#edf1f3"/></linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#a3b6c1"/><stop offset="1" stop-color="#8fa5b1"/></linearGradient>
+  </defs>
+  <path fill="url(#background)" d="M0 0h800v600H0z"/>
+  <circle cx="633" cy="133" r="69" fill="#f7f9fa" opacity=".8"/>
+  <path d="M0 457 177 414l202 60 178-83 243 68v141H0z" fill="#c5d2d9" opacity=".55"/>
+  <path d="M130 245 410 160l238 94v272H130z" fill="url(#front)"/>
+  <path d="M410 160v366H130V245z" fill="#bacad2"/>
+  <path d="M410 160 648 254v272H410z" fill="#8fa5b0"/>
+  <g fill="#e5ecef" opacity=".85">
+    <path d="M164 286h64v63h-64zM250 286h64v63h-64zM336 286h48v63h-48zM164 371h64v63h-64zM250 371h64v63h-64zM336 371h48v63h-48z"/>
+  </g>
+  <g fill="#cad8df" opacity=".82">
+    <path d="m437 275 66 20v64l-66-17zM526 303l82 25v59l-82-23zM437 369l66 17v64l-66-15zM526 390l82 24v62l-82-20z"/>
+  </g>
+  <path d="M0 526h800v74H0z" fill="#c6d1d6"/>
+  <path d="M108 526h588" stroke="#7c939f" stroke-opacity=".55" stroke-width="3"/>
+</svg>

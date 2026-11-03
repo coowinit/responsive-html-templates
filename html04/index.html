@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Development History reusable standalone component preview for a WordPress Classic Theme.">
+  <title>Development History Component | Classic Theme Blueprint</title>
+  <!-- Standalone component demo: section markup below can be reused in a page. -->
+  <link rel="preload" href="assets/fonts/inter/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/font.css">
+  <link rel="stylesheet" href="assets/vendor/swiper/14.3.0/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/components/about-extensions.css">
+</head>
+<body>
+  <main>
+    <!-- Development History: reusable component; mount once per page. -->
+    <section id="s08-history" class="abx-section abx-history" aria-labelledby="abx-history-title">
+      <div class="abx-container">
+        <div class="abx-heading">
+          <div>
+            <span class="abx-eyebrow">OUR JOURNEY</span>
+            <h2 id="abx-history-title">Development History</h2>
+          </div>
+          <p>Explore the milestones behind our growth and ongoing commitment to manufacturing excellence.</p>
+        </div>
+        <div class="abx-slider-controls">
+          <button class="abx-arrow abx-history-prev" type="button" aria-label="Previous milestones">←</button>
+          <button class="abx-arrow abx-history-next" type="button" aria-label="Next milestones">→</button>
+        </div>
+        <div class="swiper abx-history-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <article class="abx-milestone">
+                <span class="abx-year">2012</span>
+                <h3>Getting Started</h3>
+                <p>Our initial team and production capabilities took shape.</p>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="abx-milestone">
+                <span class="abx-year">2015</span>
+                <h3>Production Growth</h3>
+                <p>Expanded facilities supported a broader range of customer projects.</p>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="abx-milestone">
+                <span class="abx-year">2018</span>
+                <h3>Quality Focus</h3>
+                <p>Process improvements strengthened our approach to consistent production.</p>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="abx-milestone">
+                <span class="abx-year">2022</span>
+                <h3>Broader Collaboration</h3>
+                <p>New partnerships helped us serve increasingly varied requirements.</p>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="abx-milestone">
+                <span class="abx-year">2026</span>
+                <h3>Looking Ahead</h3>
+                <p>We continue investing in reliable service and practical solutions.</p>
+              </article>
+            </div>
+          </div>
+          <div class="abx-pagination abx-history-pagination"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="assets/vendor/swiper/14.3.0/swiper-bundle.min.js"></script>
+  <script src="assets/js/components/about-extensions.js"></script>
+</body>
+</html>

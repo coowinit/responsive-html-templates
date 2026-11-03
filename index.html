@@ -45,6 +45,21 @@
         date: "2026-11-03",
         link: "./html01/index.html"
       }
+,
+      {"title": "Honors & Credentials", "description": "Certificate carousel with an image preview dialog.", "date": "2026-11-03", "link": "./html02/index.html"},
+      {"title": "Factory Gallery", "description": "Responsive factory image gallery with enlarged previews.", "date": "2026-11-03", "link": "./html03/index.html"},
+      {"title": "Development History", "description": "Company history timeline built with Swiper.", "date": "2026-11-03", "link": "./html04/index.html"},
+      {"title": "About Section", "description": "Responsive introduction section with image and text.", "date": "2026-11-03", "link": "./html05/index.html"},
+      {"title": "Advantages Grid", "description": "Responsive advantages and feature highlights grid.", "date": "2026-11-03", "link": "./html06/index.html"},
+      {"title": "FAQ Accordion", "description": "Frequently asked questions with expandable answers.", "date": "2026-11-03", "link": "./html07/index.html"},
+      {"title": "Responsive Footer", "description": "Responsive website footer with links and contact information.", "date": "2026-11-03", "link": "./html08/index.html"},
+      {"title": "Responsive Header", "description": "Responsive navigation with mobile menu and language options.", "date": "2026-11-03", "link": "./html09/index.html"},
+      {"title": "Native Hero Slider", "description": "Hero slideshow built with native JavaScript.", "date": "2026-11-03", "link": "./html10/index.html"},
+      {"title": "Swiper Hero Slider", "description": "Responsive Swiper-powered hero slideshow.", "date": "2026-11-03", "link": "./html11/index.html"},
+      {"title": "Inner Page CTA", "description": "Call-to-action section for interior pages.", "date": "2026-11-03", "link": "./html12/index.html"},
+      {"title": "Product Gallery", "description": "Product image gallery with thumbnail navigation.", "date": "2026-11-03", "link": "./html13/index.html"},
+      {"title": "Products Grid", "description": "Responsive product showcase grid.", "date": "2026-11-03", "link": "./html14/index.html"},
+      {"title": "Testimonials Slider", "description": "Customer testimonial slider with navigation.", "date": "2026-11-03", "link": "./html15/index.html"}
     ];
 
     const list = document.getElementById("example-list");
@@ -61,6 +76,8 @@
       heading.className = "article-card__title";
       const link = document.createElement("a");
       link.href = example.link;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
       link.textContent = example.title;
       heading.appendChild(link);
 
