@@ -1,0 +1,251 @@
+/* =========================================================
+   S25 — Interactive Roofing Services
+   All styles are scoped to #s25-roofing-services.
+   ========================================================= */
+
+#s25-roofing-services {
+  --s25-bg: #f4f5f6;
+  --s25-surface: #ffffff;
+  --s25-text: #172238;
+  --s25-muted: #647181;
+  --s25-blue: #2463ff;
+  --s25-line: rgba(23, 34, 56, 0.045);
+  width: 100%;
+  padding: 70px 24px 64px;
+  background: var(--s25-bg);
+  color: var(--s25-text);
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+#s25-roofing-services *,
+#s25-roofing-services *::before,
+#s25-roofing-services *::after { box-sizing: border-box; }
+
+#s25-roofing-services .s25-inner {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(300px, 0.88fr) minmax(0, 1.18fr);
+  align-items: start;
+  gap: 52px;
+}
+
+#s25-roofing-services .s25-nav {
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--s25-surface);
+}
+
+#s25-roofing-services .s25-nav-item {
+  width: 100%;
+  min-height: 97px;
+  padding: 22px 32px;
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) 22px;
+  align-items: center;
+  gap: 16px;
+  border: 0;
+  border-bottom: 1px solid var(--s25-line);
+  background: #fafafa;
+  color: var(--s25-text);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  transition: color .2s ease, background-color .2s ease;
+}
+
+#s25-roofing-services .s25-nav-item:last-child { border-bottom: 0; }
+
+#s25-roofing-services .s25-nav-item:hover,
+#s25-roofing-services .s25-nav-item.is-active {
+  color: var(--s25-blue);
+  background: #fff;
+}
+
+#s25-roofing-services .s25-nav-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#s25-roofing-services .s25-nav-icon svg {
+  width: 23px;
+  height: 23px;
+  stroke: currentColor;
+  stroke-width: 1.65;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#s25-roofing-services .s25-nav-label {
+  min-width: 0;
+  font-size: 17px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+#s25-roofing-services .s25-nav-arrow {
+  justify-self: end;
+  font-size: 27px;
+  line-height: 1;
+  font-weight: 300;
+  transform: translateY(-1px);
+}
+
+#s25-roofing-services .s25-detail { min-width: 0; }
+
+#s25-roofing-services .s25-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 24px;
+}
+
+#s25-roofing-services .s25-image {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #d9dee3;
+}
+
+#s25-roofing-services .s25-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#s25-roofing-services .s25-image-main { height: 410px; }
+
+#s25-roofing-services .s25-image-secondary {
+  height: 342px;
+  margin-top: 68px;
+}
+
+#s25-roofing-services .s25-copy { padding-top: 30px; }
+
+#s25-roofing-services .s25-copy h1 {
+  margin: 0 0 14px;
+  color: var(--s25-text);
+  font-size: 25px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+#s25-roofing-services .s25-copy p {
+  max-width: 760px;
+  margin: 0 0 17px;
+  color: var(--s25-muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+#s25-roofing-services .s25-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--s25-blue);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap .2s ease;
+}
+
+#s25-roofing-services .s25-link:hover { gap: 13px; }
+
+#s25-roofing-services .s25-nav-item:focus-visible,
+#s25-roofing-services .s25-link:focus-visible {
+  outline: 2px solid var(--s25-blue);
+  outline-offset: -3px;
+}
+
+@media (max-width: 900px) {
+  #s25-roofing-services { padding: 28px 24px 36px; }
+
+  #s25-roofing-services .s25-inner {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  #s25-roofing-services .s25-nav { border-radius: 16px; }
+
+  #s25-roofing-services .s25-nav-item {
+    min-height: 73px;
+    padding: 16px 20px;
+    grid-template-columns: 24px minmax(0, 1fr) 20px;
+    gap: 16px;
+  }
+
+  #s25-roofing-services .s25-nav-label { font-size: 16px; }
+
+  #s25-roofing-services .s25-gallery {
+    gap: 20px;
+    align-items: end;
+  }
+
+  #s25-roofing-services .s25-image-main {
+    height: auto;
+    aspect-ratio: 1 / 1.18;
+  }
+
+  #s25-roofing-services .s25-image-secondary {
+    height: auto;
+    aspect-ratio: 1 / 0.98;
+    margin-top: 0;
+  }
+
+  #s25-roofing-services .s25-copy { padding-top: 24px; }
+
+  #s25-roofing-services .s25-copy h1 {
+    margin-bottom: 13px;
+    font-size: 23px;
+  }
+
+  #s25-roofing-services .s25-copy p {
+    margin-bottom: 17px;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  #s25-roofing-services { padding: 26px 24px 34px; }
+  #s25-roofing-services .s25-inner { gap: 26px; }
+
+  #s25-roofing-services .s25-nav-item {
+    min-height: 73px;
+    padding: 15px 20px;
+  }
+
+  #s25-roofing-services .s25-gallery { gap: 20px; }
+  #s25-roofing-services .s25-image { border-radius: 13px; }
+
+  #s25-roofing-services .s25-image-main { aspect-ratio: 1 / 1.18; }
+
+  #s25-roofing-services .s25-image-secondary {
+    aspect-ratio: 1 / 0.98;
+    margin-top: 0;
+  }
+
+  #s25-roofing-services .s25-copy { padding-top: 24px; }
+  #s25-roofing-services .s25-copy h1 { font-size: 22px; }
+
+  #s25-roofing-services .s25-copy p {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #s25-roofing-services *,
+  #s25-roofing-services *::before,
+  #s25-roofing-services *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
