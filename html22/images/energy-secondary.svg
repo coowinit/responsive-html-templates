@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title desc">
+  <title id="title">Secondary image placeholder</title>
+  <desc id="desc">Dark gray image placeholder with a simple photo icon.</desc>
+  <rect width="200" height="200" fill="#555b63"/>
+  <g transform="translate(100 100)" fill="none" stroke="#aeb6bf" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-38" y="-31" width="76" height="62" rx="6"/>
+    <circle cx="18" cy="-13" r="7" fill="#aeb6bf" stroke="none"/>
+    <path d="M-28 21 -6 -5 9 11 18 2 29 21Z" fill="#aeb6bf" stroke="none"/>
+  </g>
+</svg>
