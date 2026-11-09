@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 423" role="img" aria-labelledby="title desc">
+  <title id="title">Featured hockey article placeholder</title>
+  <desc id="desc">A simple gray image placeholder with a picture icon.</desc>
+  <rect width="630" height="423" fill="#e1e5e9"/>
+  <g fill="none" stroke="#aab2bb" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="126" y="85" width="378" height="253" rx="14"/>
+    <circle cx="409" cy="165" r="27" fill="#aab2bb" stroke="none"/>
+    <path d="M170 295 283 205 352 263 410 211 463 295Z" fill="#aab2bb" stroke="none"/>
+  </g>
+</svg>
