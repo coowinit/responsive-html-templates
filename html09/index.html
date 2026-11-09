@@ -419,7 +419,13 @@
         align-items: stretch;
         margin: 0;
         background: #fff;
-        box-shadow: -20px 0 50px rgba(0,0,0,.16);
+        background-image: none;
+        opacity: 1;
+        filter: none;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        isolation: isolate;
+        box-shadow: -15px 0 40px rgba(0,0,0,.12);
         transform: translateX(105%);
         transition: transform .4s var(--ease);
         overflow-y: auto;
@@ -442,10 +448,26 @@
 
       .nav-close {
         position: relative;
+        display: grid;
+        flex: 0 0 40px;
+        place-items: center;
         width: 40px;
         height: 40px;
+        padding: 0;
+        border: 1px solid var(--line);
         border-radius: 10px;
         background: var(--bg-soft);
+        color: var(--primary);
+        cursor: pointer;
+      }
+
+      .nav-close:hover {
+        background: #eef0f3;
+      }
+
+      .nav-close:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
       }
 
       .nav-close span {
