@@ -1,0 +1,73 @@
+* {box-sizing:border-box}
+:root {--ink:#172d40;--muted:#617383;--surface:#f5f7f9;--line:#e5eaee}
+body {margin:0;color:var(--ink);background:#fff;font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+.how-section {padding:88px 0 96px}
+.how-container {width:min(1400px,calc(100% - 48px));margin-inline:auto}
+.how-heading {display:flex;align-items:end;justify-content:space-between;gap:48px;margin-bottom:34px}
+.how-heading__main {max-width:620px}
+.how-eyebrow {margin:0 0 13px;color:#647d90;font-size:11px;font-weight:700;letter-spacing:.18em}
+.how-heading h1 {margin:0;color:var(--ink);font-size:clamp(28px,2.5vw,38px);line-height:1.2;letter-spacing:-.035em}
+.how-intro {max-width:430px;margin:0 0 3px;color:var(--muted);font-size:15px;line-height:1.75}
+.how-gallery {display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr) minmax(0,1fr);grid-template-rows:repeat(2,minmax(190px,1fr));gap:18px}
+.how-card {min-width:0;min-height:0;overflow:hidden;background:var(--surface)}
+.how-card--featured {grid-row:1 / span 2}
+.how-card__visual {position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:190px;overflow:hidden;isolation:isolate}
+.how-card--featured .how-card__visual {min-height:398px}
+.how-card__visual::before {content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(145deg,#e7edf1,#cbd8df)}
+.visual--bulk::before {background:linear-gradient(145deg,#dce7ec,#aebfc9)}
+.visual--finishing::before {background:linear-gradient(145deg,#eee8df,#d8c9b7)}
+.visual--sewing::before {background:linear-gradient(145deg,#e3e9e8,#bfcfcd)}
+.visual--molding::before {background:linear-gradient(145deg,#e6e9ef,#c5cbd8)}
+.visual--quality::before {background:linear-gradient(145deg,#e9ece7,#cbd5c8)}
+.how-card__visual svg {display:block;width:min(76%,300px);height:auto;max-height:72%;opacity:.9;filter:drop-shadow(0 7px 8px rgba(36,54,68,.08))}
+.how-card--featured .how-card__visual svg {width:82%}
+.how-card__visual svg .building,.how-card__visual svg .machine,.how-card__visual svg .clipboard {fill:#7893a4;stroke:#526f82;stroke-width:3;stroke-linejoin:round}
+.how-card__visual svg .building-inner {fill:#dbe5e9;stroke:#8ea6b4;stroke-width:2}
+.how-card__visual svg .window {fill:#8ca7b5;stroke:#fff;stroke-width:2}
+.how-card__visual svg .ground,.how-card__visual svg .table {stroke:#829ba9;stroke-width:5;stroke-linecap:round}
+.how-card__visual svg .roof-detail,.how-card__visual svg .detail,.how-card__visual svg .check-line {fill:none;stroke:#f7fafb;stroke-width:4;stroke-linecap:round}
+.how-card__visual svg .hat {fill:#b28d5d;stroke:#876b48;stroke-width:3}
+.how-card__visual svg .brim {fill:#d0b184;stroke:#876b48;stroke-width:3}
+.how-card__visual svg .ribbon {fill:#718b9c}
+.how-card__visual svg .stitch {fill:none;stroke:#f6e8d0;stroke-width:3;stroke-dasharray:5 5}
+.how-card__visual svg .machine-dark,.how-card__visual svg .clip {fill:#526f82;stroke:#405b6d;stroke-width:2}
+.how-card__visual svg .needle {stroke:#526f82;stroke-width:3}
+.how-card__visual svg .check-circle {fill:#eaf0eb;stroke:#73917b;stroke-width:4}
+.how-card__visual svg .check-mark {fill:none;stroke:#63846c;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.visual-tag {position:absolute;top:15px;left:16px;z-index:1;color:rgba(23,45,64,.58);font-size:11px;font-weight:700;letter-spacing:.12em}
+.how-card__caption {position:absolute;right:0;bottom:0;left:0;display:flex;flex-direction:column;gap:4px;padding:30px 18px 16px;color:#fff;background:linear-gradient(transparent,rgba(18,38,52,.78))}
+.how-card__caption strong {font-size:16px;line-height:1.35;font-weight:700}
+.how-card__caption small {color:rgba(255,255,255,.84);font-size:12px;line-height:1.4}
+@media(max-width:900px) {
+  .how-section {padding:68px 0 76px}
+  .how-heading {align-items:start;gap:28px}
+  .how-intro {max-width:340px}
+  .how-gallery {grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(190px,auto))}
+  .how-card--featured {grid-row:auto;grid-column:1 / -1}
+  .how-card--featured .how-card__visual {min-height:300px}
+}
+@media(max-width:600px) {
+  .how-section {padding:56px 0 64px}
+  .how-container {width:calc(100% - 36px)}
+  .how-heading {display:block;margin-bottom:24px}
+  .how-heading h1 {font-size:28px}
+  .how-intro {margin-top:13px;font-size:14px;line-height:1.7}
+  .how-gallery {grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;gap:10px}
+  .how-card--featured {grid-column:1 / -1}
+  .how-card--featured .how-card__visual {min-height:230px}
+  .how-card__visual {min-height:155px}
+  .how-card__visual svg {width:78%}
+  .how-card__caption {padding:24px 10px 10px}
+  .how-card__caption strong {font-size:13px}
+  .how-card__caption small {font-size:10px}
+  .visual-tag {top:9px;left:10px;font-size:10px}
+}
+@media(prefers-reduced-motion:no-preference) {
+  .how-card__visual svg {transition:transform .35s ease}
+}
+@media(prefers-reduced-motion:no-preference) and (hover:hover) and (pointer:fine) {
+  .how-card:hover .how-card__visual svg {transform:scale(1.04)}
+}
+@media(prefers-reduced-motion:reduce) {
+  .how-card__visual svg {transition:none}
+}
