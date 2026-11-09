@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 608 463" role="img" aria-labelledby="title desc">
+  <title id="title">Landscape image placeholder</title>
+  <desc id="desc">Gray placeholder graphic with a picture icon.</desc>
+  <rect width="608" height="463" fill="#d9dde3"/>
+  <rect x="64" y="56" width="480" height="351" rx="8" fill="none" stroke="#97a0aa" stroke-width="14"/>
+  <circle cx="447" cy="149" r="34" fill="#97a0aa"/>
+  <path d="M104 365 226 245 316 323 399 260 504 365Z" fill="#97a0aa"/>
+  <path d="M104 365 186 286 252 344 326 274 423 365Z" fill="#a9b1ba"/>
+</svg>
