@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Responsive author profile card with avatar, biography, and topic tags.">
+  <title>Author Profile Card</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="author-page">
+    <article class="author-card" aria-labelledby="author-name">
+      <div class="author-card__avatar">
+        <img src="images/author-avatar.svg" alt="Author avatar placeholder" width="120" height="120">
+      </div>
+      <div class="author-card__content">
+        <div class="author-card__heading">
+          <h1 id="author-name" class="author-card__name">Kelin</h1>
+          <span class="author-card__role">Content Writer</span>
+        </div>
+        <p class="author-card__bio">
+          Kelin is a content writer focused on outdoor living and home design.
+          With an interest in landscape architecture, he creates practical stories
+          about garden spaces, outdoor furniture, and everyday design inspiration.
+          His work helps readers make more of their outdoor spaces.
+          <a class="author-card__more" href="/author/kelin/">See Full Bio <span aria-hidden="true">›</span></a>
+        </p>
+        <ul class="author-card__tags" aria-label="Author topics">
+          <li>Content Marketing</li>
+          <li>Home Decor</li>
+          <li>Outdoor Design</li>
+        </ul>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
