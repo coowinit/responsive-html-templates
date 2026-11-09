@@ -26,12 +26,13 @@
   const setActive = (sectionId) => {
     links.forEach((link) => {
       const active = link.getAttribute("href") === `#${sectionId}`;
+      const wasActive = link.classList.contains("is-active");
       link.classList.toggle("is-active", active);
       if (active) link.setAttribute("aria-current", "location");
       else link.removeAttribute("aria-current");
 
-      // Keep the active category visible inside the horizontal mobile navigation.
-      if (active && window.matchMedia("(max-width: 680px)").matches) {
+      // Scroll the mobile category strip only when the active category changes.
+      if (active && !wasActive && window.matchMedia("(max-width: 680px)").matches) {
         link.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
       }
     });
