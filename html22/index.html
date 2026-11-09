@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A responsive FAQ section paired with overlapping renewable energy images and a video popup.">
+  <title>FAQ &amp; Image Feature Section</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <main>
+    <section class="faq-feature" aria-labelledby="faq-title">
+      <div class="faq-feature__inner">
+        <div class="faq-feature__visual">
+          <div class="faq-feature__image faq-feature__image--main">
+            <img src="images/energy-main.svg" alt="Renewable energy image placeholder" width="420" height="500">
+          </div>
+          <div class="faq-feature__image faq-feature__image--secondary">
+            <img src="images/energy-secondary.svg" alt="Solar and wind energy image placeholder" width="200" height="200">
+          </div>
+          <button class="faq-feature__play" type="button" aria-label="Play company introduction video" data-video-open data-video-url="">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.8v12.4L18 12 8 5.8Z" fill="currentColor"/></svg>
+          </button>
+        </div>
+
+        <div class="faq-feature__content">
+          <header class="faq-header">
+            <h1 id="faq-title">Questions &amp; Answers</h1>
+            <p>Join Greenoza to lead the future of renewable energy with innovative solar solutions. Contribute to sustainability and professional growth.</p>
+          </header>
+
+          <div class="faq-list" data-accordion>
+            <article class="faq-item is-open">
+              <h2 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="true" aria-controls="faq-answer-1" id="faq-question-1">
+                  <span>How does it work?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h2>
+              <div class="faq-item__panel" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
+                <div class="faq-item__answer"><p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p></div>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <h2 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">
+                  <span>Do I need a designer to use Greenoza?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h2>
+              <div class="faq-item__panel" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" hidden>
+                <div class="faq-item__answer"><p>No. Our team can guide you through the available solutions and help you choose an approach that fits your needs.</p></div>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <h2 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">
+                  <span>What do I need to do to start selling?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h2>
+              <div class="faq-item__panel" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" hidden>
+                <div class="faq-item__answer"><p>Contact our team to discuss your goals. We will explain the next steps, requirements, and available support.</p></div>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <h2 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4">
+                  <span>What happens when I receive an order?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h2>
+              <div class="faq-item__panel" id="faq-answer-4" role="region" aria-labelledby="faq-question-4" hidden>
+                <div class="faq-item__answer"><p>Our team will help coordinate the process and keep you informed about order details, preparation, and delivery.</p></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="video-modal" data-video-modal aria-hidden="true">
+    <div class="video-modal__backdrop" data-video-close></div>
+    <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
+      <div class="video-modal__topbar">
+        <h2 id="video-modal-title">Company Introduction</h2>
+        <button class="video-modal__close" type="button" aria-label="Close video" data-video-close>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="video-modal__body">
+        <iframe data-video-frame title="Company introduction video" src="about:blank" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+        <p class="video-modal__notice" data-video-notice>Add your YouTube or Vimeo embed URL to the play button's <code>data-video-url</code> attribute to enable playback.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
