@@ -1,0 +1,320 @@
+/* Responsive four-step process section */
+:root {
+  --process-bg: #f1eeee;
+  --process-card-bg: #fff;
+  --process-text: #292727;
+  --process-copy: #5d6570;
+  --process-accent: #c84e25;
+  --process-line: #d4512b;
+  --process-content-width: 1280px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--process-text);
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.process-section {
+  width: 100%;
+  padding: 36px 24px 64px;
+  background: var(--process-bg);
+}
+
+.process-section__inner {
+  width: min(100%, var(--process-content-width));
+  margin: 0 auto;
+}
+
+.process-header {
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.process-header__eyebrow {
+  margin: 0 0 26px;
+  color: #48505a;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.process-header h1 {
+  margin: 0;
+  color: var(--process-text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 4vw, 50px);
+  font-weight: 400;
+  letter-spacing: -.045em;
+  line-height: 1.12;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.process-card {
+  position: relative;
+  min-width: 0;
+  min-height: 286px;
+  padding: 28px 24px 24px;
+  border-radius: 9px;
+  background: var(--process-card-bg);
+}
+
+.process-card__number {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: fit-content;
+  padding-right: 18px;
+  color: var(--process-accent);
+  background: var(--process-card-bg);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: -.06em;
+  line-height: 1.1;
+}
+
+/* The connector line runs behind the step numbers. */
+.process-card:not(:last-child)::after {
+  position: absolute;
+  z-index: 0;
+  top: 48px;
+  right: calc(-1 * (24px + 1px));
+  width: calc(24px + 1px);
+  height: 1px;
+  background: var(--process-line);
+  content: "";
+}
+
+/* Extend the connector through the open space between all four cards. */
+.process-card::before {
+  position: absolute;
+  z-index: 0;
+  top: 48px;
+  left: 72px;
+  right: -24px;
+  height: 1px;
+  background: var(--process-line);
+  content: "";
+}
+
+.process-card:last-child::before {
+  display: none;
+}
+
+.process-card h2 {
+  margin: 54px 0 10px;
+  color: #161616;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -.035em;
+  line-height: 1.25;
+}
+
+.process-card p {
+  margin: 0;
+  color: var(--process-copy);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.process-cta {
+  display: flex;
+  min-height: 98px;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 48px;
+  padding: 20px 28px;
+  border-radius: 9px;
+  background: var(--process-card-bg);
+}
+
+.process-cta h2 {
+  margin: 0;
+  color: #171717;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  font-weight: 400;
+  letter-spacing: -.035em;
+  line-height: 1.3;
+}
+
+.process-cta__button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 26px;
+  border-radius: 999px;
+  background: var(--process-accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color .2s ease, transform .2s ease;
+}
+
+.process-cta__button:hover {
+  background: #a93d1b;
+  transform: translateY(-1px);
+}
+
+.process-cta__button:focus-visible {
+  outline: 2px solid var(--process-accent);
+  outline-offset: 3px;
+}
+
+/* Tablet: retain the four-step sequence in two columns. */
+@media (max-width: 900px) {
+  .process-section {
+    padding: 42px 24px 52px;
+  }
+
+  .process-header {
+    margin-bottom: 36px;
+  }
+
+  .process-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .process-card {
+    min-height: 250px;
+  }
+
+  .process-card::before,
+  .process-card::after {
+    display: none;
+  }
+
+  .process-card h2 {
+    margin-top: 42px;
+  }
+
+  .process-cta {
+    margin-top: 28px;
+  }
+}
+
+/* Mobile: stack the steps and CTA vertically. */
+@media (max-width: 600px) {
+  .process-section {
+    padding: 28px 24px 44px;
+  }
+
+  .process-section__inner {
+    max-width: 420px;
+  }
+
+  .process-header {
+    margin: 0 0 50px;
+    text-align: left;
+  }
+
+  .process-header__eyebrow {
+    margin-bottom: 28px;
+    font-size: 12px;
+  }
+
+  .process-header h1 {
+    max-width: 360px;
+    font-size: clamp(38px, 9vw, 48px);
+    line-height: 1.28;
+    letter-spacing: -.055em;
+  }
+
+  .process-steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .process-card {
+    min-height: 0;
+    padding: 27px 24px 30px;
+    border-radius: 9px;
+  }
+
+  .process-card__number {
+    font-size: 38px;
+  }
+
+  .process-card h2 {
+    margin: 38px 0 10px;
+    font-size: 23px;
+    line-height: 1.3;
+  }
+
+  .process-card p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .process-cta {
+    min-height: 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 48px;
+    padding: 27px 24px 25px;
+    border-radius: 12px;
+  }
+
+  .process-cta h2 {
+    font-size: 23px;
+    line-height: 1.35;
+  }
+
+  .process-cta__button {
+    min-height: 48px;
+    padding: 0 25px;
+  }
+}
+
+@media (max-width: 360px) {
+  .process-section {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .process-card {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .process-cta {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-cta__button {
+    transition: none;
+  }
+}
