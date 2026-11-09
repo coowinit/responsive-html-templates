@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A responsive FAQ page with sticky category navigation, grouped accordion questions, and automatic active-section highlighting.">
+  <title>Frequently Asked Questions</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <main class="faq-page">
+    <header class="faq-page__header">
+      <p class="faq-page__eyebrow">HELP CENTER</p>
+      <h1>Frequently Asked Questions</h1>
+      <p class="faq-page__intro">Find answers to common questions about our products, orders, payments, and support.</p>
+    </header>
+
+    <div class="faq-layout">
+      <aside class="faq-sidebar" aria-label="FAQ categories">
+        <nav class="faq-nav" aria-label="FAQ category navigation">
+          <a class="faq-nav__link is-active" href="#buying-product" aria-current="location">Buying Questions</a>
+          <a class="faq-nav__link" href="#general-questions">General Questions</a>
+          <a class="faq-nav__link" href="#payments-questions">Payments Questions</a>
+          <a class="faq-nav__link" href="#support-questions">Support Questions</a>
+        </nav>
+      </aside>
+
+      <div class="faq-content">
+        <section class="faq-group" id="buying-product" aria-labelledby="buying-product-title">
+          <h2 class="faq-group__title" id="buying-product-title">Buying Product</h2>
+          <div class="faq-list">
+            <article class="faq-item is-open">
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="true" aria-controls="buying-answer-1" id="buying-question-1">
+                  <span>How does it work?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="buying-answer-1" role="region" aria-labelledby="buying-question-1">
+                <div class="faq-item__answer"><p>Browse our product range, share your requirements, and contact our team. We will help confirm product details, customization options, pricing, and order arrangements.</p></div>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="buying-answer-2" id="buying-question-2">
+                  <span>Do I need a designer to use your products?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="buying-answer-2" role="region" aria-labelledby="buying-question-2" hidden>
+                <div class="faq-item__answer"><p>No. Our team can share product information, material options, and practical suggestions to help you choose products that fit your market and project.</p></div>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="buying-answer-3" id="buying-question-3">
+                  <span>Can I request customized products?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="buying-answer-3" role="region" aria-labelledby="buying-question-3" hidden>
+                <div class="faq-item__answer"><p>Yes. Custom options may include materials, colors, sizes, styles, and packaging. Please share your specifications so we can review feasibility.</p></div>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="buying-answer-4" id="buying-question-4">
+                  <span>How can I request a sample?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="buying-answer-4" role="region" aria-labelledby="buying-question-4" hidden>
+                <div class="faq-item__answer"><p>Contact us with the product style and specifications you are interested in. Our team will explain sample availability, cost, and shipping arrangements.</p></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="faq-group" id="general-questions" aria-labelledby="general-questions-title">
+          <h2 class="faq-group__title" id="general-questions-title">General Questions</h2>
+          <div class="faq-list">
+            <article class="faq-item is-open">
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="true" aria-controls="general-answer-1" id="general-question-1">
+                  <span>How does it work?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="general-answer-1" role="region" aria-labelledby="general-question-1">
+                <div class="faq-item__answer"><p>Our team works with you to understand your needs, recommend suitable options, and coordinate the next steps from inquiry through order fulfillment.</p></div>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="general-answer-2" id="general-question-2">
+                  <span>Where are your products manufactured?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="general-answer-2" role="region" aria-labelledby="general-question-2" hidden>
+                <div class="faq-item__answer"><p>Our manufacturing operations are based in China. Contact us if you need more information about production capabilities or facilities.</p></div>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="general-answer-3" id="general-question-3">
+                  <span>Can you provide product information and catalogs?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="general-answer-3" role="region" aria-labelledby="general-question-3" hidden>
+                <div class="faq-item__answer"><p>Yes. Get in touch with our team and let us know which product categories you are interested in.</p></div>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="general-answer-4" id="general-question-4">
+                  <span>Do you work with international customers?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="general-answer-4" role="region" aria-labelledby="general-question-4" hidden>
+                <div class="faq-item__answer"><p>Yes. We work with customers in different markets. Please share your destination country and product requirements when making an inquiry.</p></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="faq-group" id="payments-questions" aria-labelledby="payments-questions-title">
+          <h2 class="faq-group__title" id="payments-questions-title">Payments Questions</h2>
+          <div class="faq-list">
+            <article class="faq-item is-open">
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="true" aria-controls="payments-answer-1" id="payments-question-1">
+                  <span>What payment methods do you accept?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="payments-answer-1" role="region" aria-labelledby="payments-question-1">
+                <div class="faq-item__answer"><p>Available payment methods are confirmed during quotation and order discussions. Please contact us to discuss the options for your order.</p></div>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="payments-answer-2" id="payments-question-2">
+                  <span>When is the payment due?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="payments-answer-2" role="region" aria-labelledby="payments-question-2" hidden>
+                <div class="faq-item__answer"><p>Payment schedules depend on the agreed order terms. The details will be confirmed in your quotation or sales agreement.</p></div>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="payments-answer-3" id="payments-question-3">
+                  <span>Can I receive an invoice for my order?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="payments-answer-3" role="region" aria-labelledby="payments-question-3" hidden>
+                <div class="faq-item__answer"><p>Please provide your billing details to our sales team. We will confirm the applicable invoice documentation for your order.</p></div>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="payments-answer-4" id="payments-question-4">
+                  <span>Are bank charges included in the quotation?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="payments-answer-4" role="region" aria-labelledby="payments-question-4" hidden>
+                <div class="faq-item__answer"><p>Any bank charges or transfer fees should be clarified with our sales team before payment so the total amount and responsibilities are clear.</p></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="faq-group" id="support-questions" aria-labelledby="support-questions-title">
+          <h2 class="faq-group__title" id="support-questions-title">Support Questions</h2>
+          <div class="faq-list">
+            <article class="faq-item is-open">
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="true" aria-controls="support-answer-1" id="support-question-1">
+                  <span>How can I contact your support team?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="support-answer-1" role="region" aria-labelledby="support-question-1">
+                <div class="faq-item__answer"><p>You can contact us through the inquiry form on our website or use the contact details provided on the Contact Us page.</p></div>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="support-answer-2" id="support-question-2">
+                  <span>Can I check the status of my order?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="support-answer-2" role="region" aria-labelledby="support-question-2" hidden>
+                <div class="faq-item__answer"><p>Yes. Contact your sales representative with your order reference, and we can help provide an update.</p></div>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="support-answer-3" id="support-question-3">
+                  <span>What should I do if a product arrives damaged?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="support-answer-3" role="region" aria-labelledby="support-question-3" hidden>
+                <div class="faq-item__answer"><p>Please contact us promptly with your order details and clear photos of the issue so our team can review it and advise on the next steps.</p></div>
+              </div>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-item__heading">
+                <button class="faq-item__trigger" type="button" aria-expanded="false" aria-controls="support-answer-4" id="support-question-4">
+                  <span>Can I request assistance after delivery?</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </h3>
+              <div class="faq-item__panel" id="support-answer-4" role="region" aria-labelledby="support-question-4" hidden>
+                <div class="faq-item__answer"><p>Yes. Send your questions or feedback to our team and include the relevant product and order information.</p></div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
