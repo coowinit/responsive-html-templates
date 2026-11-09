@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Author avatar placeholder</title>
+  <desc id="desc">A simple gray circular profile placeholder with a person icon.</desc>
+  <circle cx="120" cy="120" r="120" fill="#dedfe2"/>
+  <circle cx="120" cy="86" r="39" fill="#9da3ac"/>
+  <path d="M43 218c5-43 35-70 77-70s72 27 77 70" fill="#9da3ac"/>
+</svg>
