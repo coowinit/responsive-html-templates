@@ -425,7 +425,7 @@
         -webkit-backdrop-filter: none;
         backdrop-filter: none;
         isolation: isolate;
-        box-shadow: -15px 0 40px rgba(0,0,0,.12);
+        box-shadow: none;
         transform: translateX(105%);
         transition: transform .4s var(--ease);
         overflow-y: auto;
@@ -616,6 +616,31 @@
         background: var(--bg-soft);
       }
 
+      .drawer-language-panel {
+        margin-top: 12px;
+        padding: 10px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: #fff;
+      }
+
+      .drawer-language-panel[hidden] {
+        display: none !important;
+      }
+
+      .drawer-language-panel .language-caption {
+        padding: 5px 9px 9px;
+      }
+
+      .drawer-language-panel .language-option {
+        min-height: 42px;
+      }
+
+      .drawer-language-panel .language-note {
+        margin: 9px 9px 3px;
+        white-space: normal;
+      }
+
       .drawer-footer p {
         margin: 0 0 13px;
         color: var(--text-light);
@@ -690,6 +715,10 @@
 
       body.menu-open .site-header .main-nav {
         transform: translate3d(0, 0, 0);
+      }
+
+      body.menu-open .site-header .main-nav {
+        box-shadow: -15px 0 40px rgba(0,0,0,.12);
       }
     }
 
@@ -957,7 +986,21 @@
 <a class="nav-link" href="#">Contact Us</a>
 </li>
 </ul>
-<div class="drawer-footer"><div class="drawer-language"><span>Language</span><button aria-controls="header-language-list" aria-expanded="false" class="mobile-language-trigger" type="button">English (EN) <svg class="language-caret" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 7.5 5 5 5-5"/></svg></button></div>
+<div class="drawer-footer">
+  <div class="drawer-language">
+    <span>Language</span>
+    <button aria-controls="drawer-language-list" aria-expanded="false" class="mobile-language-trigger" type="button">
+      English (EN)
+      <svg class="language-caret" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 7.5 5 5 5-5"/></svg>
+    </button>
+  </div>
+  <div class="drawer-language-panel" hidden id="drawer-language-list">
+    <div class="language-caption">Language preview</div>
+    <button aria-current="true" class="language-option is-current" type="button">English <span>EN</span></button>
+    <button class="language-option" data-demo-language="es" type="button">Español <span>ES</span></button>
+    <button class="language-option" data-demo-language="fr" type="button">Français <span>FR</span></button>
+    <p class="language-note">Links are placeholders until WordPress multilingual integration.</p>
+  </div>
 </div>
 </nav>
 <!-- Language menu is a UI placeholder; actual translated links come from the WordPress multilingual integration. -->
@@ -1121,32 +1164,58 @@
   const picker = document.querySelector('[data-language-picker]');
   if (!picker || picker.dataset.initialized) return;
   picker.dataset.initialized = 'true';
+
+  // Header language menu (desktop and the compact header control).
   const toggle = picker.querySelector('.language-toggle');
   const panel = picker.querySelector('.language-panel');
-  const mobile = document.querySelector('.mobile-language-trigger');
-  const close = () => {
+  const closeHeaderPanel = () => {
     panel.hidden = true;
-    toggle.setAttribute('aria-expanded','false');
-    mobile?.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-expanded', 'false');
   };
-  const open = () => {
-    panel.hidden = false;
-    toggle.setAttribute('aria-expanded','true');
-    mobile?.setAttribute('aria-expanded','true');
-  };
-  const switchPanel = () => panel.hidden ? open() : close();
-  toggle.addEventListener('click', switchPanel);
-  mobile?.addEventListener('click', () => {
-    document.body.classList.remove('menu-open');
-    document.querySelector('.nav-open')?.setAttribute('aria-expanded','false');
-    open(); toggle.focus();
+  toggle.addEventListener('click', () => {
+    const shouldOpen = panel.hidden;
+    panel.hidden = !shouldOpen;
+    toggle.setAttribute('aria-expanded', String(shouldOpen));
   });
-  document.addEventListener('pointerdown',(e)=>{ if(!picker.contains(e.target) && !mobile?.contains(e.target)) close(); });
-  document.addEventListener('keydown',(e)=>{if(e.key==='Escape' && !panel.hidden){close();toggle.focus();}});
+
+  // Drawer language menu stays inside the drawer; it must not open the
+  // header popover or move focus back to the top of the page.
+  const drawerToggle = document.querySelector('.mobile-language-trigger');
+  const drawerPanel = document.querySelector('#drawer-language-list');
+  const closeDrawerPanel = () => {
+    if (!drawerToggle || !drawerPanel) return;
+    drawerPanel.hidden = true;
+    drawerToggle.setAttribute('aria-expanded', 'false');
+  };
+  drawerToggle?.addEventListener('click', () => {
+    if (!drawerPanel) return;
+    const shouldOpen = drawerPanel.hidden;
+    drawerPanel.hidden = !shouldOpen;
+    drawerToggle.setAttribute('aria-expanded', String(shouldOpen));
+  });
+
+  document.addEventListener('pointerdown', (event) => {
+    if (!picker.contains(event.target)) closeHeaderPanel();
+    if (!drawerPanel?.contains(event.target) && !drawerToggle?.contains(event.target)) {
+      closeDrawerPanel();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeHeaderPanel();
+      closeDrawerPanel();
+    }
+  });
+
   document.querySelectorAll('.language-option[data-demo-language]').forEach((option) => {
-    option.addEventListener('click', () => { close(); });
+    option.addEventListener('click', () => {
+      closeHeaderPanel();
+      closeDrawerPanel();
+    });
   });
-  document.querySelector('.nav-open')?.addEventListener('click',close);
+
+  document.querySelector('.nav-open')?.addEventListener('click', closeHeaderPanel);
 })();
 </script>
 </body>
