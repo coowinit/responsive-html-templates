@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 502 581" role="img" aria-labelledby="title desc">
+  <title id="title">Portrait image placeholder</title>
+  <desc id="desc">Gray placeholder graphic with a picture icon.</desc>
+  <rect width="502" height="581" fill="#d9dde3"/>
+  <rect x="59" y="69" width="384" height="443" rx="8" fill="none" stroke="#97a0aa" stroke-width="14"/>
+  <circle cx="364" cy="176" r="34" fill="#97a0aa"/>
+  <path d="M95 432 196 322 278 392 334 343 407 432Z" fill="#97a0aa"/>
+  <path d="M95 432 164 361 213 409 278 343 352 432Z" fill="#a9b1ba"/>
+</svg>
