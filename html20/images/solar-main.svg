@@ -1,24 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 550" role="img" aria-labelledby="title desc">
-  <title id="title">Solar panel installation placeholder</title>
-  <desc id="desc">A soft gray illustration placeholder for a renewable energy photograph.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#edf0f2"/>
-      <stop offset="1" stop-color="#dfe5e9"/>
-    </linearGradient>
-  </defs>
-  <rect width="420" height="550" fill="url(#bg)"/>
-  <circle cx="327.6" cy="93.5" r="27.3" fill="#f8fafb"/>
-  <g transform="translate(50.4 291.5)">
-    <path d="M0 0 L319.2 0 L294.0 126.5 L25.2 126.5 Z" fill="#aab6c0"/>
-    <path d="M42.0 22.0 L277.2 22.0 L260.4 104.5 L58.8 104.5 Z" fill="#d5dde3"/>
-    <path d="M84.0 22.0 V104.5 M142.8 22.0 V104.5 M201.6 22.0 V104.5" stroke="#aab6c0" stroke-width="3"/>
-    <path d="M21.0 126.5 V214.5 H302.4 V126.5" fill="#c2cbd2"/>
-  </g>
-  <path d="M319.2 143.0 L348.6 77.0 L369.6 154.0" fill="none" stroke="#aab6c0" stroke-width="5" stroke-linecap="round"/>
-  <g transform="translate(210.0 506.0)" fill="none" stroke="#aab2bb" stroke-width="7.6" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="-18" y="-15" width="36" height="25" rx="4"/>
-    <circle cx="8" cy="-8" r="4" fill="#aab2bb" stroke="none"/>
-    <path d="M-13 6 -3 -5 4 2 9 -3 14 6Z" fill="#aab2bb" stroke="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 550" role="img" aria-labelledby="title">
+  <title id="title">Image placeholder</title>
+  <rect width="420" height="550" fill="#555b63"/>
+  <g transform="translate(210 275)" fill="none" stroke="#d9dde2" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-52" y="-42" width="104" height="84" rx="9"/>
+    <circle cx="25" cy="-17" r="10"/>
+    <path d="m-39 28 27-30 20 21 13-14 18 23z"/>
   </g>
 </svg>
