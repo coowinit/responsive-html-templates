@@ -95,18 +95,19 @@ body {
 .author-card__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 10px;
+  gap: 8px;
   margin: 14px 0 0;
   padding: 0;
   list-style: none;
 }
 
 .author-card__tags li {
-  padding: 7px 9px;
-  border-radius: 4px;
+  padding: 6px 10px;
+  border-radius: 3px;
   background: var(--author-tag);
-  font-size: 14px;
-  line-height: 1.25;
+  color: #405371;
+  font-size: 13px;
+  line-height: 1.4;
 }
 
 /* Mobile: centered avatar and heading, left-aligned biography and tags. */
