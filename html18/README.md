@@ -1,25 +1,24 @@
 # Author Profile Card
 
-A responsive, standalone author biography card for blog posts and author introductions.
+响应式作者简介卡片，适用于 WordPress 作者归档页或博客作者展示区域。保留桌面端左头像、右简介的简洁布局。
 
-## Features
+## 特点
 
-- Desktop: circular avatar on the left, author details on the right.
-- Mobile: centered avatar and heading, followed by biography and topic tags.
-- Includes a short biography, author role, and topic tags.
-- Uses standalone HTML and CSS; no framework or JavaScript dependency.
-- Includes a simple SVG avatar placeholder.
+- 电脑端：左侧圆形头像，右侧姓名、职业、简介和主题标签。
+- 手机端（≤600px）：头像和姓名居中，简介及主题标签自然换行；头像尺寸缩小，节省纵向空间。
+- 深蓝色文字、浅灰色边框，与简洁的 B2B 博客页面风格一致。
+- 独立 HTML + CSS，无 JavaScript 和第三方框架依赖。
 
-## Files
+## 文件
 
-- `index.html` — page structure and sample author content
-- `css/style.css` — component styles and responsive breakpoints
-- `images/author-avatar.svg` — replaceable avatar placeholder
+- `index.html`：演示内容和 HTML 结构。
+- `css/style.css`：响应式样式。
+- `images/author-avatar.svg`：可替换的头像占位图。
 
-## Customization
+## 使用
 
-Update the author name, role, biography, and topic tags in `index.html`.
-Replace `images/author-avatar.svg` with the author's image, or update the image path.
+复制 `index.html` 中的 `.author-card` 组件并引入 CSS，替换作者姓名、职业、简介、头像和主题标签。姓名默认使用 `h2`，便于作者归档页将 Banner 或页面主标题保留为 `h1`；集成时仍应根据实际页面标题结构调整。
 
-The `See Full Bio` link currently points to `/author/kelin/` as an example.
-Change it to the actual author archive URL when integrating this component into a website.
+作者归档页本身已经列出该作者文章，因此演示版不再显示指向同一归档页的“See Full Bio”链接。若用于博客文章详情页，可以按需增加作者详情链接，链接至真实的作者归档地址。
+
+**WordPress 接入提示：** 当前组件是静态示例。实际项目中应读取当前作者的姓名、简介、头像及链接，并转义输出；不要将演示文案当作真实作者履历。
