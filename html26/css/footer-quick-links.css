@@ -1,0 +1,85 @@
+/* Footer Quick Links — reusable styles, no frameworks or JavaScript. */
+.fql, .fql * { box-sizing: border-box; }
+.fql {
+  --fql-bg: #242021;
+  --fql-text: #fff;
+  --fql-line: #928d90;
+  --fql-icon-bg: #383436;
+  --fql-halo: rgba(255,255,255,.17);
+  background: var(--fql-bg);
+  color: var(--fql-text);
+  padding: 60px 28px 64px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.fql__inner { width: min(100%, 1280px); margin-inline: auto; }
+.fql__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.fql__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  min-width: 0;
+  min-height: 200px;
+  padding: 40px 14px 22px;
+  border: 1px solid var(--fql-line);
+  border-radius: 9px;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color .2s ease;
+}
+.fql__card:hover { border-color: #e1dddf; }
+.fql__card:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.fql__icon {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  flex: 0 0 auto;
+  width: 72px;
+  height: 72px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--fql-icon-bg);
+}
+.fql__icon::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--fql-halo);
+  opacity: 0;
+  pointer-events: none;
+}
+/* One pulse per hover entry; animation does not loop. */
+@media (hover: hover) and (pointer: fine) {
+  .fql__card:hover .fql__icon::before { animation: fql-halo-pulse .65s ease-out 1; }
+}
+.fql__icon svg { display: block; width: 34px; height: 34px; }
+.fql__label {
+  display: block;
+  max-width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  overflow-wrap: normal;
+}
+@keyframes fql-halo-pulse {
+  0% { transform: scale(.95); opacity: .95; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+@media (max-width: 767px) {
+  .fql { padding: 37px 15px 38px; }
+  .fql__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .fql__card { min-height: 175px; padding: 28px 9px 20px; gap: 19px; }
+  .fql__icon { width: 48px; height: 48px; }
+  .fql__icon svg { width: 25px; height: 25px; }
+  .fql__label { font-size: 20px; line-height: 1.2; max-width: 135px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fql__card { transition: none; }
+  .fql__card:hover .fql__icon::before { animation: none; }
+}
