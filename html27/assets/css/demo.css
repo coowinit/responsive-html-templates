@@ -1,0 +1,50 @@
+/* Preview page only. Never enqueue this file in WordPress. */
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {margin:0;font-family:Arial,Helvetica,sans-serif;color:#25334d;background:#fff}
+button {font:inherit}
+.wic-demo__container {max-width:1220px;margin:auto;padding-left:26px;padding-right:26px}
+.wic-demo__header {border-bottom:1px solid #e9edf1;background:#fafbfc}
+.wic-demo__header-inner {display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:38px;padding-bottom:34px}
+.wic-demo__eyebrow {margin:0 0 9px;font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--wic-brand)}
+.wic-demo__header h1 {margin:0;font-size:clamp(28px,4vw,42px);letter-spacing:-.04em}
+.wic-demo__intro {margin:10px 0 0;color:#66758b;line-height:1.6}
+.wic-demo__tag {padding:8px 12px;border:1px solid #e3e7ed;border-radius:20px;font-size:12px;white-space:nowrap;color:#596981;background:#fff}
+.wic-demo__notice {display:flex;gap:12px;padding:15px 17px;margin-top:28px;border:1px solid #e7e1ec;background:#fbf8fc;border-radius:7px;line-height:1.6;font-size:13px;color:#59647a}
+.wic-demo__notice strong {color:var(--wic-brand);white-space:nowrap}
+.wic-demo__section {padding-top:44px;padding-bottom:38px}
+.wic-demo__section-heading {display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:22px}
+.wic-demo__section-heading h2 {margin:0;font-size:clamp(24px,3vw,30px);font-weight:700;letter-spacing:-.035em}
+.wic-demo__section-heading>span {font-size:12px;color:#8994a4}
+.wic-demo__reset:focus-visible {outline:3px solid #9a73ad;outline-offset:3px}
+.wic-demo__cart-section {border-top:1px solid #e8ebf0;padding-bottom:80px}
+.wic-demo__reset {background:#fff;color:#7b5989;border:1px solid #ded5e4;border-radius:5px;padding:8px 12px;font-size:13px;cursor:pointer}
+.wic-demo__reset:hover {background:#faf7fb}
+.wic-demo__cart-note {font-size:12px;color:#8a93a1;margin:15px 0 34px}
+.wic-form-preview {border:1px dashed #d2d8e1;background:#fafbfd;border-radius:6px;padding:28px}
+.wic-form-preview__heading h2 {margin:0;color:#63748e;font-size:25px;font-weight:500}
+.wic-form-preview__heading p {font-size:14px;line-height:1.6;color:#8791a0}
+.wic-form-preview__grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin-top:25px}
+.wic-form-preview__grid>div span {display:block;font-weight:700;font-size:13px;color:#77839a;margin-bottom:7px}
+.wic-form-preview__full {grid-column:1/-1}
+.wic-form-preview__fake-input {padding:11px 12px;border:1px solid #dbe1e9;border-radius:4px;background:#fff;color:#a4adbb;font-size:14px}
+.wic-form-preview__fake-input--large {height:94px}
+.wic-form-preview__button {background:#7d858d;color:#fff;border-radius:4px;padding:12px;text-align:center;margin-top:18px;font-size:14px}
+.wic-form-preview__disclaimer {font-size:11px;color:#919aa7;margin:10px 0 0}
+.wic-demo__footer {text-align:center;border-top:1px solid #ebedf1;background:#fafbfc;color:#9aa3b1;padding:24px;font-size:12px}
+@media (max-width:700px) {
+.wic-demo__container {padding-left:16px;padding-right:16px}
+.wic-demo__header-inner {padding-top:30px;padding-bottom:27px;display:block}
+.wic-demo__tag {display:inline-block;margin-top:17px}
+.wic-demo__notice {display:block}
+.wic-demo__notice strong {display:block;margin-bottom:3px}
+.wic-demo__section {padding-top:33px}
+.wic-form-preview {padding:18px}
+.wic-form-preview__grid {grid-template-columns:1fr}
+}
+@media (max-width:410px) {
+.wic-demo__section-heading h2 {font-size:23px}
+}
+@media (prefers-reduced-motion:reduce) {
+html {scroll-behavior:auto}
+}
