@@ -1,11 +1,11 @@
 /* Author profile card — standalone responsive component */
 :root {
-  --author-text: #111111;
-  --author-muted: #6f6f6f;
-  --author-accent: #741b91;
-  --author-border: #cfd1d8;
+  --author-text: #243653;
+  --author-muted: #708097;
+  --author-accent: #203657;
+  --author-border: #e1e5ea;
   --author-surface: #fafafa;
-  --author-tag: #e1e1e5;
+  --author-tag: #f1f3f6;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -68,7 +68,8 @@ body {
 
 .author-card__role {
   padding-left: 13px;
-  border-left: 1px solid #777777;
+  border-left: 1px solid #a9b4c2;
+  color: var(--author-muted);
   font-size: 18px;
   line-height: 1.25;
 }
@@ -112,7 +113,7 @@ body {
 @media (max-width: 600px) {
   body {
     padding: 18px 16px;
-    background: #f0f3f9;
+    background: #ffffff;
   }
 
   .author-card {
@@ -123,7 +124,7 @@ body {
     background: #ffffff;
   }
 
-  .author-card__avatar { width: 160px; height: 160px; }
+  .author-card__avatar { width: 100px; height: 100px; }
   .author-card__content { width: 100%; }
   .author-card__heading { justify-content: center; margin-bottom: 10px; }
 
