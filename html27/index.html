@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Reusable inquiry cart interface prototype: add-to-cart buttons, cart list, and floating cart.">
+  <title>Inquiry Cart UI — Interactive Component Preview</title>
+  <link rel="stylesheet" href="assets/css/cart-components.css">
+  <link rel="stylesheet" href="assets/css/demo.css">
+  <script defer src="assets/js/cart-demo.js"></script>
+</head>
+<body>
+  <div class="wic-demo wic-cart-ui">
+    <header class="wic-demo__header">
+      <div class="wic-demo__container wic-demo__header-inner">
+        <div><p class="wic-demo__eyebrow">REUSABLE HTML COMPONENT / 01</p><h1>Inquiry Cart UI</h1><p class="wic-demo__intro">Product cards, add-to-cart interactions, linked cart items and a floating shortcut.</p></div>
+        <span class="wic-demo__tag">HTML · CSS · JavaScript</span>
+      </div>
+    </header>
+    <main class="wic-demo__container">
+      <div class="wic-demo__notice" role="note"><strong>Interactive demo</strong><span>Click “Add to Cart” to test the one-time success state, update quantities in the cart, or remove a product. The form below is a visual placeholder only; it does not collect or send data.</span></div>
+      <section class="wic-demo__section" aria-labelledby="products-heading">
+        <div class="wic-demo__section-heading"><div><p class="wic-demo__eyebrow">01 / PRODUCT CARDS</p><h2 id="products-heading">Add to cart</h2></div><span>Clickable preview</span></div>
+        <div class="wic-products" id="wic-products">
+          <article class="wic-product" data-product-card="cpd-03s">
+            <div class="wic-product__image"><a class="wic-product__image-link" href="#" aria-label="View product"><img src="assets/images/deck-grey.svg" alt="Illustration of grey capped composite decking board" width="520" height="310"></a><span class="wic-product__image-label">DECKING</span></div>
+            <div class="wic-product__body"><h3><a class="wic-product__title-link" href="#">Easy to Install Capped Composite Decking CPD-03S</a></h3><div class="wic-product__spec"><span>▥ CPD-03S</span><span>✥ 138mm × 23mm</span></div>
+              <button class="wic-add-button" type="button" data-add-product="cpd-03s"><span class="wic-add-button__icon" aria-hidden="true"><img src="assets/icons/cart-add.svg" alt="" width="17" height="17"></span><span class="wic-add-button__text">Add to Cart</span></button>
+            </div>
+          </article>
+          <article class="wic-product" data-product-card="cpd-05">
+            <div class="wic-product__image"><a class="wic-product__image-link" href="#" aria-label="View product"><img src="assets/images/deck-brown.svg" alt="Illustration of brown composite decking boards" width="520" height="310"></a><span class="wic-product__image-label">DECKING</span></div>
+            <div class="wic-product__body"><h3><a class="wic-product__title-link" href="#">Ultra Strong Core More Durable Composite Decking CPD-05</a></h3><div class="wic-product__spec"><span>▥ CPD-05</span><span>✥ 138mm × 23mm</span></div>
+              <button class="wic-add-button" type="button" data-add-product="cpd-05"><span class="wic-add-button__icon" aria-hidden="true"><img src="assets/icons/cart-add.svg" alt="" width="17" height="17"></span><span class="wic-add-button__text">Add to Cart</span></button>
+            </div>
+          </article>
+          <article class="wic-product" data-product-card="wpc-12">
+            <div class="wic-product__image"><a class="wic-product__image-link" href="#" aria-label="View product"><img src="assets/images/wall-cladding.svg" alt="Illustration of wood-look WPC wall cladding panels" width="520" height="310"></a><span class="wic-product__image-label">CLADDING</span></div>
+            <div class="wic-product__body"><h3><a class="wic-product__title-link" href="#">Wood Look WPC Exterior Wall Cladding WPC-12</a></h3><div class="wic-product__spec"><span>▥ WPC-12</span><span>✥ 160mm × 25mm</span></div>
+              <button class="wic-add-button" type="button" data-add-product="wpc-12"><span class="wic-add-button__icon" aria-hidden="true"><img src="assets/icons/cart-add.svg" alt="" width="17" height="17"></span><span class="wic-add-button__text">Add to Cart</span></button>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="wic-demo__section wic-demo__cart-section" id="cart-preview" aria-labelledby="cart-heading">
+        <div class="wic-demo__section-heading"><div><p class="wic-demo__eyebrow">02 / CART LIST</p><h2 id="cart-heading">Your Cart</h2></div><button class="wic-demo__reset" type="button" id="wic-reset">Reset demo</button></div>
+        <div class="wic-cart" aria-label="Cart items">
+          <div class="wic-cart__items" id="wic-cart-items"></div>
+          <div class="wic-cart__empty" id="wic-cart-empty" hidden><span class="wic-cart__empty-icon" aria-hidden="true">▤</span><strong>Your cart is empty.</strong><p>Choose a product above to see it here.</p><a href="#products-heading">Browse products</a></div>
+        </div>
+        <div class="wic-demo__cart-note">This is a product inquiry cart, not an online checkout. No prices or payment features.</div>
+        <div class="wic-form-preview" aria-labelledby="form-heading"><div class="wic-form-preview__heading"><h2 id="form-heading">Your existing contact form goes here</h2><p>Each WordPress website can retain its own inquiry form fields and email workflow.</p></div>
+          <div class="wic-form-preview__grid" aria-hidden="true"><div><span>Name</span><div class="wic-form-preview__fake-input">Please enter your name</div></div><div><span>Email</span><div class="wic-form-preview__fake-input">Please enter your email</div></div><div class="wic-form-preview__full"><span>Message</span><div class="wic-form-preview__fake-input wic-form-preview__fake-input--large">Your inquiry details...</div></div></div>
+          <div class="wic-form-preview__button" aria-hidden="true">Submit Inquiry — handled by your website</div>
+          <p class="wic-form-preview__disclaimer">Preview only — these are not actual form controls or a submission button.</p>
+        </div>
+      </section>
+    </main>
+    <div class="wic-floating-cart" id="wic-floating-cart"><button type="button" id="wic-floating-button" class="wic-floating-cart__button" aria-label="Go to cart, 0 items" title="View cart"><img class="wic-floating-cart__icon" src="assets/icons/cart-floating.svg" alt="" width="30" height="30"><span class="wic-floating-cart__count" id="wic-floating-count" hidden>0</span></button></div>
+    <div id="wic-status" class="wic-screen-reader" role="status" aria-live="polite"></div>
+    <footer class="wic-demo__footer">UI prototype only · No WordPress dependencies · No personal information is transmitted</footer>
+  </div>
+</body>
+</html>
