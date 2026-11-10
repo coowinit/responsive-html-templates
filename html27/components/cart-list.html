@@ -1,0 +1,14 @@
+<!-- Cart list markup; place inside .wic-cart-ui. Replace product fields with server data. -->
+<div class="wic-cart" aria-label="Cart items">
+  <div class="wic-cart__items">
+    <div class="wic-cart__row">
+      <a class="wic-cart__thumb-link" href="#" aria-label="View product">
+        <img class="wic-cart__thumb" src="assets/images/deck-brown.svg" alt="" width="70" height="55">
+      </a>
+      <div class="wic-cart__title"><a class="wic-cart__title-link" href="#">Composite Decking CPD-05</a></div>
+      <div class="wic-cart__qty"><label for="wic-qty-example">Quantity</label><input id="wic-qty-example" type="number" min="1" max="99" step="1" value="1"></div>
+      <div class="wic-cart__actions"><button type="button" data-update="PRODUCT_ID">Update</button><button type="button" data-remove="PRODUCT_ID">Delete</button></div>
+    </div>
+  </div>
+  <div class="wic-cart__empty" hidden><strong>Your cart is empty.</strong><p>Choose a product to add to your cart.</p></div>
+</div>
