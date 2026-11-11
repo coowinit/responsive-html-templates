@@ -1,0 +1,122 @@
+/* html36: full-bleed image + container-aligned form. */
+.s36 {
+  --s36-container: 1400px; /* 网站主要内容的最大宽度 */
+  --s36-gutter: 24px; /* 窄屏左右安全留白 */
+  --s36-background: #f0f3f7;
+  --s36-accent: #69247e;
+  --s36-text: #27323b;
+  --s36-muted: #64707b;
+  --s36-field-border: #cfd6dc;
+  --s36-image-position: center;
+  --s36-form-gap: 14px;
+  color: var(--s36-text);
+  background: var(--s36-background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.s36 *, .s36 *::before, .s36 *::after { box-sizing: border-box; }
+.s36-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 48%) minmax(0, 52%);
+  grid-template-rows: auto auto;
+  min-height: 570px;
+  align-content: center;
+}
+.s36-image {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  min-width: 0;
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.s36-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: var(--s36-image-position);
+}
+.s36-header, .s36-form-wrap {
+  min-width: 0;
+  /* 右侧对齐全站1400px内容容器的右边线 */
+  padding-right: max(var(--s36-gutter), calc((100vw - var(--s36-container)) / 2));
+  padding-left: clamp(28px, 5.5vw, 100px);
+}
+.s36-header { grid-column: 2; grid-row: 1; padding-top: 60px; }
+.s36-form-wrap { grid-column: 2; grid-row: 2; padding-top: 30px; padding-bottom: 60px; }
+.s36-eyebrow {
+  margin: 0 0 13px;
+  color: var(--s36-accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .19em;
+}
+.s36-header h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(30px, 3vw, 48px);
+  letter-spacing: -.03em;
+  line-height: 1.2;
+}
+.s36-intro { max-width: 620px; margin: 16px 0 0; color: var(--s36-muted); line-height: 1.7; font-size: 15px; }
+.s36-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s36-form-gap) 18px; }
+.s36-field { display: flex; flex-direction: column; min-width: 0; gap: 7px; }
+.s36-field--wide { grid-column: 1 / -1; }
+.s36-field label { font-size: 13px; font-weight: 600; color: #40515e; }
+.s36-field label span { color: #a53434; }
+.s36-field :is(input,textarea) {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  border: 1px solid var(--s36-field-border);
+  border-radius: 5px;
+  background: #fff;
+  color: var(--s36-text);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 11px 13px;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.s36-field input { min-height: 46px; }
+.s36-field textarea { resize: vertical; min-height: 130px; }
+.s36-field :is(input,textarea):focus { border-color: var(--s36-accent); box-shadow: 0 0 0 3px rgba(105,36,126,.09); }
+.s36-field :is(input,textarea)[aria-invalid="true"] { border-color: #bb3838; }
+.s36-submit {
+  display: inline-flex; align-items: center; justify-content: center; gap: 18px;
+  margin-top: 16px; padding: 15px 27px;
+  border: 0; border-radius: 3px; background: var(--s36-accent);
+  color: #fff; cursor: pointer; font: inherit; font-weight: 700; font-size: 13px;
+  letter-spacing: .07em; min-height: 48px;
+  transition: background .2s ease;
+}
+.s36-submit:hover { background: #522060; }
+.s36-submit:focus-visible { outline: 2px solid #263b4b; outline-offset: 3px; }
+.s36-status { margin: 12px 0 0; font-size: 13px; line-height: 1.6; color: #355d52; }
+.s36-status:empty { display: none; }
+.s36-status[data-state="error"] { color: #a32f2f; }
+@media (max-width: 991px) {
+  .s36-layout { display: flex; flex-direction: column; min-height: 0; }
+  .s36-header, .s36-form-wrap { padding-left: 0; padding-right: 0; width: min(100% - 36px, 700px); margin-inline: auto; }
+  .s36-header { order: 0; text-align: center; padding-top: 40px; }
+  .s36-header h2 { font-size: clamp(27px, 5vw, 38px); }
+  .s36-intro { margin-inline: auto; }
+  .s36-image { order: 1; min-height: 0; width: min(100% - 36px, 700px); aspect-ratio: 16 / 10; margin: 25px auto 0; }
+  .s36-form-wrap { order: 2; padding-top: 28px; padding-bottom: 44px; }
+}
+@media (max-width: 600px) {
+  .s36-header, .s36-form-wrap, .s36-image { width: calc(100% - 32px); }
+  .s36-header { padding-top: 30px; }
+  .s36-intro { font-size: 14px; }
+  .s36-image { aspect-ratio: 3 / 2; margin-top: 20px; }
+  .s36-form-wrap { padding-top: 24px; padding-bottom: 36px; }
+  .s36-fields { grid-template-columns: minmax(0, 1fr); gap: 13px; }
+  .s36-field--wide { grid-column: auto; }
+  .s36-submit { margin-top: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .s36 :is(input,textarea,.s36-submit) { transition: none; }
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000" role="img" aria-labelledby="title desc">
+<title id="title">建材样品与板材展示</title><desc id="desc">灰色木纹地板上摆放墙板、地板、木纹样板和植物的简洁场景示意图。</desc>
+<defs>
+ <linearGradient id="bg" x2=".8" y2="1"><stop stop-color="#71818a"/><stop offset="1" stop-color="#424d53"/></linearGradient>
+ <linearGradient id="w" x2="1" y2="1"><stop stop-color="#c3a47b"/><stop offset=".55" stop-color="#a67c54"/><stop offset="1" stop-color="#795838"/></linearGradient>
+ <linearGradient id="p" x2="1" y2="1"><stop stop-color="#846291"/><stop offset="1" stop-color="#563264"/></linearGradient>
+ <pattern id="grain" width="100" height="24" patternUnits="userSpaceOnUse"><path d="M0 8 Q25 1 50 8 T100 8 M0 17 Q40 25 80 17" stroke="#4a3826" stroke-opacity=".17" fill="none" stroke-width="2"/></pattern>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="9" dy="13" stdDeviation="15" flood-color="#1d2124" flood-opacity=".35"/></filter>
+</defs>
+<rect width="1200" height="1000" fill="url(#bg)"/>
+<g opacity=".35" stroke="#263039" stroke-width="9"><path d="M-50 110H1250M-50 270H1250M-50 430H1250M-50 590H1250M-50 750H1250M-50 910H1250"/></g>
+<g transform="translate(170 215) rotate(-16)" filter="url(#shadow)"><rect width="500" height="590" rx="8" fill="url(#p)"/><rect x="30" y="45" width="440" height="500" rx="6" fill="#6d4a7d" stroke="#b69bc2" stroke-width="3"/><g transform="translate(72 160)"><rect width="90" height="295" fill="#f1e3c7"/><rect x="105" width="90" height="295" fill="#cfb28c"/><rect x="210" width="90" height="295" fill="#ac8b63"/><rect x="315" width="90" height="295" fill="#dbcfbb"/><path d="M20 0v295M135 0v295M242 0v295M347 0v295" stroke="#806a4b" stroke-opacity=".35" stroke-width="5"/></g></g>
+<g transform="translate(710 325) rotate(19)" filter="url(#shadow)"><rect width="290" height="350" rx="5" fill="url(#w)"/><rect width="290" height="350" rx="5" fill="url(#grain)"/><path d="M0 75H290M0 150H290M0 225H290M0 300H290" stroke="#775536" stroke-opacity=".45" stroke-width="3"/></g>
+<g transform="translate(505 645) rotate(-13)" filter="url(#shadow)"><rect width="310" height="165" rx="6" fill="#96785a"/><rect width="310" height="165" rx="6" fill="url(#grain)"/><path d="M0 40H310M0 83H310M0 126H310" stroke="#f7e2bd" stroke-opacity=".26" stroke-width="4"/></g>
+<g transform="translate(985 35)"><path d="M35 0C-50 80 10 160 100 210C145 105 120 28 35 0Z" fill="#49734e"/><path d="M115 -10C70 35 125 125 210 152C232 62 194 6 115 -10Z" fill="#63935e"/><path d="M20 135C-30 190 22 260 110 280C130 207 94 157 20 135Z" fill="#3e6245"/></g>
+</svg>

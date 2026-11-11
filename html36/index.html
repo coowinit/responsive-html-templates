@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="全宽图片与1400px容器对齐的响应式免费样品申请表单组件。">
+  <title>响应式免费样品申请表单 · 全宽图片布局</title>
+  <link rel="stylesheet" href="./assets/css/sample-form.css">
+</head>
+<body style="margin:0">
+  <!-- 独立组件：将整个 section 复制到项目中，CSS/JS 均采用 s36 作用域。 -->
+  <section class="s36" aria-labelledby="s36-heading">
+    <div class="s36-layout">
+      <header class="s36-header">
+        <p class="s36-eyebrow">FREE SAMPLES</p>
+        <h2 id="s36-heading">申请免费样品</h2>
+        <p class="s36-intro">了解我们的地板、墙板及装饰材料。填写下方信息，我们将根据您的项目需求提供样品咨询。</p>
+      </header>
+      <div class="s36-image">
+        <img src="./images/sample-display.svg" width="1200" height="1000" alt="木纹地板、墙板与装饰材料样品展示">
+      </div>
+      <div class="s36-form-wrap">
+        <!-- 前端演示：不发送邮件。正式项目中请替换为真实的后端提交逻辑。 -->
+        <form class="s36-form" data-s36-form novalidate>
+          <div class="s36-fields">
+            <div class="s36-field">
+              <label for="s36-subject">申请主题 <span aria-hidden="true">*</span></label>
+              <input id="s36-subject" name="subject" type="text" placeholder="例如：户外地板样品" required maxlength="120" autocomplete="off">
+            </div>
+            <div class="s36-field">
+              <label for="s36-name">您的姓名 <span aria-hidden="true">*</span></label>
+              <input id="s36-name" name="name" type="text" placeholder="请输入姓名" required maxlength="120" autocomplete="name">
+            </div>
+            <div class="s36-field">
+              <label for="s36-phone">联系电话</label>
+              <input id="s36-phone" name="phone" type="tel" placeholder="请输入电话（选填）" maxlength="60" autocomplete="tel">
+            </div>
+            <div class="s36-field">
+              <label for="s36-email">电子邮箱 <span aria-hidden="true">*</span></label>
+              <input id="s36-email" name="email" type="email" placeholder="请输入邮箱" required maxlength="190" autocomplete="email">
+            </div>
+            <div class="s36-field s36-field--wide">
+              <label for="s36-message">您的需求 <span aria-hidden="true">*</span></label>
+              <textarea id="s36-message" name="message" placeholder="请描述希望了解的产品、样品数量或项目需求" rows="5" maxlength="3000" required></textarea>
+            </div>
+          </div>
+          <button class="s36-submit" type="submit">提交申请 <span aria-hidden="true">→</span></button>
+          <p class="s36-status" data-s36-status role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+  <script src="./assets/js/sample-form.js"></script>
+</body>
+</html>
