@@ -15,7 +15,7 @@
 .shop-category__item:is(:hover,:focus-visible) .shop-category__placeholder{transform:scale(1.06)}
 .shop-category__item:focus-visible{outline:2px solid #647a82;outline-offset:6px;border-radius:10px}
 /* Replace SVG placeholder with <img class="shop-category__product" src="..." alt="" loading="lazy"> */
-.shop-category__product{display:block;width:82%;height:82%;object-fit:contain;transition:transform .35s ease}
+.shop-category__product{display:block;width:96%;height:96%;max-width:100%;max-height:100%;object-fit:contain;object-position:center;transition:transform .35s ease;flex-shrink:0}
 .shop-category__item:is(:hover,:focus-visible) .shop-category__product{transform:scale(1.06)}
 @media(max-width:900px){.shop-category__grid{gap:18px}.shop-category__circle{width:min(100%,210px)}.shop-category{padding-block:52px 58px}}
 @media(max-width:640px){.shop-category__container{width:min(calc(100% - 32px),1400px)}.shop-category{padding:40px 0 46px}.shop-category__header{margin-bottom:26px}.shop-category__grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;row-gap:27px}.shop-category__circle{width:min(100%,190px)}.shop-category__item{gap:12px}.shop-category__name{font-size:14px}}
