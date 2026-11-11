@@ -7,16 +7,16 @@
 .shop-category__header p{font-size:14px;line-height:1.65;color:#66727a;margin:0}
 .shop-category__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
 .shop-category__item{display:flex;flex-direction:column;align-items:center;gap:17px;min-width:0;cursor:pointer;color:inherit;text-decoration:none}
-.shop-category__circle{display:grid;place-items:center;width:min(100%,254px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 46% 34%,#fafbfb 0%,#f5f6f7 72%);border:1px solid #e6e9eb;box-shadow:0 5px 16px rgba(24,38,47,.055),inset 0 0 0 5px rgba(255,255,255,.45);overflow:hidden;transition:box-shadow .3s ease,transform .3s ease,border-color .3s ease}
-.shop-category__placeholder{width:29%;height:29%;fill:none;stroke:#b5bec4;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s ease,stroke .3s ease}
-.shop-category__name{font-size:16px;font-weight:650;text-align:center;line-height:1.35;transition:color .3s ease}
-.shop-category__item:hover .shop-category__circle,.shop-category__item:focus-visible .shop-category__circle{transform:translateY(-3px);border-color:#d9dfe3;box-shadow:0 12px 26px rgba(24,38,47,.12),inset 0 0 0 5px rgba(255,255,255,.45)}
-.shop-category__item:hover .shop-category__placeholder,.shop-category__item:focus-visible .shop-category__placeholder{transform:scale(1.08) translateY(-2px);stroke:#84939c}
-.shop-category__item:hover .shop-category__name,.shop-category__item:focus-visible .shop-category__name{color:#677d72}
+.shop-category__circle{display:grid;place-items:center;width:min(100%,254px);aspect-ratio:1;border-radius:50%;background:#ededed;overflow:hidden}
+.shop-category__placeholder{width:29%;height:29%;fill:none;stroke:#b5bec4;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s ease}
+.shop-category__name{position:relative;display:inline-block;padding-bottom:5px;font-size:16px;font-weight:500;text-align:center;line-height:1.35}
+.shop-category__name::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left center;transition:transform .3s ease}
+.shop-category__item:is(:hover,:focus-visible) .shop-category__name::after{transform:scaleX(1)}
+.shop-category__item:is(:hover,:focus-visible) .shop-category__placeholder{transform:scale(1.06)}
 .shop-category__item:focus-visible{outline:2px solid #647a82;outline-offset:6px;border-radius:10px}
 /* Replace SVG placeholder with <img class="shop-category__product" src="..." alt="" loading="lazy"> */
-.shop-category__product{display:block;width:82%;height:82%;object-fit:contain;transition:transform .3s ease}
-.shop-category__item:hover .shop-category__product,.shop-category__item:focus-visible .shop-category__product{transform:translateY(-4px) scale(1.035)}
+.shop-category__product{display:block;width:82%;height:82%;object-fit:contain;transition:transform .35s ease}
+.shop-category__item:is(:hover,:focus-visible) .shop-category__product{transform:scale(1.06)}
 @media(max-width:900px){.shop-category__grid{gap:18px}.shop-category__circle{width:min(100%,210px)}.shop-category{padding-block:52px 58px}}
 @media(max-width:640px){.shop-category__container{width:min(calc(100% - 32px),1400px)}.shop-category{padding:40px 0 46px}.shop-category__header{margin-bottom:26px}.shop-category__grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;row-gap:27px}.shop-category__circle{width:min(100%,190px)}.shop-category__item{gap:12px}.shop-category__name{font-size:14px}}
-@media(prefers-reduced-motion:reduce){.shop-category__circle,.shop-category__placeholder,.shop-category__name,.shop-category__product{transition:none}.shop-category__item:hover .shop-category__circle,.shop-category__item:hover .shop-category__placeholder,.shop-category__item:hover .shop-category__product{transform:none}}
+@media(prefers-reduced-motion:reduce){.shop-category__placeholder,.shop-category__name::after,.shop-category__product{transition:none}.shop-category__item:is(:hover,:focus-visible) .shop-category__placeholder,.shop-category__item:is(:hover,:focus-visible) .shop-category__product{transform:none}}
