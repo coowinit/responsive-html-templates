@@ -1,0 +1,328 @@
+:root {
+  --s31-text: #171717;
+  --s31-muted: #767676;
+  --s31-soft: #e9e9ea;
+  --s31-bg: #f7f7f7;
+  --s31-accent: #7a57d1;
+  --s31-white: #ffffff;
+  --s31-radius: 18px;
+  --s31-shadow: 0 12px 30px rgba(18, 18, 18, 0.06);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--s31-text);
+  background: var(--s31-white);
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+.s31 {
+  padding: 28px 16px 60px;
+  background: #fff;
+}
+
+.s31-wrap {
+  max-width: 1290px;
+  margin: 0 auto;
+}
+
+.s31-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.s31-eyebrow {
+  margin: 0 0 12px;
+  color: #9a9a9a;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+}
+
+.s31-title {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.s31-slider {
+  position: relative;
+}
+
+.s31-viewport {
+  overflow: hidden;
+  width: 100%;
+  min-width: 0;
+}
+
+.s31-track {
+  display: flex;
+  width: 100%;
+}
+
+.s31-slide {
+  min-width: 100%;
+}
+
+.s31-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  min-height: 368px;
+  border-radius: var(--s31-radius);
+  overflow: hidden;
+  background: var(--s31-soft);
+}
+
+.s31-info {
+  padding: 42px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.s31-card-title {
+  margin: 0 0 14px;
+  font-size: 18px;
+  line-height: 1.45;
+  font-weight: 700;
+  max-width: 580px;
+}
+
+.s31-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+}
+
+.s31-meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.s31-meta img {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.s31-desc {
+  margin: 0 0 30px;
+  color: var(--s31-muted);
+  font-size: 18px;
+  line-height: 1.55;
+  max-width: 520px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.s31-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 266px;
+  padding: 10px 24px;
+  border-radius: 8px;
+  background: var(--s31-white);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  font-weight: 700;
+  box-shadow: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.s31-btn:hover,
+.s31-btn:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.s31-media {
+  position: relative;
+  min-height: 100%;
+  background: #d8d8da;
+}
+
+.s31-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.s31-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.96);
+  color: var(--s31-accent);
+  box-shadow: var(--s31-shadow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.s31-arrow span {
+  font-size: 42px;
+  line-height: 1;
+  margin-top: -2px;
+}
+
+.s31-arrow:hover,
+.s31-arrow:focus-visible {
+  transform: translateY(-50%) scale(1.02);
+  box-shadow: 0 16px 30px rgba(0,0,0,0.12);
+}
+
+.s31-arrow--prev { left: -30px; }
+.s31-arrow--next { right: -30px; }
+
+.s31-dots {
+  display: none;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.s31-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 0;
+  background: #d5d5d5;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.s31-dot.is-active {
+  background: var(--s31-accent);
+  transform: scale(1.02);
+}
+
+.s31-arrow:focus-visible,
+.s31-dot:focus-visible,
+.s31-btn:focus-visible {
+  outline: 2px solid var(--s31-accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1350px) {
+  .s31-arrow--prev { left: -12px; }
+  .s31-arrow--next { right: -12px; }
+}
+
+@media (max-width: 991px) {
+  .s31 {
+    padding: 28px 0 44px;
+    background: #ffffff;
+  }
+
+  .s31-wrap {
+    max-width: 390px;
+    padding: 0 15px;
+  }
+
+  .s31-head {
+    margin-bottom: 32px;
+  }
+
+  .s31-title {
+    font-size: 34px;
+  }
+
+  .s31-card {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    border-radius: 18px;
+  }
+
+  .s31-media {
+    order: -1;
+    aspect-ratio: 345 / 368;
+  }
+
+  .s31-info {
+    padding: 30px 20px 32px;
+  }
+
+  .s31-card-title {
+    font-size: 18px;
+    line-height: 1.35;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .s31-meta {
+    gap: 10px 16px;
+    margin-bottom: 32px;
+  }
+
+  .s31-meta li {
+    font-size: 15px;
+  }
+
+  .s31-desc {
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-line-clamp: 4;
+    margin-bottom: 32px;
+  }
+
+  .s31-btn {
+    width: 150px;
+    padding: 10px 20px;
+  }
+
+  .s31-arrow {
+    display: none;
+  }
+
+  .s31-dots {
+    display: flex;
+  }
+}
+
+/* Keep slider layout stable during touch gestures and at narrow widths. */
+.s31-viewport { touch-action: pan-y; }
+.s31-slide { flex: 0 0 100%; width: 100%; min-width: 100%; }
+.s31-card, .s31-info { min-width: 0; }
+.s31-meta li { min-width: 0; }
+.s31-meta li span { overflow-wrap: anywhere; }
+@media (max-width: 359px) {
+  .s31-wrap { padding-inline: 12px; }
+  .s31-info { padding-inline: 16px; }
+  .s31-card-title { font-size: 17px; }
+  .s31-meta li { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .s31-track, .s31-dot, .s31-btn, .s31-arrow { transition-duration: 0.01ms; }
+}
+
+/* A full-width slide is required whether Swiper has initialized or not. */
+.s31 .swiper-slide { flex-shrink: 0; width: 100%; min-width: 100%; }
+.s31 .swiper-wrapper { display: flex; }
+.s31 .swiper-slide { height: auto; }
+.s31 .swiper { overflow: hidden; }

@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Responsive HTML page templates and interactive UI examples for learning and reuse.">
-  <title>Responsive HTML Templates</title>
+  <meta name="description" content="响应式 HTML 页面模板与前端交互案例合集，方便学习研究、效果预览和项目复用。">
+  <title>响应式 HTML 模板案例合集</title>
   <style>
     :root { color-scheme: light; --page-bg: #fafafa; --card-bg: #fafafa; --card-border: #dedede; --text-primary: #101010; --text-secondary: #6e747e; --hover-accent: #385e8c; --card-radius: 8px; }
     *, *::before, *::after { box-sizing: border-box; }
@@ -31,198 +31,204 @@
 <body>
   <main class="page-container">
     <header class="page-header">
-      <h1>Responsive HTML Templates</h1>
-      <p>Responsive HTML, CSS and JavaScript templates for learning and reuse.</p>
+      <h1>响应式 HTML 模板案例合集</h1>
+      <p>精选 HTML、CSS 与 JavaScript 响应式页面及交互案例，方便学习、预览和项目复用。</p>
     </header>
-    <section class="article-grid" id="example-list" aria-label="HTML template examples"></section>
+    <section class="article-grid" id="example-list" aria-label="HTML 模板案例列表"></section>
   </main>
   <script>
     // 新增案例：只需在这里添加一条数据。link 指向各案例独立的 index.html。
     const examples = [
       {
-        title: "Rectangle Product Category Cards",
-        description: "Display four product categories with rounded-rectangle image cards, color-enhancing hover effects, accent borders, and animated underline labels.",
+        title: "热门产品轮播",
+        description: "响应式产品展示轮播：电脑端左右图文分栏，手机端上下布局，支持箭头切换、触摸滑动与分页导航。",
+        date: "2026-11-11",
+        link: "./html31/index.html"
+      },
+      {
+        title: "矩形产品分类卡片",
+        description: "四组圆角矩形产品分类卡片，支持悬停图片色彩变化、边框强调和文字下划线动画。",
         date: "2026-11-11",
         link: "./html30/index.html"
       },
       {
-        title: "Circular Product Category Cards",
-        description: "Display four product categories with clean light-gray circular backgrounds, centered product cutouts, image zoom, animated underline labels, and a two-column mobile layout.",
+        title: "圆形产品分类卡片",
+        description: "四组浅灰色圆形背景产品分类卡片，图片居中展示，支持悬停放大与下划线动画，手机端双列布局。",
         date: "2026-11-11",
         link: "./html29/index.html"
       },
       {
-        title: "WordPress Advantages Timeline",
-        description: "Present four WordPress benefits in an alternating image-and-text timeline with numbered purple milestones and responsive SVG placeholders.",
+        title: "为什么选择 WordPress",
+        description: "通过交错图文时间轴展示 WordPress 的四项优势，搭配紫色编号节点与响应式 SVG 占位图。",
         date: "2026-11-10",
         link: "./html28/index.html"
       },
       {
-        title: "Inquiry Cart UI Components",
-        description: "Reusable product inquiry cart interface with add-to-cart feedback, editable cart list, floating shortcut, standalone SVG icons, and isolated CSS.",
+        title: "产品询盘购物车组件",
+        description: "可复用的产品询盘购物车界面，包含加入反馈、购物车列表编辑、悬浮快捷入口及独立 SVG 图标。",
         date: "2026-11-10",
         link: "./html27/index.html"
       },
       {
-        title: "Footer Quick Links with Hover Halo",
-        description: "Show four responsive footer shortcut cards with a one-time expanding halo animation on hover.",
+        title: "页脚快捷入口悬停光晕效果",
+        description: "四组响应式页脚快捷入口卡片，鼠标悬停时触发一次性扩散光晕动画。",
         date: "2026-11-10",
         link: "./html26/index.html"
       },
       {
-        title: "Form Focus on Navigation",
-        description: "Scroll to a dealer application form and automatically focus its first input field.",
+        title: "表单定位与自动聚焦",
+        description: "点击导航后平滑滚动至经销商申请表单，并自动聚焦第一个输入框。",
         date: "2026-11-03",
         link: "./html01/index.html"
       },
       {
-        title: "Honors & Credentials",
-        description: "Display certificates in a responsive carousel with enlarged image previews.",
+        title: "荣誉资质轮播展示",
+        description: "通过响应式轮播展示企业证书与资质图片，支持点击放大查看。",
         date: "2026-11-03",
         link: "./html02/index.html"
       },
       {
-        title: "Factory Gallery",
-        description: "Show factory photos in a responsive gallery with click-to-enlarge previews.",
+        title: "工厂图片展示画廊",
+        description: "以响应式图片画廊展示工厂场景，支持点击放大预览。",
         date: "2026-11-03",
         link: "./html03/index.html"
       },
       {
-        title: "Development History",
-        description: "Present company milestones in a horizontal Swiper timeline.",
+        title: "企业发展历程时间轴",
+        description: "使用 Swiper 横向时间轴展示企业发展的重要里程碑。",
         date: "2026-11-03",
         link: "./html04/index.html"
       },
       {
-        title: "About Us Section",
-        description: "Introduce a business with a responsive image-and-text layout.",
+        title: "关于我们图文介绍",
+        description: "采用响应式图文组合布局，展示企业介绍与品牌信息。",
         date: "2026-11-03",
         link: "./html05/index.html"
       },
       {
-        title: "Advantages Grid",
-        description: "Highlight key strengths and product benefits in a responsive grid.",
+        title: "企业优势网格布局",
+        description: "通过响应式网格卡片突出展示企业核心优势与产品卖点。",
         date: "2026-11-03",
         link: "./html06/index.html"
       },
       {
-        title: "FAQ Accordion",
-        description: "Organize frequently asked questions with expandable answers.",
+        title: "常见问题折叠面板",
+        description: "通过可展开和收起的问答面板，有序展示常见问题及答案。",
         date: "2026-11-03",
         link: "./html07/index.html"
       },
       {
-        title: "Responsive Footer",
-        description: "Build a multi-column footer with navigation and contact details.",
+        title: "响应式网站页脚",
+        description: "多列式页脚布局，包含导航链接与联系方式，适配电脑端和手机端。",
         date: "2026-11-03",
         link: "./html08/index.html"
       },
       {
-        title: "Responsive Header",
-        description: "Create desktop navigation, a mobile menu, and language switching.",
+        title: "响应式网站头部导航",
+        description: "实现电脑端导航、手机端菜单以及语言切换功能。",
         date: "2026-11-03",
         link: "./html09/index.html"
       },
       {
-        title: "Native Hero Slider",
-        description: "Build a responsive homepage banner slider with vanilla JavaScript.",
+        title: "原生 JavaScript 首页轮播",
+        description: "使用原生 JavaScript 实现响应式首页横幅轮播效果。",
         date: "2026-11-03",
         link: "./html10/index.html"
       },
       {
-        title: "Swiper Hero Slider",
-        description: "Create a responsive homepage banner carousel using Swiper.",
+        title: "Swiper 首页横幅轮播",
+        description: "使用 Swiper 实现响应式首页横幅轮播与切换交互。",
         date: "2026-11-03",
         link: "./html11/index.html"
       },
       {
-        title: "Inner Page CTA",
-        description: "Add a reusable call-to-action section to an inner page.",
+        title: "内页行动引导模块",
+        description: "可复用的网站内页行动引导区域，突出按钮和联系入口。",
         date: "2026-11-03",
         link: "./html12/index.html"
       },
       {
-        title: "Product Image Gallery",
-        description: "Browse product photos with thumbnail navigation and a main image.",
+        title: "产品图片缩略图画廊",
+        description: "通过缩略图导航切换产品主图，便于浏览产品不同角度的图片。",
         date: "2026-11-03",
         link: "./html13/index.html"
       },
       {
-        title: "Products Grid",
-        description: "Display product cards in a responsive showcase grid.",
+        title: "产品展示网格布局",
+        description: "采用响应式网格卡片集中展示产品图片与基本信息。",
         date: "2026-11-03",
         link: "./html14/index.html"
       },
       {
-        title: "Five-Image Manufacturing Gallery",
-        description: "Show a production process in an asymmetric responsive gallery with one large image and four smaller panels.",
+        title: "五图组合生产制造展示",
+        description: "一张大图搭配四张小图，组成非对称响应式画廊，展示生产制造流程。",
         date: "2026-11-09",
         link: "./html16/index.html"
       },
       {
-        title: "Basketball Club Introduction",
-        description: "Introduce a sports club with an offset image layout, responsive text content, and a four-item statistics section.",
+        title: "篮球俱乐部介绍布局",
+        description: "使用错位图片、响应式介绍文案与四项数据统计展示篮球俱乐部信息。",
         date: "2026-11-09",
         link: "./html17/index.html"
       },
       {
-        title: "Author Profile Card",
-        description: "Present an author with a responsive profile card, circular avatar, short biography, and topic tags.",
+        title: "作者个人资料卡片",
+        description: "响应式作者介绍卡片，包含圆形头像、简短个人简介与主题标签。",
         date: "2026-11-09",
         link: "./html18/index.html"
       },
       {
-        title: "Featured Blog & Recent Posts",
-        description: "Highlight one featured article alongside three related posts in a responsive editorial layout.",
+        title: "精选博客与近期文章",
+        description: "左侧重点展示精选文章，右侧排列三篇相关文章，形成响应式资讯布局。",
         date: "2026-11-09",
         link: "./html19/index.html"
       },
       {
-        title: "Solar Energy Feature Section",
-        description: "Introduce a renewable energy business with overlapping images, service highlights, and a responsive call-to-action layout.",
+        title: "太阳能企业特色介绍",
+        description: "通过重叠图片、服务优势和响应式行动按钮介绍可再生能源企业。",
         date: "2026-11-09",
         link: "./html20/index.html"
       },
       {
-        title: "Interior Design Process Section",
-        description: "Present a four-step design process with connected milestone cards and a responsive contact call-to-action.",
+        title: "室内设计服务流程",
+        description: "以四步流程节点卡片展示设计服务过程，并搭配响应式联系引导区域。",
         date: "2026-11-09",
         link: "./html21/index.html"
       },
       {
-        title: "FAQ & Image Feature Section",
-        description: "Combine an interactive FAQ accordion with overlapping image cards and a responsive video popup.",
+        title: "常见问题与图片组合布局",
+        description: "结合交互式常见问题面板、叠放图片卡片和响应式视频弹窗。",
         date: "2026-11-09",
         link: "./html22/index.html"
       },
       {
-        title: "FAQ Category Navigation",
-        description: "Organize grouped FAQs with a sticky desktop sidebar, a horizontally scrollable mobile category bar, and scroll-aware active navigation.",
+        title: "常见问题分类导航",
+        description: "按分类组织问答内容，电脑端使用粘性侧栏，手机端使用横向滚动分类菜单，并支持滚动高亮。",
         date: "2026-11-09",
         link: "./html23/index.html"
       },
       {
-        title: "Reliable Solar Services",
-        description: "Showcase six service features in a responsive grid with dark image-placeholder backgrounds on desktop hover and a clean stacked mobile layout.",
+        title: "太阳能服务特色卡片",
+        description: "六组服务特色响应式网格卡片，电脑端支持深色图片占位背景悬停效果，手机端采用纵向布局。",
         date: "2026-11-09",
         link: "./html24/index.html"
       },
       {
-        title: "Interactive Roofing Services",
-        description: "Switch between four roofing service categories and update the paired images and service details in a responsive layout.",
+        title: "交互式屋顶服务展示",
+        description: "切换四类屋顶服务选项，同步更新配套图片和服务介绍，兼容电脑端与手机端。",
         date: "2026-11-09",
         link: "./html25/index.html"
       },
       {
-        title: "Testimonials Slider",
-        description: "Present customer testimonials in a responsive sliding carousel.",
+        title: "客户评价轮播",
+        description: "通过响应式滑动轮播展示客户评价与反馈。",
         date: "2026-11-03",
         link: "./html15/index.html"
       }
     ];
 
     const list = document.getElementById("example-list");
-    const dateFormatter = new Intl.DateTimeFormat("en-US", {
+    const dateFormatter = new Intl.DateTimeFormat("zh-CN", {
       year: "numeric", month: "short", day: "numeric", timeZone: "UTC"
     });
 
