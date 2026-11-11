@@ -6,6 +6,7 @@
 - 将 `assets/css/shop-category.css` 加载到页面，样式使用 `shop-category` 前缀，避免影响其他模块。
 - 将四个 `href="#"` 替换为真实产品分类链接。
 - 将每个 `svg.shop-category__placeholder` 替换为 `<img class="shop-category__product" src="产品抠图路径.webp" alt="" loading="lazy">`，建议使用透明背景的产品图片。
+- 圆形使用纯浅灰背景，无边框、无阴影；Hover 时圆形不动，仅图标或透明产品图片轻微放大（1.06 倍），分类文字下划线从左向右展开。
 - 不依赖 JavaScript；支持 Hover、键盘焦点和减少动态效果偏好。
 
 案例图片仅为 SVG 占位符，名称和链接请按实际站点修改。
