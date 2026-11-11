@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>产品图片画廊 · 底部缩略图</title>
+  <link rel="stylesheet" href="assets/vendor/swiper/14.3.0/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/components/product-gallery.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 16px/1.6 Arial, sans-serif; color: #1c2b35; }
+    main { max-width: 850px; padding: 44px 20px 90px; margin: auto; }
+    h1 { font-size: clamp(24px, 4vw, 30px); margin: 0 0 10px; font-weight: 650; }
+    .note { color: #60727e; margin: 0 0 28px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>产品图片画廊 · 底部缩略图</h1>
+    <p class="note">主图下方为自适应缩略图，完整排列不裁切；支持切换、滑动与点击放大。图片仅用于演示。</p>
+          <div class="product-gallery" data-product-gallery>
+            <div class="pg-layout">
+              <div class="pg-rail">
+                <button class="pg-thumb-prev" type="button" aria-label="查看前面的缩略图"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+                <div class="pg-thumbs swiper" aria-label="产品缩略图">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <button class="pg-thumb is-active" type="button" aria-label="Show image 1: Main composite decking photo" aria-pressed="true">
+                        <img src="assets/images/product-placeholder.svg" width="120" height="120" loading="lazy" alt="">
+                      </button>
+                    </div>
+                    <div class="swiper-slide">
+                      <button class="pg-thumb" type="button" aria-label="Show image 2: Decking detail and finish" aria-pressed="false">
+                        <img src="assets/images/about-placeholder.svg" width="120" height="120" loading="lazy" alt="">
+                      </button>
+                    </div>
+                    <div class="swiper-slide">
+                      <button class="pg-thumb" type="button" aria-label="Show image 3: Material structure" aria-pressed="false">
+                        <img src="assets/images/quality-placeholder.svg" width="120" height="120" loading="lazy" alt="">
+                      </button>
+                    </div>
+                    <div class="swiper-slide">
+                      <button class="pg-thumb" type="button" aria-label="Show image 4: Application reference" aria-pressed="false">
+                        <img src="assets/images/team-placeholder.svg" width="120" height="120" loading="lazy" alt="">
+                      </button>
+                    </div>
+                    <div class="swiper-slide">
+                      <button class="pg-thumb" type="button" aria-label="Show image 5: Additional product view" aria-pressed="false">
+                        <img src="assets/images/product-placeholder.svg" width="120" height="120" loading="lazy" alt="">
+                      </button>
+                    </div>
+                    <div class="swiper-slide">
+                      <button class="pg-thumb" type="button" aria-label="Show image 6: Additional product perspective" aria-pressed="false">
+                        <img src="assets/images/about-placeholder.svg" width="120" height="120" loading="lazy" alt="">
+                      </button>
+                    </div>
+                    <div class="swiper-slide">
+                      <button class="pg-thumb" type="button" aria-label="Show image 7: Additional product detail" aria-pressed="false">
+                        <img src="assets/images/quality-placeholder.svg" width="120" height="120" loading="lazy" alt="">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <button class="pg-thumb-next" type="button" aria-label="查看后面的缩略图"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+              </div>
+              <div class="pg-stage">
+                <div class="pg-main swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="assets/images/product-placeholder.svg" alt="Main composite decking photo" width="800" height="800" fetchpriority="high">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/images/about-placeholder.svg" alt="Decking detail and finish" width="800" height="800" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/images/quality-placeholder.svg" alt="Material structure" width="800" height="800" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/images/team-placeholder.svg" alt="Application reference" width="800" height="800" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/images/product-placeholder.svg" alt="Additional product view" width="800" height="800" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/images/about-placeholder.svg" alt="Additional product perspective" width="800" height="800" loading="lazy">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="assets/images/quality-placeholder.svg" alt="Additional product detail" width="800" height="800" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+                <button class="pg-zoom" type="button" aria-label="放大查看当前图片"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 5 5M10.8 8v5.6M8 10.8h5.6"/></svg></button>
+              </div>
+            </div>
+          </div>
+  </main>
+  <script src="assets/vendor/swiper/14.3.0/swiper-bundle.min.js"></script>
+  <script src="assets/js/components/product-gallery.js"></script>
+</body>
+</html>
