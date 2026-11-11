@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Product Gallery | Standalone Component Lab</title>
+  <title>产品图片画廊 · 左侧缩略图</title>
   <link rel="stylesheet" href="assets/vendor/swiper/14.3.0/swiper-bundle.min.css">
   <link rel="stylesheet" href="assets/css/components/product-gallery.css">
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; font: 16px/1.6 Arial, sans-serif; color: #1c2b35; }
-    main { max-width: 760px; padding: 40px 20px 90px; margin: auto; }
-    h1 { font-size: 26px; margin: 0 0 12px; }
-    .note { color: #60727e; margin-bottom: 26px; }
+    main { max-width: 850px; padding: 44px 20px 90px; margin: auto; }
+    h1 { font-size: clamp(24px, 4vw, 30px); margin: 0 0 10px; font-weight: 650; }
+    .note { color: #60727e; margin: 0 0 28px; }
   </style>
 </head>
 <body>
   <main>
-    <h1>Product Gallery — Component Lab</h1>
-    <p class="note">Choose a thumbnail, click for Lightbox, or swipe on mobile. Demonstration images only.</p>
+    <h1>产品图片画廊 · 左侧缩略图</h1>
+    <p class="note">点击缩略图切换图片，点击主图放大预览；手机端支持左右滑动。图片仅用于演示。</p>
           <div class="product-gallery" data-product-gallery>
             <div class="pg-layout">
               <div class="pg-rail">
-                <button class="pg-thumb-prev" type="button" aria-label="Previous thumbnails">↑</button>
+                <button class="pg-thumb-prev" type="button" aria-label="上一组缩略图"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button>
                 <div class="pg-thumbs swiper" aria-label="Product thumbnails">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -61,7 +61,7 @@
                     </div>
                   </div>
                 </div>
-                <button class="pg-thumb-next" type="button" aria-label="Next thumbnails">↓</button>
+                <button class="pg-thumb-next" type="button" aria-label="下一组缩略图"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
               </div>
               <div class="pg-stage">
                 <div class="pg-main swiper">
@@ -89,7 +89,7 @@
                     </div>
                   </div>
                 </div>
-                
+                <button class="pg-zoom" type="button" aria-label="放大查看当前图片"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 5 5M10.8 8v5.6M8 10.8h5.6"/></svg></button>
               </div>
             </div>
           </div>
