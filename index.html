@@ -17,14 +17,14 @@
     .article-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
     .article-card { display: flex; flex-direction: column; min-width: 0; min-height: 190px; padding: 26px; border: 1px solid var(--card-border); border-radius: var(--card-radius); background: var(--card-bg); transition: border-color .18s ease; }
     .article-card:hover { border-color: #a8b8ca; }
-    .article-card__title { margin: 0 0 14px; font-size: clamp(22px, 2vw, 26px); font-weight: 400; letter-spacing: -.055em; line-height: 1.12; overflow-wrap: anywhere; }
+    .article-card__title { margin: 0 0 14px; font-size: clamp(22px, 2vw, 28px); font-weight: 400; letter-spacing: -.055em; line-height: 1.12; overflow-wrap: anywhere; }
     .article-card__title a { color: inherit; text-decoration: none; transition: color .18s ease; }
     .article-card__title a:hover { color: var(--hover-accent); }
     .article-card__title a:focus-visible { outline: 2px solid var(--hover-accent); outline-offset: 4px; border-radius: 2px; }
-    .article-card__excerpt { margin: 0; font-size: 16px; line-height: 1.5; overflow-wrap: anywhere; }
+    .article-card__excerpt { margin: 0; font-size: 18px; line-height: 1.5; overflow-wrap: anywhere; }
     .article-card__date { display: block; margin-top: auto; padding-top: 18px; color: var(--text-secondary); font-size: 14px; line-height: 1.4; }
     @media (max-width: 991.98px) { .article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 767.98px) { .page-container { padding: 20px 16px 40px; } .article-grid { grid-template-columns: 1fr; gap: 16px; } .article-card { padding: 22px; min-height: 180px; } .article-card__title { font-size: 24px; } .article-card__excerpt { font-size: 17px; } }
+    @media (max-width: 767.98px) { .page-container { padding: 20px 16px 40px; } .article-grid { grid-template-columns: 1fr; gap: 16px; } .article-card { padding: 22px; min-height: 180px; } .article-card__title { font-size: 26px; } .article-card__excerpt { font-size: 17px; } }
     @media (prefers-reduced-motion: reduce) { .article-card, .article-card__title a { transition: none; } }
   </style>
 </head>
