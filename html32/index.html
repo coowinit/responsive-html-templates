@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="原生 HTML、CSS、JavaScript 实现的响应式 Before After 图片对比组件，支持拖拽、触摸和键盘操作。">
+  <title>图片改造前后对比 | Before After</title>
+  <link rel="stylesheet" href="./assets/css/before-after.css">
+  <script src="./assets/js/before-after.js" defer></script>
+</head>
+<body>
+  <main class="s32">
+    <div class="s32-container">
+      <header class="s32-header">
+        <p class="s32-eyebrow">BEFORE &amp; AFTER</p>
+        <h1>图片改造前后对比</h1>
+        <p>拖动中间的分割线，直观比较木质露台改造前后的效果。</p>
+      </header>
+
+      <!--
+        要新增对比实例：复制整个 .s32-compare 区块，替换图片路径、标签和描述即可。
+        修改容器宽度：assets/css/before-after.css 中的 --s32-max-width。
+        调整初始分割位置：data-start="50"（范围 0-100）。
+      -->
+      <section class="s32-example" aria-label="木质露台改造效果对比">
+        <div class="s32-compare" data-before-after data-start="50"
+          role="slider" tabindex="0" aria-label="改造前后图片对比，左右方向键调整分割位置"
+          aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="左侧改造后 50%，右侧改造前 50%">
+          <img class="s32-img s32-img--before" src="./images/before.jpg"
+            alt="改造前：木质栏杆和露台的房屋外景" width="1260" height="720" draggable="false">
+          <div class="s32-after" aria-hidden="true">
+            <img class="s32-img s32-img--after" src="./images/after.jpg"
+              alt="" width="1260" height="720" draggable="false">
+          </div>
+          <span class="s32-tag s32-tag--after" aria-hidden="true">Composite Decking</span>
+          <span class="s32-tag s32-tag--before" aria-hidden="true">Wood</span>
+          <div class="s32-divider" aria-hidden="true">
+            <span class="s32-handle">
+              <svg viewBox="0 0 48 48" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 14L8 24L18 34V14Z" fill="currentColor"/>
+                <path d="M30 14L40 24L30 34V14Z" fill="currentColor"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+        <p class="s32-hint">电脑端可鼠标拖动；手机端可左右滑动；键盘可使用 ← / → 调整。</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
