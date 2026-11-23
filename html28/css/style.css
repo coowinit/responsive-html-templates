@@ -96,6 +96,11 @@ img { display: block; max-width: 100%; }
     transform: none;
     will-change: auto;
   }
+  /* Override the stronger even-item direction selectors after reveal. */
+  .adv--motion .adv__item.is-visible:nth-child(even) .adv__media,
+  .adv--motion .adv__item.is-visible:nth-child(even) .adv__content {
+    transform: none;
+  }
   .adv--motion .adv__item.is-visible .adv__content { transition-delay: .12s; }
   .adv--motion .adv__item.is-visible .adv__number { transition-delay: .07s; }
   @media (max-width: 680px) {
