@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="WordPress 技术主题案例轮播响应式 HTML 示例，包含六组 PNG 图片与 SVG Logo 占位图。">
+  <title>WordPress 技术案例展示 · 响应式 Logo 导航</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <section class="cases" aria-label="WordPress 技术案例展示">
+      <!-- 预览数量：默认 6 组；在地址末尾添加 ?count=2 或 ?count=7 测试。生产使用时可直接增删对应的 article 与 button，并去掉演示参数逻辑。 -->
+      <div class="case-stage" id="case-stage" aria-live="off">
+          <article class="case-slide is-active" role="group" aria-roledescription="幻灯片" aria-label="1 / 7" aria-hidden="false" data-index="0">
+            <div class="case-card">
+              <div class="case-content">
+                <img class="case-brand" src="assets/images/LOGO01.svg" width="220" height="80" alt="LOGO01 占位标志">
+                <div class="case-copy"><span class="case-kicker">主题架构 · 内容管理</span><h2>WordPress 网站架构</h2><p>WordPress 为内容型和企业网站提供成熟的内容管理能力。通过主题模板、区块编辑器及合理的内容类型设计，可以在保持易用性的同时，建立清晰、可长期维护的网站结构。</p></div>
+              </div>
+              <div class="case-visual"><img src="assets/images/01.png" width="1200" height="900" alt="WordPress 网站架构案例占位图，编号01" fetchpriority="high"></div>
+            </div>
+          </article>
+          <article class="case-slide" role="group" aria-roledescription="幻灯片" aria-label="2 / 7" aria-hidden="true" data-index="1">
+            <div class="case-card">
+              <div class="case-content">
+                <img class="case-brand" src="assets/images/LOGO02.svg" width="220" height="80" alt="LOGO02 占位标志">
+                <div class="case-copy"><span class="case-kicker">页面设计 · 可视化编辑</span><h2>Elementor 可视化建站</h2><p>Elementor 提供直观的拖拽式页面编辑体验，适合快速搭建营销页面和活动落地页。项目中应统一全局样式、控制插件数量，并关注生成代码与页面加载性能。</p></div>
+              </div>
+              <div class="case-visual"><img src="assets/images/02.png" width="1200" height="900" alt="Elementor 可视化建站案例占位图，编号02" loading="lazy"></div>
+            </div>
+          </article>
+          <article class="case-slide" role="group" aria-roledescription="幻灯片" aria-label="3 / 7" aria-hidden="true" data-index="2">
+            <div class="case-card">
+              <div class="case-content">
+                <img class="case-brand" src="assets/images/LOGO03.svg" width="220" height="80" alt="LOGO03 占位标志">
+                <div class="case-copy"><span class="case-kicker">产品目录 · B2B 询盘</span><h2>WooCommerce 产品展示</h2><p>WooCommerce 不仅可以用于在线交易，也可以扩展为产品目录与询盘展示系统。结合产品分类、属性和自定义字段，能够为 B2B 网站构建规范、易扩展的产品信息体系。</p></div>
+              </div>
+              <div class="case-visual"><img src="assets/images/03.png" width="1200" height="900" alt="WooCommerce 产品展示案例占位图，编号03" loading="lazy"></div>
+            </div>
+          </article>
+          <article class="case-slide" role="group" aria-roledescription="幻灯片" aria-label="4 / 7" aria-hidden="true" data-index="3">
+            <div class="case-card">
+              <div class="case-content">
+                <img class="case-brand" src="assets/images/LOGO04.svg" width="220" height="80" alt="LOGO04 占位标志">
+                <div class="case-copy"><span class="case-kicker">结构优化 · 搜索可见性</span><h2>技术 SEO 优化</h2><p>从语义化 HTML、页面标题和结构化数据，到 XML Sitemap、Canonical 和页面性能，技术 SEO 应贯穿网站建设与维护流程，并结合 Search Console 持续检查索引状态。</p></div>
+              </div>
+              <div class="case-visual"><img src="assets/images/04.png" width="1200" height="900" alt="技术 SEO 优化案例占位图，编号04" loading="lazy"></div>
+            </div>
+          </article>
+          <article class="case-slide" role="group" aria-roledescription="幻灯片" aria-label="5 / 7" aria-hidden="true" data-index="4">
+            <div class="case-card">
+              <div class="case-content">
+                <img class="case-brand" src="assets/images/LOGO05.svg" width="220" height="80" alt="LOGO05 占位标志">
+                <div class="case-copy"><span class="case-kicker">Core Web Vitals · 缓存</span><h2>性能与缓存策略</h2><p>网站性能优化需要协同处理图片尺寸、WebP/AVIF、缓存、CSS 和 JavaScript 加载方式。使用缓存插件时，应按页面功能逐项测试，避免优化设置影响轮播、表单及动态组件。</p></div>
+              </div>
+              <div class="case-visual"><img src="assets/images/05.png" width="1200" height="900" alt="性能与缓存策略案例占位图，编号05" loading="lazy"></div>
+            </div>
+          </article>
+          <article class="case-slide" role="group" aria-roledescription="幻灯片" aria-label="6 / 7" aria-hidden="true" data-index="5">
+            <div class="case-card">
+              <div class="case-content">
+                <img class="case-brand" src="assets/images/LOGO06.svg" width="220" height="80" alt="LOGO06 占位标志">
+                <div class="case-copy"><span class="case-kicker">安全更新 · 备份恢复</span><h2>网站安全与运维</h2><p>WordPress 日常运维应建立更新、备份、权限和恢复机制。建议在升级核心、主题或插件之前备份文件与数据库，并在测试环境验证兼容性，降低正式网站的维护风险。</p></div>
+              </div>
+              <div class="case-visual"><img src="assets/images/06.png" width="1200" height="900" alt="网站安全与运维案例占位图，编号06" loading="lazy"></div>
+            </div>
+          </article>
+          <article class="case-slide" role="group" aria-roledescription="幻灯片" aria-label="7 / 7" aria-hidden="true" data-index="6">
+            <div class="case-card">
+              <div class="case-content">
+                <img class="case-brand" src="assets/images/LOGO07.svg" width="220" height="80" alt="LOGO07 占位标志">
+                <div class="case-copy"><span class="case-kicker">插件架构 · 模块复用</span><h2>WordPress 插件开发</h2><p>将重复功能封装为独立插件，可以减少主题之间的代码耦合。通过清晰的接口、规范的权限校验与可复用组件，使功能更易于升级、测试和迁移。</p></div>
+              </div>
+              <div class="case-visual"><img src="assets/images/07.png" width="1200" height="900" alt="WordPress 插件开发案例占位图，编号07" loading="lazy"></div>
+            </div>
+          </article>
+      </div>
+      <div class="logo-navigation" aria-label="选择案例">
+        <div class="logo-track" style="--visible-count:6" role="tablist" aria-label="WordPress 技术主题">
+          <button class="logo-tab is-active" type="button" role="tab" id="case-tab-1" aria-label="切换至WordPress 网站架构" aria-selected="true" aria-controls="case-stage" tabindex="0" data-index="0"><img src="assets/images/LOGO01.svg" width="140" height="50" alt="LOGO01"><span class="logo-indicator" aria-hidden="true"></span></button>
+          <button class="logo-tab" type="button" role="tab" id="case-tab-2" aria-label="切换至Elementor 可视化建站" aria-selected="false" aria-controls="case-stage" tabindex="-1" data-index="1"><img src="assets/images/LOGO02.svg" width="140" height="50" alt="LOGO02"><span class="logo-indicator" aria-hidden="true"></span></button>
+          <button class="logo-tab" type="button" role="tab" id="case-tab-3" aria-label="切换至WooCommerce 产品展示" aria-selected="false" aria-controls="case-stage" tabindex="-1" data-index="2"><img src="assets/images/LOGO03.svg" width="140" height="50" alt="LOGO03"><span class="logo-indicator" aria-hidden="true"></span></button>
+          <button class="logo-tab" type="button" role="tab" id="case-tab-4" aria-label="切换至技术 SEO 优化" aria-selected="false" aria-controls="case-stage" tabindex="-1" data-index="3"><img src="assets/images/LOGO04.svg" width="140" height="50" alt="LOGO04"><span class="logo-indicator" aria-hidden="true"></span></button>
+          <button class="logo-tab" type="button" role="tab" id="case-tab-5" aria-label="切换至性能与缓存策略" aria-selected="false" aria-controls="case-stage" tabindex="-1" data-index="4"><img src="assets/images/LOGO05.svg" width="140" height="50" alt="LOGO05"><span class="logo-indicator" aria-hidden="true"></span></button>
+          <button class="logo-tab" type="button" role="tab" id="case-tab-6" aria-label="切换至网站安全与运维" aria-selected="false" aria-controls="case-stage" tabindex="-1" data-index="5"><img src="assets/images/LOGO06.svg" width="140" height="50" alt="LOGO06"><span class="logo-indicator" aria-hidden="true"></span></button>
+          <button class="logo-tab" type="button" role="tab" id="case-tab-7" aria-label="切换至WordPress 插件开发" aria-selected="false" aria-controls="case-stage" tabindex="-1" data-index="6"><img src="assets/images/LOGO07.svg" width="140" height="50" alt="LOGO07"><span class="logo-indicator" aria-hidden="true"></span></button>
+        </div>
+      </div>
+      <div class="case-footer"><span id="case-count" aria-live="polite">01 / 06</span><div class="case-controls"><button class="nav-arrow" id="case-prev" type="button" aria-label="上一个案例">&#8592;</button><button class="nav-arrow" id="case-next" type="button" aria-label="下一个案例">&#8594;</button></div></div>
+    </section>
+  </main>
+</body>
+</html>
