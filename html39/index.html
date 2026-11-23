@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="html39 · Swiper 嵌套双轮播时间轴，支持卡片内部独立左右箭头、分页圆点与响应式里程碑展示。">
+  <title>HTML39 · Swiper 企业里程碑与卡片内图片轮播</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+<main class="page-shell">
+  <section class="milestones" aria-labelledby="timeline-title">
+    <header class="milestones-header">
+      <h1 id="timeline-title">从网站架构到智能化运营<br>探索 WordPress 技术实践</h1>
+      <div class="milestones-intro">
+        <p>以 WordPress 网站建设与运营为主题，记录不同阶段的技术实践。每张里程碑卡片都包含可独立切换的项目图片。</p>
+        <a class="more-link" href="https://wordpress.org/documentation/" target="_blank" rel="noopener noreferrer">了解更多 <span aria-hidden="true">→</span></a>
+      </div>
+    </header>
+    <div class="timeline-toolbar" aria-label="里程碑导航">
+      <button id="timeline-prev" class="nav-button" type="button" aria-label="上一项里程碑"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button>
+      <span class="year-range" id="year-range" aria-live="polite">2017 ~ 2019</span>
+      <button id="timeline-next" class="nav-button" type="button" aria-label="下一项里程碑"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></button>
+    </div>
+    <div class="swiper timeline-swiper" aria-label="里程碑横向轮播">
+      <div class="swiper-wrapper" id="timeline-items"></div>
+    </div>
+    <footer class="timeline-footer">
+      <div class="timeline-scrollbar swiper-scrollbar" aria-label="里程碑浏览进度"></div>
+      <span class="timeline-years" id="timeline-years">2017 – 2024</span>
+    </footer>
+    <p id="swiper-error" class="swiper-error" hidden>Swiper 资源未加载。请确认网络连接正常，或将 Swiper 的 CSS 与 JavaScript 下载到本地后修改引用路径。</p>
+  </section>
+</main>
+</body>
+</html>
