@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Image & Content Showcase | HTML42</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<main class="page">
+<section class="showcase" data-showcase aria-label="Outdoor project showcase" aria-roledescription="carousel">
+  <div class="showcase-slides" aria-live="polite" aria-atomic="true">
+    <article class="showcase-slide is-active" data-slide>
+      <div class="showcase-media"><img src="images/showcase-01.webp" width="900" height="600" alt="Illustration of a garden terrace with composite decking"><span class="showcase-quote" aria-hidden="true">❞</span></div>
+      <div class="showcase-content"><div class="showcase-meta"><span class="showcase-tag">Outdoor Living</span><span class="showcase-rating"><span aria-hidden="true">★</span> <strong>4.9</strong> <span>Demo rating</span></span></div><p class="showcase-text">The new decking has completely transformed our garden. Its natural finish makes the outdoor space feel warm, welcoming and easy to enjoy every day.</p><div class="showcase-author"><strong>James W.</strong><span>Residential decking project</span></div></div>
+    </article>
+    <article class="showcase-slide" data-slide>
+      <div class="showcase-media"><img src="images/showcase-02.webp" width="900" height="600" alt="Illustration of a contemporary home with horizontal wall cladding"><span class="showcase-quote" aria-hidden="true">❞</span></div>
+      <div class="showcase-content"><div class="showcase-meta"><span class="showcase-tag">Modern Architecture</span><span class="showcase-rating"><span aria-hidden="true">★</span> <strong>4.8</strong> <span>Demo rating</span></span></div><p class="showcase-text">The wall cladding gives the building a clean, contemporary finish. We love the combination of rich texture and a simple architectural design.</p><div class="showcase-author"><strong>Sarah M.</strong><span>Commercial cladding project</span></div></div>
+    </article>
+    <article class="showcase-slide" data-slide>
+      <div class="showcase-media"><img src="images/showcase-03.webp" width="900" height="600" alt="Illustration of a landscaped garden with composite privacy fencing"><span class="showcase-quote" aria-hidden="true">❞</span></div>
+      <div class="showcase-content"><div class="showcase-meta"><span class="showcase-tag">Garden Design</span><span class="showcase-rating"><span aria-hidden="true">★</span> <strong>5.0</strong> <span>Demo rating</span></span></div><p class="showcase-text">The fencing brings privacy and character to our garden. Its understated design fits beautifully into the landscape and creates a relaxing place to unwind.</p><div class="showcase-author"><strong>David T.</strong><span>Landscape fencing project</span></div></div>
+    </article>
+  </div>
+  <div class="showcase-controls" hidden>
+    <div class="showcase-thumbs" role="group" aria-label="Choose a project">
+      <button type="button" data-index="0" aria-label="Show decking project" aria-pressed="true"><img src="images/showcase-01.webp" alt="" width="56" height="56"></button>
+      <button type="button" data-index="1" aria-label="Show cladding project" aria-pressed="false"><img src="images/showcase-02.webp" alt="" width="56" height="56"></button>
+      <button type="button" data-index="2" aria-label="Show fencing project" aria-pressed="false"><img src="images/showcase-03.webp" alt="" width="56" height="56"></button>
+    </div>
+    <div class="showcase-arrows" role="group" aria-label="Slide navigation">
+      <button type="button" data-prev aria-label="Previous project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
+      <button type="button" data-next aria-label="Next project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+    </div>
+  </div>
+</section>
+</main>
+</body>
+</html>
